@@ -155,7 +155,7 @@
         $(document).ready(function () {
             const fragment = window.location.hash.substring(1);
             if (fragment) {
-                fetch(`https://api.connectcareeronline.com/api/v1/blogPost/title/${fragment}`)
+                fetch(`https://api.minijobsgermany/api/v1/blogPost/title/${fragment}`)
                     .then(response => response.json())
                     .then(data => {
                         const blog = data.data;

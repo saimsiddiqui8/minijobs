@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to fetch job details from the API
     async function fetchJobDetails(jobId) {
         try {
-            const response = await fetch(`https://api.connectcareeronline.com/api/v1/job/get-job/${jobId}`);
+            const response = await fetch(`https://api.minijobsgermany/api/v1/job/get-job/${jobId}`);
             if (!response.ok) {
                 throw new Error("Failed to fetch job details");
             }

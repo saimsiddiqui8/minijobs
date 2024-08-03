@@ -103,7 +103,7 @@
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-6 col-md-6">
-                        <p class="mt-3">Find employment opportunities at Connectcareeronline.com to help you with different types of job postings in the local as well as international markets...</p>
+                        <p class="mt-3">Find employment opportunities at minijobsgermany to help you with different types of job postings in the local as well as international markets...</p>
                         <h5 class="text-white mb-4 mt-5">Quick Links</h5>
                         <a class="btn btn-link text-white" href="contact">Contact Us</a>
                         <a class="btn btn-link text-white" href="job-in-english">Jobs in English</a>
@@ -176,7 +176,7 @@
                 // Decode jobId to handle encoded characters like %20 for spaces
                 const decodedJobId = decodeURIComponent(jobId);
 
-                fetch(`https://api.connectcareeronline.com/api/v1/job/job/search?search_string=${encodeURIComponent(decodedJobId)}&limit=20`)
+                fetch(`https://api.minijobsgermany/api/v1/job/job/search?search_string=${encodeURIComponent(decodedJobId)}&limit=20`)
                     .then(response => response.json())
                     .then(data => {
                         if (data && data.jobs && data.jobs.length > 0) {

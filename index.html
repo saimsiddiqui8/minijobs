@@ -197,7 +197,7 @@
                         <img src="./img/logo.png" width="150px" alt="Logo">
                     </div>
                     <p class="footer-description mt-3">
-                        Find employment opportunities at Connectcareeronline.com to help you with different types of job
+                        Find employment opportunities at minijobsgermany to help you with different types of job
                         postings in the local as well as international markets. Our goal is to connect.
                     </p>
                 </div>
@@ -290,7 +290,7 @@
         });
 
         async function searchJobs(keyword, location) {
-            const url = `https://api.connectcareeronline.com/api/v1/job/job/search?search_string=${encodeURIComponent(keyword)}&location=${encodeURIComponent(location)}&limit=20`;
+            const url = `https://api.minijobsgermany/api/v1/job/job/search?search_string=${encodeURIComponent(keyword)}&location=${encodeURIComponent(location)}&limit=20`;
 
             try {
                 const response = await fetch(url);
