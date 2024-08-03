@@ -1,0 +1,247 @@
+#searchBox {
+    background-image: url('./img/germany.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 40px;
+    background-size: cover;
+    position: relative;
+}
+
+#searchBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.384);
+    z-index: 1;
+}
+
+#section {
+    position: relative;
+    z-index: 2;
+}
+
+h1.text-center.mt-5.display-2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p.text-center.mt-3.mb-5.container {
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: 900;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Container for the search box and button */
+.container.box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+.row.g-2 {
+    width: 100%;
+}
+
+#location,
+#keyword {
+    border: none;
+    color: #fff !important;
+    border-bottom: 2px solid #fff !important;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Ensure that columns take full width and center content */
+.col-md-8,
+.col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Align items in the input fields and button */
+.form-control,
+.btn {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Nav bar */
+.navbar-nav .nav-link {
+    font-family: 'Arial', sans-serif !important;
+    font-weight: bold !important;
+    text-transform: capitalize !important;
+    color: #fff !important;
+}
+
+.text-center.mt-5 {
+    color: #fff;
+}
+
+.container-sm.primary-blue {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    padding: 0;
+}
+
+/* search container */
+
+.box1 {
+    background-color: transparent;
+    padding: 5px;
+}
+
+input[type="text"] {
+    background-color: transparent !important;
+    color: black;
+    padding: 10px;
+    /* border-radius: 5px; */
+}
+
+input[type="text"]::placeholder {
+    color: #ffffff;
+}
+
+
+.suggestions {
+    margin-left: 10px;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.bottom-border {
+    margin-top: 5px;
+    border-bottom: 1px solid #2b3940;
+    padding: 0 2px;
+}
+
+.searchBtn {
+    background-color: #044175;
+    color: #ffffff;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.searchBtn:hover {
+    background-color: #2b3940;
+}
+
+/* cities */
+.card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 10px;
+}
+.card-title {
+    margin-bottom: 0;
+    font-size: 20px;
+    color: #fff;
+}
+.card-text {
+    font-size: 20px;
+    margin: 0;
+}
+.card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 10px;
+}
+.card:hover img {
+    transform: scale(1.5);
+}
+
+
+/* footer */
+footer{
+    background-color: #eff2f6;
+}
+.custom-padding {
+    padding-top: 7rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    #searchBox {
+        padding: 30px;
+    }
+
+    .box1 {
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .searchBtn {
+        width: 150px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .container-sm.primary-blue {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .box1 {
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .searchBtn {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #searchBox {
+        padding: 20px;
+    }
+
+    .box1 {
+        padding: 5px;
+    }
+
+    .searchBtn {
+        padding: 10px;
+        width: 100% !important;
+        font-size: 16px;
+    }
+}

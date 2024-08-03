@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JobEntry - Job Detail</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+<!-- 3rd changes -->
+    <!-- Favicon -->
+    <link href="img/favicon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border primary-color-blue" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+            <a href="/" class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5">
+                <img class="py-4" src="./img/logo.png" width="80px" alt="">
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="/" class="nav-item nav-link active">Home</a>
+                    <a href="job-auf-Deutsch" class="nav-item nav-link">Jobs In German</a>
+                    <a href="job-in-english" class="nav-item nav-link">Jobs In English</a>
+                    <a href="jobs-in-berlin" class="nav-item nav-link">Jobs In Berlin</a>
+                    <a href="jobs-in-hamburg" class="nav-item nav-link">Jobs In Hamburg</a>
+                    <a href="contact" class="nav-item nav-link">Contact</a>
+                    <a href="student-corner" class="nav-item nav-link">Student Corner</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Job Detail Start -->
+        <div class="container-xxl pt-5 wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="my-4 fw-bold">Job Details:</h1>
+            <div class="container">
+                <div class="row gy-5 gx-4">
+                    <div class="col-lg-8">
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="text-start">
+                                <h3 id="job-title" class="mb-3"></h3>
+                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt secondary-color-blue me-2"></i><span id="job-location"></span></span>
+                                <span class="text-truncate me-3"><i class="far fa-clock secondary-color-blue me-2"></i><span id="job-type"></span></span>
+                                <span class="text-truncate me-0"><i class="far fa-money-bill-alt secondary-color-blue me-2"></i><span id="job-salary"></span></span>
+                            </div>
+                        </div>
+                        <div>
+                            <p><i class="fa fa-angle-right primary-color-blue me-2"></i><span id="job-summary"></span></p>
+                            <p><i class="fa fa-angle-right primary-color-blue me-2"></i><span id="job-nature"></span></p>
+                            <p><i class="fa fa-angle-right primary-color-blue me-2"></i><span id="job-salary-summary"></span></p>
+                            <p><i class="fa fa-angle-right primary-color-blue me-2"></i>Job Description: <span id="job-description"></span></p>
+                        </div>
+                        <div class="mb-5">
+                        </div>
+
+                        <div>
+                            <div class="col-12 pb-4">
+                                <a class="btn primary-blue text-white w-100" id="apply-now" target="_blank">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- Optional Additional Content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Job Detail End -->
+
+        <!-- Footer Start -->
+        <div class="bg-dark text-white footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 col-md-6">
+                        <p class="mt-3">Find employment opportunities at Connectcareeronline.com to help you with different types of job postings in the local as well as international markets...</p>
+                        <h5 class="text-white mb-4 mt-5">Quick Links</h5>
+                        <a class="btn btn-link text-white" href="contact">Contact Us</a>
+                        <a class="btn btn-link text-white" href="job-in-english">Jobs in English</a>
+                        <a class="btn btn-link text-white" href="job-auf-Deutsch">Jobs in German</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-5 pt-5">
+                        <div class="mt-5 pt-5">
+                            <h5 class="text-white mb-4 mt-5 pt-5">Contact</h5>
+                            <a href="https://www.facebook.com/profile.php?id=61559389169275">
+                                <p class="mb-2"><i class="fab fa-facebook me-3"></i>facebook/connectcareeronline</p>
+                            </a>
+                            <p class="mb-2"><i class="fa fa-envelope me-3"></i>connectcareerservice@gmail.com</p>
+                            <div class="d-flex pt-2">
+                                <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/profile.php?id=61559389169275"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-5 pt-5">
+                        <div class="mt-5 pt-5">
+                            <h5 class="text-white mb-4 mt-5 pt-5">Newsletter</h5>
+                            <p>Subscribe to our Newsletter to get latest jobs and updates.</p>
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                                <button type="button" class="btn primary-blue text-white py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">connectcareeronline</a>, All Right Reserved.
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="/">Home</a>
+                                <a href="/contact">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg primary-blue text-white btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Custom Script to Fetch Job Details -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the job title from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobId = urlParams.get('jobId');
+            
+            if (jobId) {
+                // Decode jobId to handle encoded characters like %20 for spaces
+                const decodedJobId = decodeURIComponent(jobId);
+
+                fetch(`https://api.connectcareeronline.com/api/v1/job/job/search?search_string=${encodeURIComponent(decodedJobId)}&limit=20`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.jobs && data.jobs.length > 0) {
+                            const job = data.jobs[0];
+                            document.getElementById('job-title').textContent = job.title || 'N/A';
+                            document.getElementById('job-location').textContent = job.location || 'N/A';
+                            document.getElementById('job-type').textContent = job.type || 'N/A';
+                            document.getElementById('job-salary').textContent = job.salary || 'N/A';
+                            document.getElementById('job-summary').textContent = job.summary || 'N/A';
+                            document.getElementById('job-nature').textContent = job.nature || 'N/A';
+                            document.getElementById('job-salary-summary').textContent = job.salarySummary || 'N/A';
+                            document.getElementById('job-description').textContent = job.description || 'N/A';
+                            document.getElementById('apply-now').href = job.applyNow || '#';
+                        } else {
+                            document.querySelector('.container-xxl').innerHTML = '<p>Job not found.</p>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching job details:', error);
+                        document.querySelector('.container-xxl').innerHTML = '<p>There was an error fetching job details.</p>';
+                    });
+            } else {
+                document.querySelector('.container-xxl').innerHTML = '<p>No job ID provided in the URL.</p>';
+            }
+        });
+    </script>
+    
+</body>
+</html>
