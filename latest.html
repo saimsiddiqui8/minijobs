@@ -31,7 +31,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="canonical" href="https://minijobsgermany/latest">
+    <link rel="canonical" href="https://connectcareeronline.com/latest">
 
 </head>
 
@@ -55,7 +55,7 @@
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
             <a href="/" class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5">
-                <img class="py-4" src="./img/logo.png" width="80px" alt="">
+               <img class="py-4" src="./img/White/White/01.png" width="80px" alt="logo">
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -198,13 +198,13 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-6 col-md-6">
-                    <p class="mt-3">Find employment opportunities at minijobsgermany to help you with different
+                    <p class="mt-3">Find employment opportunities at Connectcareeronline.com to help you with different
                         types of job postings in the local as well as international markets. Our goal is to connect
                         motivated students and professionals with all kinds of jobs in Germany like Berlin, Hamburg,
                         Frankfurt, Essen, Munich, Potsdam, Zurich, Dortmund, Walldorf, Darmstadt, Wuzuburg, and many
                         more.
                         We have listed jobs in Germany along with other jobs internationally.
-                        <br/> Embrace the future of job searching with minijobsgermany, where your global career
+                        <br/> Embrace the future of job searching with Connectcareeronline.com, where your global career
                         begins.
                     </p>
                     <h5 class="text-white mb-4 mt-5">Quick Links</h5>
@@ -282,7 +282,7 @@
         });
 
         function fetchFullTimeJobs() {
-            fetch('https://api.minijobsgermany/api/v1/job/get-all-jobs')
+            fetch('https://api.connectcareeronline.com/api/v1/job/get-all-jobs')
                 .then(response => response.json())
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-2');
@@ -328,7 +328,7 @@
                 });
         };
         function fetchPartTimeJobs() {
-            fetch('https://api.minijobsgermany/api/v1/job/get-all-jobs')
+            fetch('https://api.connectcareeronline.com/api/v1/job/get-all-jobs')
                 .then(response => response.json())
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-3');
@@ -380,7 +380,7 @@
             if (category && category !== 'Category') params.append('category', category);
 
             // Fetch jobs from the API endpoint with the query parameters
-            fetch(`https://api.minijobsgermany/api/v1/job/filter?${params.toString()}`)
+            fetch(`https://api.connectcareeronline.com/api/v1/job/filter?${params.toString()}`)
                 .then(response => response.json())
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-2');
