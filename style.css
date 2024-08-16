@@ -127,7 +127,7 @@ p.text-center.mt-3.mb-5.container {
 }
 
 
-/* Ensure that columns take full width and center content */
+/* columns take full width and center content */
 .col-md-8,
 .col-md-4 {
     display: flex;
@@ -164,44 +164,64 @@ p.text-center.mt-3.mb-5.container {
 /* search container */
 
 #section {
-    background-color: #ffffff; /* White background */
-    border-radius: 25px !important; /* Rounded corners */
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    padding: 3px ; /* Padding inside the container */
-    max-width: 800px; /* Set a maximum width */
-    margin: 10px auto; /* Centering the container */
-    text-align: center; /* Center-align text */
+    background-color: #ffffff; 
+    border-radius: 25px !important; 
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
+    padding: 3px ; 
+    max-width: 800px;
+    margin: 10px auto; 
+    text-align: center; 
     color: #022149 !important;
 }
 
+.col-md-6.d-flex.align-items-center.keyword::after {
+    content: "";
+    display: block;
+    border-left: 2px solid #ccc; 
+    height: 40px; 
+    margin-left: 10px;
+}
+
+
+.input{
+    background-color: #f4f7f7;
+    border-radius: 2px;
+    /* color: ; */
+}
+
 input.form-control {
-    border-radius: 10px; /* Rounded corners for inputs */
+    border-radius: 10px; 
     padding: 15px;
-    border: 1px solid #ddd; /* Soft border */
+    border: 1px solid #ddd;
+    background-color: #f4f7f7;
 }
 
 button.searchBtn {
-    background-color: #ff9900; /* Orange button color similar to the image */
+    background-color: #ff9900; 
     color: #ffffff;
-    border-radius: 10px; /* Rounded corners */
-    padding: 15px 30px;
+    border-radius: 5px;
+    padding: 8px 10px;
     border: none;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
+    width: 150px; 
+/* padding-bottom: 10px !important; */
 }
 
+
+
 .suggestions {
-    /* margin-top: 15px !important; Space between search button and suggestions */
+    /* margin-top: 15px !important;  */
     font-size: 14px;
     margin-bottom: 0 !important ;
 
-        /* margin-bottom: 0 !important; Remove bottom margin */
+        /* margin-bottom: 0 !important;  */
         
      
 }
 
 .trending-keywords {
-    color: #555; /* Gray color for trending keywords */
+    color: #555 !important;
 }
 
 .suggestions p {
@@ -344,4 +364,9 @@ button.searchBtn {
         width: 100% !important;
         font-size: 16px;
     }
+    .col-md-6.d-flex.align-items-center.keyword::after {
+    border: none   
+    }
+    
+    
 }
