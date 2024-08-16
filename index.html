@@ -103,7 +103,7 @@
                                 <li><a class="dropdown-item" href="jobs-in-stuttgart">Jobs in Stuttgart</a></li>
                             </ul>
                         </div>
-                       
+
                         <a href="student-corner" class="nav-item nav-link">Student Corner</a>
                         <a href="contact" class="nav-item nav-link">Contact</a>
                     </div>
@@ -112,46 +112,91 @@
 
 
             <!-- <div id="searchBox"> -->
-                <section id="section">
-                    <div class="container">
-                        <h1 class="text-center mt-5 display-6 fw-bold">Find the Best Job in Germany
-                        </h1>
-                        <p class="text-center mt-3 mb-5 fw-light" style="font-size: 15px; font-weight: 900;">
-                            Browse the latest English speaking jobs in Germany | Part time jobs in Germany
-                        </p>
-                
-                        <!-- Search Start -->
-                        <div class="container-sm mb-5 wow fadeIn" data-wow-delay="0.1s">
-                            <div class="row g-2">
-                                <div class="col-md-8">
-                                    <div class="row g-2">
-                                        <div class="col-md-6">
-                                            <input type="text" id="keyword" class="form-control border-0 py-3"
-                                                   placeholder="Search Job Category..." />
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" id="location" class="form-control border-0 py-3"
-                                                   placeholder="Search by Location..." />
-                                        </div>
+            <section id="section">
+                <div class="container">
+                    <h1 class="text-center mt-5 display-6 fw-bold">Find the Best Job in Germany
+                    </h1>
+                    <p class="text-center mt-3 mb-5 fw-light" style="font-size: 15px; font-weight: 900;">
+                        Browse the latest English speaking jobs in Germany | Part time jobs in Germany
+                    </p>
+
+                    <!-- Search Start -->
+                    <div class="search container-sm mb-5 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="row g-2 input">
+                            <div class="col-md-8">
+                                <!-- <div class="row g-2" style="background-color: #f4f7f7;"> -->
+                                <div class="row g-2">
+                                    <div class="col-md-6 d-flex align-items-center keyword">
+                                        <i class="fa-solid fa-magnifying-glass ps-3"></i>
+                                        <input type="text" id="keyword" class="form-control border-0 py-3"
+                                            placeholder="Search Job Category..."/>
+                                    </div>
+
+
+
+                                    <div class="col-md-6 d-flex align-items-center">
+                                        <i class="fa-solid fa-location-dot ps-3"></i>
+                                        <input type="text" id="location" class="form-control border-0 py-3"
+                                            placeholder="Search by Location..."/>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <button id="searchButton" class="btn btn-secondary border-0 w-100 py-3 searchBtn">
-                                        <i class="fa-solid fa-magnifying-glass" style="padding-right: 10px;"></i> <span id="buttonText">Search</span>
-                                        <span id="buttonLoader" class="spinner-border spinner-border-sm d-none" role="status"
-                                              aria-hidden="true"></span>
-                                    </button>
-                                </div>
                             </div>
-                            <div class="suggestions mt-3 mb-0 pb-0">
-                                <p>Trending Keywords: <span class="trending-keywords">Software Engineer</span> <span class="trending-keywords">Graphic Designer</span><span class="trending-keywords">Restaurant Jobs</span><span class="trending-keywords">Bar Jobs</span><span class="trending-keywords">Kitchen Jobs</span><span class="trending-keywords">Electrician Jobs</span>
-                                </p>
+                            <div class="col-md-4">
+                                <button id="searchButton" class="btn btn-secondary border-0 py-3 searchBtn">
+                                    <i class="fa-solid fa-magnifying-glass" style="padding-right: 10px;"></i> 
+                                    <span id="buttonText">Search</span>
+                                    <span id="buttonLoader" class="spinner-border spinner-border-sm d-none"
+                                        role="status" aria-hidden="true"></span>
+                                </button>
+                                
                             </div>
                         </div>
+                        <!-- </div> -->
+
+                        <div class="suggestions mt-3 mb-0 pb-0">
+                            <p>Trending Jobs: <span class="trending-keywords">Software Engineer</span> <span
+                                    class="trending-keywords">Graphic Designer</span><span
+                                    class="trending-keywords">Restaurant Jobs</span><span class="trending-keywords">Bar
+                                    Jobs</span><span class="trending-keywords">Kitchen Jobs</span><span
+                                    class="trending-keywords">Electrician Jobs</span>
+                            </p>
+                        </div>
                     </div>
-                </section>                
+                </div>
+            </section>
         </div>
     </div>
+
+<!-- tabs start  -->
+<div class="container">
+    <h1 class="text-center mb-5 ">Job Listing</h1>
+    <div class="tab-class text-center ">
+        <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+            <li class="nav-item">
+                <a class="d-flex align-items-center text-start mx-3 pb-3 active" data-bs-toggle="pill"
+                    href="#tab-2">
+                    <h6 class="mt-n1 mb-0">Full Time</h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill"
+                    href="#tab-3">
+                    <h6 class="mt-n1 mb-0">Part Time</h6>
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-2" class="tab-pane fade show p-0 active">
+            </div>
+            <div id="tab-3" class="tab-pane fade show p-0">
+            </div>
+            <a class="btn primary-blue text-white py-3 px-5" href="">Browse More Jobs</a>
+        </div>
+    </div>
+</div>
+
+<!-- tabs end  -->
+
     <!-- Search End -->
     <div class="container my-4">
         <h2 class="text-start fw-bold pt-5 ">Start your Jobs Search in Germany Now!</h2>
