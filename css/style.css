@@ -334,15 +334,13 @@
 
 .job-item {
     border: 1px solid transparent;
-    border-radius: 8px;
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    border-radius: 20px;
     transition: .5s;
-
+    border-color: rgb(221 221 222 / 1) !important;
 }
 
 .job-item:hover {
-    border-color: rgba(0, 0, 0, .08);
-    box-shadow: none;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
 }
 
 .company-logo {
@@ -370,11 +368,6 @@
     /* Ensures the section takes full height of the card */
 }
 
-.text-truncate {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item,

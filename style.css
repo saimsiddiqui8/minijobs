@@ -1,10 +1,13 @@
 #searchBox {
 
     background-image: linear-gradient(to right, #044175, #007bff);
-
     padding-bottom: 10px;
     background-size: cover;
     position: relative;
+}
+
+* {
+    font-family: Helvetica;
 }
 
 /* section{
@@ -130,7 +133,7 @@ p.text-center.mt-3.mb-5.container {
 #jobTitle {
     font-size: 24px;
     transition: 0.2s;
-    
+
 }
 
 #jobTitle:hover {
@@ -296,7 +299,6 @@ button.searchBtn {
 }
 
 .footer a:hover {
-    /* text-decoration: underline; */
     color: #3292f8;
 }
 
@@ -307,6 +309,71 @@ button.searchBtn {
 
 .footer .contact-info p a {
     margin: 0;
+}
+
+/* side bar content  */
+#sidebar-content {
+    background-color: rgb(250, 250, 250);
+    padding: 11px;
+    height: 350px;
+    overflow-y: auto;
+    text-align: justify
+}
+
+#newsletter {
+    padding: 10px;
+    border-radius: 5px;
+    padding-bottom: 30px;
+    background-image: linear-gradient(to right, #06579e, #337ab7);
+    color: #fff;
+    margin-top: 25px;
+}
+#newsletter-email {
+    width: 80%;
+    padding: 8px;
+    margin-top: 25px;
+    font-family: "Heebo", sans-serif;
+    background-color: #ececec;
+    border-radius: 2px;
+    box-shadow: none;
+    border: none;
+}
+
+#newsletter-button {
+    width: 80%;
+    padding: 6px;
+    border-radius: 2px;
+    margin-top: 10px;
+    background-color: #ff9900;
+    color: #fff;
+    box-shadow: none;
+    border: none;
+
+}
+
+#sidebar-content::-webkit-scrollbar {
+    width: 8px;
+    /* Width of the scrollbar */
+}
+
+#sidebar-content::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #f1f1f1;
+    /* Background of the scrollbar track */
+}
+
+#sidebar-content::-webkit-scrollbar-thumb {
+    background-color: #ff9900;
+    /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    /* Roundness of the scrollbar thumb */
+    border: 2px solid #f1f1f1;
+    /* Padding around the thumb */
+}
+
+#sidebar-content::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3;
+    /* Color of the scrollbar thumb on hover */
 }
 
 /* Responsive Styles */
