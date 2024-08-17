@@ -16,8 +16,9 @@
     display: inline-block;
     border-radius: 15px;
     overflow: hidden;
-    color: white; 
+    color: white;
 }
+
 .card-body {
     position: absolute;
     bottom: 0;
@@ -27,6 +28,7 @@
     z-index: 2;
     background: transparent;
 }
+
 .card::after {
     content: '';
     position: absolute;
@@ -41,7 +43,8 @@
 .secondary-blue {
     background-color: var(--secondary);
 }
-.cityPara{
+
+.cityPara {
     color: #0b71d9 !important;
     font-size: 18px !important;
 }
@@ -322,14 +325,19 @@
 
 /*** Job Listing ***/
 .nav-pills .nav-item .active {
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 3px solid #0b71d9;
+}
+
+.nav-pills .nav-item .active h6 {
+    color: #0b71d9 !important;
 }
 
 .job-item {
     border: 1px solid transparent;
-    border-radius: 2px;
+    border-radius: 8px;
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     transition: .5s;
+
 }
 
 .job-item:hover {
@@ -337,6 +345,36 @@
     box-shadow: none;
 }
 
+.company-logo {
+    width: 60px;
+    height: auto;
+}
+
+.primary-blue {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+
+.apply-now-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.apply-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+    /* Ensures the section takes full height of the card */
+}
+
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item,
