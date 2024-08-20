@@ -334,7 +334,7 @@
 
 .job-item {
     border: 1px solid transparent;
-    border-radius: 20px;
+    border-radius: 10px;
     transition: .5s;
     border-color: rgb(221 221 222 / 1) !important;
 }
