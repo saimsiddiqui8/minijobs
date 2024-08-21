@@ -1,5 +1,11 @@
 #searchBox {
     background-image: linear-gradient(to right, #044175, #007bff);
+    /* background-image: linear-gradient(to right, #212529, #007bff); */
+
+    /* background: linear-gradient(90deg, #21232A 0%, #b3a8a8 50%, #21232A 100%); */
+    background: linear-gradient(90deg, #044175 0%, #0c72df 50%, #044175 100%);
+    /* background: linear-gradient(to right, #212529 0%, #ffffff 50%, #212529 100%); */
+    /* background-color: #212529; */
     padding-bottom: 10px;
     background-size: cover;
     position: relative;
@@ -8,6 +14,8 @@
 * {
     font-family: Helvetica;
 }
+
+
 
 .container-fluid {
     width: 100% !important;
@@ -107,13 +115,21 @@ p.text-center.mt-3.mb-5.container {
     transition: background-color 0.3s ease;
 }
 
+.job-item {
+    cursor: pointer;
+}
+
 #jobTitle {
     font-size: 24px;
     transition: 0.2s;
 }
 
+.job-item:hover {
+    background-color: #f0f8ff;
+}
+
 #jobTitle:hover {
-    color: #ff9900;
+    color: #555;
 }
 
 #jobLocation {
@@ -131,6 +147,10 @@ p.text-center.mt-3.mb-5.container {
     font-weight: bold !important;
     text-transform: capitalize !important;
     color: #ddd !important;
+}
+
+.navbar a:hover {
+    color: #ff9900 !important;
 }
 
 .text-center.mt-5 {
@@ -310,7 +330,11 @@ button.searchBtn {
 #about-our-web {
     margin-top: 25px;
     padding: 15px;
-    background-color: rgb(233, 223, 241);
+    /* background-color: rgb(233, 223, 241); */
+}
+
+#sidebar-content {
+    background-color: #f0f8ff;
 }
 
 #sidebar-content::-webkit-scrollbar {
@@ -403,9 +427,11 @@ button.searchBtn {
     .box1 {
         padding: 5px;
     }
-.input{
-    border-radius: 0%;
-}
+
+    .input {
+        border-radius: 0%;
+    }
+
     .searchBtn {
         padding: 10px;
         width: 100% !important;
