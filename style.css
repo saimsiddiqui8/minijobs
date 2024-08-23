@@ -1,5 +1,5 @@
 #searchBox {
-    background-image: linear-gradient(to right, #044175, #007bff);
+    /* background-image: linear-gradient(to right, #044175, #007bff); */
     /* background-image: linear-gradient(to right, #212529, #007bff); */
 
     /* background: linear-gradient(90deg, #21232A 0%, #b3a8a8 50%, #21232A 100%); */
@@ -15,7 +15,65 @@
     font-family: Helvetica;
 }
 
+/* navbar  */
+.navbar-nav .nav-link {
+    font-family: 'Arial', sans-serif !important;
+    font-weight: bold !important;
+    text-transform: capitalize !important;
+    color: #ddd !important;
+}
 
+.navbar a:hover {
+    color: #ff9900 !important;
+}
+/* navbar end   */
+
+/* mega menu  */
+.megamenu-content h6 {
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 800 !important;
+}
+
+h6:hover {
+    color: #ff9900;
+
+}
+
+.navbar .megamenu {
+    padding: 1rem;
+}
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+    .navbar .has-megamenu {
+        position: static !important;
+    }
+
+    .navbar .megamenu {
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media(max-width: 991px) {
+
+    .navbar.fixed-top .navbar-collapse,
+    .navbar.sticky-top .navbar-collapse {
+        overflow-y: auto;
+        max-height: 90vh;
+        margin-top: 10px;
+    }
+}
+
+/* mega menu end  */
+
+/* search container  */
 
 .container-fluid {
     width: 100% !important;
@@ -44,6 +102,8 @@
     background: rgba(0, 0, 0, 0.384);
     z-index: 1;
 }
+
+/* search container end  */
 
 .jobs-section {
     padding: 2rem;
@@ -141,18 +201,6 @@ p.text-center.mt-3.mb-5.container {
     width: 100%;
     max-width: 500px;
 }
-
-.navbar-nav .nav-link {
-    font-family: 'Arial', sans-serif !important;
-    font-weight: bold !important;
-    text-transform: capitalize !important;
-    color: #ddd !important;
-}
-
-.navbar a:hover {
-    color: #ff9900 !important;
-}
-
 .text-center.mt-5 {
     color: #fff;
 }
@@ -378,6 +426,18 @@ button.searchBtn {
     .searchBtn {
         width: 150px !important;
     }
+
+    .navbar .has-megamenu {
+        position: static !important;
+    }
+
+    .navbar .megamenu {
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 0;
+    }
+
 }
 
 @media (max-width: 768px) {
