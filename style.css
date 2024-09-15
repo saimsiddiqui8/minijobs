@@ -43,6 +43,12 @@ h6:hover {
     padding: 1rem;
 }
 
+.megamenu{
+    border-radius: 10px !important;
+    
+    
+}
+
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
 
@@ -302,13 +308,20 @@ button.searchBtn {
     position: relative;
     overflow: hidden;
     border: none;
-    border-radius: 10px;
 }
 
 .card:hover img {
     transform: scale(1.2);
 }
 
+.jobs{
+    color:#ff9900 !important;
+}
+
+.jobs:hover{
+    
+    text-decoration: underline;
+}
 .footer {
     background-color: #022149;
     color: white;
