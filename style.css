@@ -433,6 +433,9 @@ button.searchBtn {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
+    .logo{
+        margin-bottom: 20px;
+    }
     #searchBox {
         padding: 30px;
     }
@@ -464,6 +467,10 @@ button.searchBtn {
 }
 
 @media (max-width: 768px) {
+
+    .logo{
+        margin-bottom: 20px;
+    }
     section {
         margin: 20px;
         padding: 10px;
