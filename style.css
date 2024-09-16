@@ -26,6 +26,13 @@
 .navbar a:hover {
     color: #ff9900 !important;
 }
+
+.sticky-navbar{
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it's above other elements */
+}
 /* navbar end   */
 
 /* mega menu  */
@@ -323,7 +330,10 @@ button.searchBtn {
     text-decoration: underline;
 }
 .footer {
-    background-color: #022149;
+    /* background-color: #022149; */
+    background: linear-gradient(90deg, #044175 0%, #0c72df 50%, #044175 100%);
+    background-size: cover;
+    position: relative;
     color: white;
 }
 
@@ -337,7 +347,7 @@ button.searchBtn {
 }
 
 .footer a:hover {
-    color: #3292f8;
+    color: #ff9900;
 }
 
 .footer .social-icons a {
@@ -394,9 +404,9 @@ button.searchBtn {
     /* background-color: rgb(233, 223, 241); */
 }
 
-#sidebar-content {
+/* #sidebar-content {
     background-color: #f0f8ff;
-}
+} */
 
 #sidebar-content::-webkit-scrollbar {
     width: 8px;
