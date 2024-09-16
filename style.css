@@ -41,9 +41,8 @@
     font-weight: 800 !important;
 }
 
-h6:hover {
-    color: #ff9900;
-
+.megamenu-content a:hover{
+color: #3c4043 !important;
 }
 
 .navbar .megamenu {
