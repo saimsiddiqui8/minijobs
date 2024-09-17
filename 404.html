@@ -11,12 +11,13 @@
     <!-- Favicon -->
     <link href="img/favicon.png" rel="icon">
 
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -27,9 +28,10 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="./style.css">
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="canonical" href="https://connectcareeronline.com/">
 </head>
 
 <body>
@@ -42,12 +44,10 @@
             </div>
         </div>
         <!-- Spinner End -->
-
-
         <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a href="/" class="navbar-brand d-flex align-items-center text-center py-5 px-4 px-lg-5">
-                <img class="py-4" src="./img/logo.png" width="100px" alt="logo">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 sticky-navbar">
+            <a href="/" class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5">
+                <img class="logo py-4 mt-4" src="./img/logo2.png" width="120px" alt="logo">
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -55,15 +55,81 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="jobs-in-berlin" class="nav-item nav-link">Jobs In Berlin</a>
-                    <a href="jobs-in-hamburg" class="nav-item nav-link">Jobs In Hamburg</a>
-                    <a href="contact" class="nav-item nav-link">Contact</a>
-                    <a href="student-corner" class="nav-item nav-link">Student Corner</a>
+                    <a href="contact" class="nav-item nav-link" style="color: #000 !important;">Our team</a>
+                    <a class="nav-link dropdown-toggle" id="jobsMenuLink" href="#" data-bs-toggle="dropdown"
+                        style="color: #000 !important;">More
+                        Jobs</a>
+                    <div class="dropdown-menu megamenu mt-3" role="menu">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item megamenu">
+                                <div class="megamenu-content" aria-labelledby="navbarDropdownMenuLink">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#">
+                                                <h6>JOBS</h6>
+                                            </a>
+                                            <a class="dropdown-item" href="#">Home Office Jobs</a>
+                                            <a class="dropdown-item" href="#">Jobs from now on</a>
+                                            <a class="dropdown-item" href="#">Jobs without work experience</a>
+                                            <a class="dropdown-item" href="#">Jobs abroad</a>
+                                            <a class="dropdown-item" href="#">Vacancies</a>
+                                            <a class="dropdown-item" href="#">Activities</a>
+                                            <a class="dropdown-item" href="#">Part-time Jobs</a>
+                                            <a class="dropdown-item" href="#">Full-time Jobs</a>
+                                        </div>
+                                        <div class="col-lg-3   col-md-6">
+                                            <a href="">
+                                                <h6>CAREER START </h6>
+                                            </a>
+                                            <a class="dropdown-item" href="#">High School Graduate Jobs</a>
+                                            <a class="dropdown-item" href="#">Graduate Jobs</a>
+                                            <a class="dropdown-item" href="#">Entry-level jobs</a>
+                                            <a class="dropdown-item" href="#">Holiday Jobs</a>
+                                            <a class="dropdown-item" href="#">Junior Jobs</a>
+                                            <a class="dropdown-item" href="#">Internship</a>
+                                            <a class="dropdown-item" href="#">Working Student</a>
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <a href="">
+                                                <h6>JOBS BY CITY</h6>
+                                            </a>
+                                            <a class="dropdown-item" href="#">Jobs in Berlin</a>
+                                            <a class="dropdown-item" href="#">Jobs in Dortmund</a>
+                                            <a class="dropdown-item" href="#">Jobs in Düsseldorf</a>
+                                            <a class="dropdown-item" href="#">Jobs in Frankfurt am Main</a>
+                                            <a class="dropdown-item" href="#">Jobs in Cologne</a>
+                                            <a class="dropdown-item" href="#">Jobs in Munich</a>
+                                            <a class="dropdown-item" href="#">Jobs in Germany</a>
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <a href="">
+                                                <h6>WORKING AT</h6>
+                                            </a>
+                                            <a class="dropdown-item" href="#">YoungCapital</a>
+                                            <a class="dropdown-item" href="#">Deutsche Telekom</a>
+                                            <a class="dropdown-item" href="#">Lieferando</a>
+                                            <a class="dropdown-item" href="#">Picnic</a>
+                                            <a class="dropdown-item" href="#">Sixt</a>
+                                            <a class="dropdown-item" href="#">Other Companies</a>
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <a href="">
+                                                <h6>MORE</h6>
+                                            </a>
+                                            <a class="dropdown-item" href="#">FAQ</a>
+                                            <a class="dropdown-item" href="#">YC App</a>
+                                            <a class="dropdown-item" href="#">Well-paid jobs</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="contact" class="nav-item nav-link" style="color: #000 !important;">Contact</a>
+                    <a href="blogs" class="nav-item nav-link" style="color: #000 !important;">Blogs</a>
                 </div>
             </div>
         </nav>
-        <!-- Navbar End -->
 
 
 
@@ -85,57 +151,78 @@
         <!-- 404 End -->
 
         <!-- Footer Start -->
-        <div class=" bg-dark text-white footer  wow fadeIn " data-wow-delay="0.1s">
+        <div class="text-white footer wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-4 col-md-6">
-                        <h5 class="text-white mb-4">Quick Links</h5>
-                        <a class="btn btn-link text-white" href="contact">Contact Us</a>
-                        <a class="btn btn-link text-white" href="job-in-english">Jobs in English</a>
-                        <a class="btn btn-link text-white" href="job-auf-Deutsch">Jobs in German</a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h5 class="text-white mb-4">Contact</h5>
-                        <a href="https://www.facebook.com/profile.php?id=61559389169275">
-                            <p class="mb-2"><i class="fab fa-facebook me-3"></i>facebook/connectcareeronline</p>
-                        </a>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>connectcareerservice@gmail.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" target="_blank"
-                                href="https://www.facebook.com/profile.php?id=61559389169275"><i
-                                    class="fab fa-facebook-f"></i></a>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-logo">
+                            <img src="./img/logo2.png" alt="Logo">
                         </div>
+                        <p class="footer-description mt-3">
+                            Find employment opportunities at Connectcareeronline.com to help you with different types of
+                            job
+                            postings in the local as well as international markets. Our goal is to connect.
+                        </p>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h5 class="text-white mb-4">Newsletter</h5>
-                        <p>Subscribe to our Newsletter to get latest jobs and updates.</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                                placeholder="Your email">
-                            <button type="button"
-                                class="btn primary-blue text-white py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h5 class="text-white mb-4">Contact</h5>
+                        <div class="contact-info">
+                            <p class="mb-2"><i class="fab fa-facebook me-3"></i><a
+                                    href="https://www.facebook.com/profile.php?id=61559389169275">facebook/connectcareeronline</a>
+                            </p>
+                            <p class="mb-2"><i class="fa fa-envelope me-3"></i><a
+                                    href="mailto:info@connectcareeronline.com">info@connectcareeronline.com</a></p>
+                        </div>
+                        <h5 class="text-white mb-4 mt-5">Newsletter</h5>
+                        <p>Subscribe to our Newsletter to get the latest jobs and updates.</p>
+                    </div>
+                    <div class="col-lg-5 col-md-12 mb-4">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- <a class="d-block mb-2 btn btn-link" href="contact">Contact Us</a> -->
+                                <a class="d-block mb-2  btn btn-link" href="jobs-in-berlin">Jobs in Berlin</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-essen">Jobs in Essen</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-bonn">Jobs in Bonn</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-dussledorf">Jobs in Dussledorf</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-falkensee">Jobs in Falkensee</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-frankfurt">Jobs in Frankfurt</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-lunen">Jobs in Lünen</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-hamburg">Jobs in Hamburg</a>
+                            </div>
+                            <div class="col-md-6">
+
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-potsdam">Jobs in Potsdam</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-munich">Jobs in Cologne</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-nurtingen">Jobs in Nürtingen</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-vienna">Jobs in Vienna </a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-wurzburg">Jobs in Würzburg</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-zurich">Jobs in Zurich</a>
+                                <a class="d-block mb-2 btn btn-link" href="jobs-in-stuttgart">Jobs in Stuttgart</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container">
-                <div class="copyright">
+                <div class="copyright py-3">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                             &copy; <a class="border-bottom" href="#">connectcareeronline</a>, All Right Reserved.
-                            <!-- Developed By Saim Siddiqui -->
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
                                 <a href="/">Home</a>
-                                <a href="/contact">Contact</a>
+                                <a href="contact">Contact</a>
+                                <a href="student-corner">Student Corner</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Footer End -->
+        <!-- Footers End -->
+
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg primary-blue btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
