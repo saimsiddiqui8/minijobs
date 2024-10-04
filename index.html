@@ -39,7 +39,7 @@
 <body>
     <!-- Navbar Start -->
     <nav style="z-index: 1000 !important;  background: linear-gradient(90deg, #044175 0%, #074a91 50%, #044175 100%);"
-        class="navbar navbar-expand-lg navbar-light sticky-top p-0 sticky-navbar py-1">
+        class="navbar navbar-expand-lg navbar-light">
         <a href="/" class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5">
             <img class="logo " src="./img/logo2.png" width="110px" alt="logo">
         </a>
@@ -1274,6 +1274,31 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script>
+
+        // Get the navbar element
+        const navbar = document.querySelector('nav');
+
+        // Add an event listener to the window's scroll event
+        window.addEventListener('scroll', () => {
+            // Check if the user has scrolled down before
+            if (window.scrollY > 100) {
+                if (window.scrollY < window.prevScrollY) {
+                    // Add the sticky class to the navbar
+                    navbar.classList.add('sticky-top');
+                } else {
+                    // Remove the sticky class from the navbar
+                    navbar.classList.remove('sticky-top');
+                }
+            }
+
+            // Update the previous scroll position
+            window.prevScrollY = window.scrollY;
+        });
+
+        // Initialize the previous scroll position
+        window.prevScrollY = window.scrollY;
+    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

@@ -27,12 +27,15 @@
     color: #ff9900 !important;
 }
 
-.sticky-navbar{
-    position: -webkit-sticky; /* For Safari */
+.sticky-navbar {
+    position: -webkit-sticky;
+    /* For Safari */
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure it's above other elements */
+    z-index: 1000;
+    /* Ensure it's above other elements */
 }
+
 /* navbar end   */
 
 /* mega menu  */
@@ -41,18 +44,18 @@
     font-weight: 800 !important;
 }
 
-.megamenu-content a:hover{
-color: #3c4043 !important;
+.megamenu-content a:hover {
+    color: #3c4043 !important;
 }
 
 .navbar .megamenu {
     padding: 1rem;
 }
 
-.megamenu{
+.megamenu {
     border-radius: 10px !important;
-    
-    
+
+
 }
 
 /* ============ desktop view ============ */
@@ -201,6 +204,7 @@ p.text-center.mt-3.mb-5.container {
     width: 100%;
     max-width: 500px;
 }
+
 .text-center.mt-5 {
     color: #fff;
 }
@@ -293,6 +297,7 @@ button.searchBtn {
     color: #fff;
 }
 
+
 .card-text {
     font-size: 20px;
     margin: 0;
@@ -308,14 +313,15 @@ button.searchBtn {
     transform: scale(1.2);
 }
 
-.jobs{
-    color:#ff9900 !important;
+.jobs {
+    color: #ff9900 !important;
 }
 
-.jobs:hover{
-    
+.jobs:hover {
+
     text-decoration: underline;
 }
+
 .footer {
     /* background-color: #022149; */
     background: linear-gradient(90deg, #062846 0%, #1c518a 50%, #062846 100%);
@@ -418,9 +424,10 @@ button.searchBtn {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    .logo{
+    .logo {
         margin-bottom: 20px;
     }
+
     #searchBox {
         padding: 30px;
     }
@@ -447,9 +454,11 @@ button.searchBtn {
         right: 0;
         margin-top: 0;
     }
+
     .nav-pills .nav-item {
-        margin-bottom: 15px; 
+        margin-bottom: 15px;
     }
+
     .nav-pills .nav-item a {
         text-align: center;
     }
@@ -458,9 +467,10 @@ button.searchBtn {
 
 @media (max-width: 768px) {
 
-    .logo{
+    .logo {
         margin-bottom: 20px;
     }
+
     section {
         margin: 20px;
         padding: 10px;
@@ -497,9 +507,11 @@ button.searchBtn {
     .searchBtn {
         width: 100% !important;
     }
+
     .nav-pills .nav-item {
-        margin-bottom: 15px; 
+        margin-bottom: 15px;
     }
+
     .nav-pills .nav-item a {
         text-align: center;
     }
@@ -529,8 +541,9 @@ button.searchBtn {
     }
 
     .nav-pills .nav-item {
-        margin-bottom: 15px; 
+        margin-bottom: 15px;
     }
+
     .nav-pills .nav-item a {
         text-align: center;
     }
