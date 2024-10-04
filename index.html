@@ -1275,28 +1275,17 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script>
-
-        // Get the navbar element
         const navbar = document.querySelector('nav');
-
-        // Add an event listener to the window's scroll event
         window.addEventListener('scroll', () => {
-            // Check if the user has scrolled down before
             if (window.scrollY > 100) {
                 if (window.scrollY < window.prevScrollY) {
-                    // Add the sticky class to the navbar
                     navbar.classList.add('sticky-top');
                 } else {
-                    // Remove the sticky class from the navbar
                     navbar.classList.remove('sticky-top');
                 }
             }
-
-            // Update the previous scroll position
             window.prevScrollY = window.scrollY;
         });
-
-        // Initialize the previous scroll position
         window.prevScrollY = window.scrollY;
     </script>
 
