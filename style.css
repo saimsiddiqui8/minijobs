@@ -131,12 +131,13 @@
 .jobs-section h1,
 .jobs-section h2,
 .jobs-section h3 {
+    font-size: 25px;
     color: #000000;
     margin-bottom: 1rem;
 }
 
 .jobs-section p {
-    font-size: 1.125rem;
+    font-size: 14px;
     line-height: 1.6;
     color: #495057;
 }
