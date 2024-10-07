@@ -107,29 +107,6 @@ function parseAndRenderJobs(xmlData) {
             </div>
         `;
 
-        // Add JSON-LD schema for each job
-        const schemaScript = document.createElement('script');
-        schemaScript.type = 'application/ld+json';
-        schemaScript.innerHTML = JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "JobPosting",
-            "title": title,
-            "description": description,
-            "jobLocation": {
-                "@type": "Place",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressCountry": location
-                }
-            },
-            "datePosted": date,
-            "hiringOrganization": {
-                "@type": "Organization",
-                "name": companyName,
-            },
-        });
-        // Append the JSON-LD script to the <head> for SEO
-        document.head.appendChild(schemaScript);
         // Append the job item to the job container
         jobContainer.appendChild(jobItem);
     });
