@@ -479,7 +479,7 @@ li.nav-item.megamenu::marker {
 
 @media (max-width: 768px) {
     .logo {
-        padding-top: 25px;
+        padding-top: 30px;
     }
 
     #section h1 {
