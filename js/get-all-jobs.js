@@ -26,17 +26,17 @@ async function jobFilter(kw, page = 1, limit = 15) {
                 description = decodeHtml(description).slice(0, 150) + '...';
                 jobCard.innerHTML = `
                 <div onClick="window.open('${jobUrl}', '_blank')">
-                <div class="text-end" id="datePosted">Date posted: ${date}</div>
-                <div class="d-flex">
-                    <img src="${companyLogo}" alt="Company Logo" class="company-logo" />
-                        <div>
-                            <div class="job-company">Company: ${companyName}</div>
-                            <div class="job-location">Location: ${location}</div>
+                    <div class="text-end" id="datePosted">Date posted: ${date}</div>
+                    <div class="d-flex">
+                        <img src="${companyLogo}" alt="Company Logo" class="company-logo" />
+                            <div>
+                                <div class="job-company">Company: ${companyName}</div>
+                                <div class="job-location">Location: ${location}</div>
+                            </div>
                         </div>
-                    </div>
-                <div class="job-title">${title}</div>
-                <div class="job-description">${description}</div>
-                <a href="${jobUrl}" target="_blank" class="job-link">Apply Now</a>
+                    <div class="job-title">${title}</div>
+                    <div class="job-description">${description}</div>
+                    <a href="${jobUrl}" target="_blank" class="job-link">Apply Now</a>
                 </div>
                 `;
                 jobContainer.appendChild(jobCard);

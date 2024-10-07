@@ -23,6 +23,17 @@
     color: #ddd !important;
 }
 
+.load-more{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    border-radius: 20px;
+    background-color: #022149;
+    color: #fff;
+    font-size: 17px;
+    border: none;
+}
 .navbar a:hover {
     color: #ff9900 !important;
 }
