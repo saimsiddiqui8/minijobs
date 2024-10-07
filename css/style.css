@@ -342,7 +342,7 @@
 .job-item:hover {
     background-color: #f0f8ff;
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    border: 3.5px solid #ddddde !important;
+    border: 3.5px solid #b7b7c0 !important;
 }
 
 .company-logo {
