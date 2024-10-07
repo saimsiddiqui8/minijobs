@@ -267,10 +267,11 @@ button.searchBtn {
     margin: 0;
     text-align: left;
 }
+
 li.nav-item.megamenu::marker {
     content: none;
-  }
-  
+}
+
 .suggestions span {
     background-color: #f1f1f1;
     padding: 5px 10px;
@@ -335,6 +336,14 @@ li.nav-item.megamenu::marker {
 
 .footer .footer-logo img {
     max-width: 120px;
+}
+
+#newsletter-button{
+    background-color: #ff9900;
+    border-radius: 10px !important;
+}
+#newsletter-input{
+    color: #ffffff !important;
 }
 
 .footer a {
@@ -469,9 +478,20 @@ li.nav-item.megamenu::marker {
 }
 
 @media (max-width: 768px) {
-
     .logo {
-        margin-bottom: 20px;
+        padding-top: 25px;
+    }
+
+    #section h1 {
+        font-size: 30px !important;
+    }
+
+    #jobsBySomething {
+        display: none;
+    }
+
+    .cityGoldenLink {
+        display: none;
     }
 
     section {
