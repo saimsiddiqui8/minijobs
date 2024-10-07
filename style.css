@@ -198,10 +198,6 @@ p.text-center.mt-3.mb-5.container {
     transition: 0.2s;
 }
 
-.job-item:hover {
-    background-color: #f0f8ff;
-}
-
 #jobTitle:hover {
     color: #555;
 }
