@@ -128,7 +128,8 @@ function parseAndRenderJobs(xmlData) {
                 "name": companyName,
             },
         });
-
+        // Append the JSON-LD script to the <head> for SEO
+        document.head.appendChild(schemaScript);
         // Append the job item to the job container
         jobContainer.appendChild(jobItem);
     });
