@@ -106,7 +106,6 @@ function parseAndRenderJobs(xmlData) {
             <div class="mt-2">
                 ${description}
             </div>
-            <a href="${jobUrl}" target="_blank" class="job-link">Apply Now</a>
         `;
 
         // Append the job item to the job container
