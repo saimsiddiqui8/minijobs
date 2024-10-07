@@ -430,14 +430,11 @@ li.nav-item.megamenu::marker {
 }
 
 #about-our-web {
-    margin-top: 25px;
     padding: 15px;
-    /* background-color: rgb(233, 223, 241); */
+    background-color: #396893;
+    color: #fff;
+    border-radius: 15px;
 }
-
-/* #sidebar-content {
-    background-color: #f0f8ff;
-} */
 
 #sidebar-content::-webkit-scrollbar {
     width: 8px;
