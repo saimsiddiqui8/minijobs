@@ -482,7 +482,9 @@ li.nav-item.megamenu::marker {
     .logo {
         padding-top: 30px;
     }
-
+    .jobs-section{
+        padding: 1px;
+    }
     .after::before {
         padding-left: 0px;
     }
