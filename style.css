@@ -526,7 +526,7 @@ li.nav-item.megamenu::marker {
         font-size: 30px !important;
     }
 
-    #jobsBySomething {
+    #jobsByCategory {
         display: none;
     }
 
