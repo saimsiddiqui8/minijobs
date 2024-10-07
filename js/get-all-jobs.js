@@ -94,7 +94,7 @@ function parseAndRenderJobs(xmlData) {
                 </span>
                 <span class="text-start ps-2">
                     <div class="d-flex d-inline-flex">
-                        <span class="text-truncate" id="jobLocation">
+                        <span id="jobLocation">
                            <i class="fa fa-map-marker-alt secondary-color-blue fs-5 me-2"></i>${location}
                             <p>Company: ${companyName}</p>
                         </span>
