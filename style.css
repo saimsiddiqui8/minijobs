@@ -338,11 +338,12 @@ li.nav-item.megamenu::marker {
     max-width: 120px;
 }
 
-#newsletter-button{
+#newsletter-button {
     background-color: #ff9900;
     border-radius: 10px !important;
 }
-#newsletter-input{
+
+#newsletter-input {
     color: #ffffff !important;
 }
 
@@ -482,6 +483,16 @@ li.nav-item.megamenu::marker {
         padding-top: 30px;
     }
 
+    .after::before {
+        padding-left: 0px;
+    }
+
+    #searchButton {
+        margin-left: 5px;
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+    }
+
     #section h1 {
         font-size: 30px !important;
     }
@@ -550,7 +561,7 @@ li.nav-item.megamenu::marker {
     }
 
     .input {
-        border-radius: 0%;
+        border-radius: 15px;
     }
 
     .searchBtn {
