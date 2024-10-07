@@ -58,7 +58,6 @@ async function fetchJobs(page = 1, limit = 15) {
         const response = await fetch(`https://api.connectcareeronline.com/api/v1/job/stepstone?page=${page}&limit=${limit}`);
         if (!response.ok) throw new Error('Failed to fetch jobs');
         const xmlData = await response.text();
-        console.log(xmlData)
         parseAndRenderJobs(xmlData);
     } catch (error) {
         console.error('Error fetching jobs:', error);
