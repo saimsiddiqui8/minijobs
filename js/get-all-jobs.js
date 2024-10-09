@@ -138,3 +138,53 @@ function getMoreJobs() {
 
 // Initial fetch
 fetchJobs(currentPage, limit);
+
+
+
+
+// EMAIL SUBSCRIBE 
+document.getElementById('newsletter-button').addEventListener('click', async function () {
+    console.log("A")
+    const email = document.getElementById('newsletter-input').value;
+
+    if (!email) {
+        Toastify({
+            text: "Please enter a valid email address",
+            backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
+            duration: 3000
+        }).showToast();
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:8000/api/v1/email-subscribe/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        });
+
+        const data = await response.json();
+
+        if (response.status === 201) {
+            Toastify({
+                text: "Subscription successful!",
+                backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+                duration: 3000
+            }).showToast();
+        } else {
+            Toastify({
+                text: `Error: ${data.message}`,
+                backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                duration: 3000
+            }).showToast();
+        }
+    } catch (error) {
+        Toastify({
+            text: "Something went wrong. Please try again later.",
+            backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
+            duration: 3000
+        }).showToast();
+    }
+});
