@@ -55,7 +55,7 @@ async function fetchJobs(page = 1, limit = 15) {
     isLoading = true;
     toggleLoader(true);
     try {
-        const response = await fetch(`https://api.connectcareeronline.com/api/v1/job/stepstone?page=${page}&limit=${limit}`);
+        const response = await fetch(`https://minijob-backend.vercel.app/api/v1/job/stepstone?page=${page}&limit=${limit}`);
         if (!response.ok) throw new Error('Failed to fetch jobs');
         const xmlData = await response.text();
         parseAndRenderJobs(xmlData);
@@ -140,10 +140,7 @@ function getMoreJobs() {
 fetchJobs(currentPage, limit);
 
 
-
-
-// EMAIL SUBSCRIBE 
-document.getElementById('newsletter-button').addEventListener('click', async function () {
+async function subscribeToEmail() {
     console.log("A")
     const email = document.getElementById('newsletter-input').value;
 
@@ -157,7 +154,7 @@ document.getElementById('newsletter-button').addEventListener('click', async fun
     }
 
     try {
-        const response = await fetch('http://localhost:8000/api/v1/email-subscribe/create', {
+        const response = await fetch('https://minijob-backend.vercel.app/api/v1/email-subscribe/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -169,8 +166,8 @@ document.getElementById('newsletter-button').addEventListener('click', async fun
 
         if (response.status === 201) {
             Toastify({
-                text: "Subscription successful!",
-                backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+                text: "Subscribed to email successfully!",
+                backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
                 duration: 3000
             }).showToast();
         } else {
@@ -187,4 +184,4 @@ document.getElementById('newsletter-button').addEventListener('click', async fun
             duration: 3000
         }).showToast();
     }
-});
+}
