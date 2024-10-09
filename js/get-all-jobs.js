@@ -102,7 +102,7 @@ function parseAndRenderJobs(xmlData) {
                 </span>
                 </div>
                 <h5 class="mb-2" id="jobTitle">${title}</h5>
-            <div class="mt-2">
+            <div class="mt-2" id="jobDescription">
                 ${description}
             </div>
         `;

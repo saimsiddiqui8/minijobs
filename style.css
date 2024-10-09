@@ -508,6 +508,18 @@ li.nav-item.megamenu::marker {
         padding-top: 30px;
     }
 
+    #jobLocation {
+        font-size: 11px;
+    }
+
+    #jobTitle {
+        font-size: 17px;
+    }
+
+    #jobDescription {
+        font-size: 13px;
+    }
+
     .jobs-section {
         padding: 3px;
     }
