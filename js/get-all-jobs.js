@@ -141,7 +141,6 @@ fetchJobs(currentPage, limit);
 
 
 async function subscribeToEmail() {
-    console.log("A")
     const email = document.getElementById('newsletter-input').value;
 
     if (!email) {
@@ -187,7 +186,6 @@ async function subscribeToEmail() {
 }
 
 async function subscribeToEmailBox() {
-    console.log("A")
     const email = document.getElementById('newsletter-email').value;
 
     if (!email) {
