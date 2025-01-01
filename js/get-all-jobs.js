@@ -77,7 +77,7 @@ function parseAndRenderJobs(xmlData) {
 
     Array.from(jobs).forEach(job => {
         const title = job.getElementsByTagName('title')[0].textContent;
-        let description = job.getElementsByTagName('description')[0].textContent.slice(0, 150) + '...';
+        let description = job.getElementsByTagName('description')[0].textContent.slice(0, 200) + '...';
         const location = job.getElementsByTagName('location')[0].textContent;
         const companyName = job.getElementsByTagName('companyName')[0].textContent;
         const jobUrl = job.getElementsByTagName('url')[0].textContent;
@@ -101,7 +101,7 @@ function parseAndRenderJobs(xmlData) {
                     </div>
                 </span>
                 </div>
-                <h5 class="mb-2" id="jobTitle">${title}</h5>
+                <h6 class="mb-2" id="jobTitle">${title}</h6>
             <div class="mt-2" id="jobDescription">
                 ${description}
             </div>
