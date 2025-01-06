@@ -259,6 +259,7 @@ p.text-center.mt-3.mb-5.container {
 
 .input {
     background-color: #f4f7f7;
+    border: 2px solid #d3cfcf;
     border-radius: 200px;
     padding-bottom: 5px;
 }
