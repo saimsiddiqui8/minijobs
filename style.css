@@ -301,7 +301,8 @@ li.nav-item.megamenu::marker {
 }
 
 .suggestions span {
-    background-color: #cbc8c8;
+    background-color: #f2f2f2;
+    border: 2px solid #a9a9a9;
     padding: 5px 10px;
     border-radius: 20px;
     display: inline-block;
@@ -371,9 +372,6 @@ li.nav-item.megamenu::marker {
     border-radius: 10px !important;
 }
 
-#newsletter-input {
-    color: #ffffff !important;
-}
 
 .footer a {
     color: white;
