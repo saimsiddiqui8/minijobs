@@ -153,7 +153,7 @@ async function subscribeToEmail() {
     }
 
     try {
-        const response = await fetch('https://in-backend.vercel.app/api/v1/email-subscribe/create', {
+        const response = await fetch('https://minijob-backend.vercel.app/api/v1/email-subscribe/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
