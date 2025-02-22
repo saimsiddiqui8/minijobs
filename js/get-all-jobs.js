@@ -3,7 +3,7 @@ const limit = 15;
 let isLoading = false;
 async function jobFilter(kw, page = 1, limit = 15) {
     try {
-        const response = await fetch(`https://in-backend.vercel.app/api/v1/job/stepstone?page=${page}&limit=${limit}`);
+        const response = await fetch(`https://minijob-backend.vercel.app/api/v1/job/stepstone?page=${page}&limit=${limit}`);
         if (!response.ok) throw new Error('Failed to fetch jobs');
         const xmlData = await response.text();
         const parser = new DOMParser();
@@ -55,7 +55,7 @@ async function fetchJobs(page = 1, limit = 15) {
     isLoading = true;
     toggleLoader(true);
     try {
-        const response = await fetch(`https://in-backend.vercel.app/api/v1/job/stepstone?page=${page}&limit=${limit}`);
+        const response = await fetch(`https://minijob-backend.vercel.app/api/v1/job/stepstone?page=${page}&limit=${limit}`);
         if (!response.ok) throw new Error('Failed to fetch jobs');
         const xmlData = await response.text();
         parseAndRenderJobs(xmlData);
@@ -198,7 +198,7 @@ async function subscribeToEmailBox() {
     }
 
     try {
-        const response = await fetch('https://in-backend.vercel.app/api/v1/email-subscribe/create', {
+        const response = await fetch('https://minijob-backend.vercel.app/api/v1/email-subscribe/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
