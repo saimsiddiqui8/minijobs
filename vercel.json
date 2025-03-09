@@ -1,19 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/minijob-:city",
-      "destination": "/in-:city.html"
-    },
-    {
       "source": "/(.*)",
       "destination": "/$1.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/in-:city.html",
-      "destination": "/minijob-:city",
-      "permanent": true
     }
   ]
 }

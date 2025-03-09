@@ -1,8 +1,7 @@
 RewriteEngine On
 RewriteBase /
 
-# Redirect "in-{city}.html" to "minijob-{city}" (301 Permanent Redirect)
-RewriteRule ^in-(.*)\.html$ /minijob-$1 [R=301,L]
+RewriteRule ^in-(.*)$ /minijob-$1 [R=301,L]
 
 # Serve "in-{city}.html" when "minijob-{city}" is requested (without redirection)
 RewriteRule ^minijob-(.*)$ /in-$1.html [L]
