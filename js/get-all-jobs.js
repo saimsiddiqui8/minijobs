@@ -36,7 +36,7 @@ async function jobFilter(kw, page = 1, limit = 15) {
                         </div>
                     <div class="job-title">${title}</div>
                     <div class="job-description">${description}</div>
-                    <a href="${jobUrl}" target="_blank" class="job-link">Apply Now</a>
+                    <a  target="_blank" href="${jobUrl}" target="_blank" class="job-link">Apply Now</a>
                 </div>
                 `;
                 jobContainer.appendChild(jobCard);
