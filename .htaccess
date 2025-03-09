@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteBase /
 
+# Redirect "minijob-{city}" to serve "in-{city}.html"
+RewriteRule ^minijob-(.*)$ /in-$1.html [L,R=301]
+
 # Check if the requested file exists as .html
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
