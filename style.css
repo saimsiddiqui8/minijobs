@@ -1,100 +1,107 @@
 #searchBox {
-    /* background-image: linear-gradient(to right, #044175, #007bff); */
-    /* background-image: linear-gradient(to right, #212529, #007bff); */
+  /* background-image: linear-gradient(to right, #044175, #007bff); */
+  /* background-image: linear-gradient(to right, #212529, #007bff); */
 
-    /* background: linear-gradient(90deg, #21232A 0%, #b3a8a8 50%, #21232A 100%); */
-    background: linear-gradient(90deg, #044175 0%, #074a91 50%, #044175 100%);
-    /* background: linear-gradient(to right, #212529 0%, #ffffff 50%, #212529 100%); */
-    /* background-color: #212529; */
-    padding-bottom: 10px;
-    background-size: cover;
-    position: relative;
+  /* background: linear-gradient(90deg, #21232A 0%, #b3a8a8 50%, #21232A 100%); */
+  background: linear-gradient(90deg, #044175 0%, #074a91 50%, #044175 100%);
+  /* background: linear-gradient(to right, #212529 0%, #ffffff 50%, #212529 100%); */
+  /* background-color: #212529; */
+  padding-bottom: 10px;
+  background-size: cover;
+  position: relative;
 }
 
 * {
-    font-family: Helvetica;
+  font-family: Helvetica;
 }
 
 /* navbar  */
 .navbar-nav .nav-link {
-    font-family: 'Arial', sans-serif !important;
-    font-weight: bold !important;
-    text-transform: capitalize !important;
-    color: #ddd !important;
+  font-family: "Arial", sans-serif !important;
+  font-weight: bold !important;
+  text-transform: capitalize !important;
+  color: #ddd !important;
 }
 
 .load-more {
-    padding-left: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 20px;
-    border-radius: 20px;
-    background-color: #022149;
-    color: #fff;
-    font-size: 17px;
-    border: none;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  border-radius: 20px;
+  background-color: #022149;
+  color: #fff;
+  font-size: 17px;
+  border: none;
 }
 
 .navbar a:hover {
-    color: #ff9900 !important;
+  color: #ff9900 !important;
 }
 
 .sticky-navbar {
-    position: -webkit-sticky;
-    /* For Safari */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    /* Ensure it's above other elements */
+  position: -webkit-sticky;
+  /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Ensure it's above other elements */
 }
 
 /* navbar end   */
 
 /* mega menu  */
 .megamenu-content h6 {
-    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 800 !important;
+  font-family:
+    "Work Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-weight: 800 !important;
 }
 
 .megamenu-content a:hover {
-    color: #3c4043 !important;
+  color: #3c4043 !important;
 }
 
 .navbar .megamenu {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .megamenu {
-    border-radius: 10px !important;
-
-
+  border-radius: 10px !important;
 }
 
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
+  .navbar .has-megamenu {
+    position: static !important;
+  }
 
-    .navbar .has-megamenu {
-        position: static !important;
-    }
-
-    .navbar .megamenu {
-        left: 0;
-        right: 0;
-        margin-top: 0;
-    }
+  .navbar .megamenu {
+    left: 0;
+    right: 0;
+    margin-top: 0;
+  }
 }
 
 /* ============ desktop view .end// ============ */
 
 /* ============ mobile view ============ */
-@media(max-width: 991px) {
-
-    .navbar.fixed-top .navbar-collapse,
-    .navbar.sticky-top .navbar-collapse {
-        overflow-y: auto;
-        max-height: 90vh;
-        margin-top: 10px;
-    }
+@media (max-width: 991px) {
+  .navbar.fixed-top .navbar-collapse,
+  .navbar.sticky-top .navbar-collapse {
+    overflow-y: auto;
+    max-height: 90vh;
+    margin-top: 10px;
+  }
 }
 
 /* mega menu end  */
@@ -102,523 +109,518 @@
 /* search container  */
 
 .container-fluid {
-    width: 100% !important;
-    padding-right: 0px;
-    padding-left: 0px;
+  width: 100% !important;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 #section h1 {
-    font-family: Helvetica;
-    color: #022149 !important;
-    margin-bottom: 10px !important;
+  font-family: Helvetica;
+  color: #022149 !important;
+  margin-bottom: 10px !important;
 }
 
 #section p {
-    font-family: sans-serif !important;
-    margin-top: 5px !important;
+  font-family: sans-serif !important;
+  margin-top: 5px !important;
 }
 
 /* search container end  */
 
 .jobs-section {
-    padding: 2rem;
-    background-color: #fcfcff;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background-color: #fcfcff;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .jobs-section h1,
 .jobs-section h2,
 .jobs-section h3 {
-    font-size: 25px;
-    color: #000000;
-    margin-bottom: 1rem;
+  font-size: 25px;
+  color: #000000;
+  margin-bottom: 1rem;
 }
 
 .jobs-section p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #495057;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #495057;
 }
 
 .jobs-section a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .jobs-section a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+  color: #0056b3;
+  text-decoration: underline;
 }
 
 #section {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 h1.text-center.mt-5.display-2 {
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 p.text-center.mt-3.mb-5.container {
-    color: #ffffff !important;
-    font-size: 22px;
-    font-weight: 900;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  color: #ffffff !important;
+  font-size: 22px;
+  font-weight: 900;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .container.box1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  justify-content: center;
 }
 
 .row.g-2 {
-    width: 100%;
+  width: 100%;
 }
 
 #location,
 #keyword {
-    border: none;
-    color: #555;
-    border-radius: 0;
-    transition: background-color 0.3s ease;
+  border: none;
+  color: #555;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
 }
 
 .job-item {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #jobTitle {
-    font-size: 20px;
-    transition: 0.2s;
+  font-size: 20px;
+  transition: 0.2s;
 }
 
-
 .tag {
-    background-color: #dde1e1;
-    padding: 5px 10px;
-    border-radius: 10px;
-    color: rgb(0, 0, 0);
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
-    font-weight: 500;
+  background-color: #dde1e1;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .tag:hover {
-    background-color: #95a5a6;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #95a5a6;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #jobTitle:hover {
-    color: #555;
+  color: #555;
 }
 
 #jobLocation {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 .form-control,
 .btn {
-    width: 100%;
-    max-width: 500px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .text-center.mt-5 {
-    color: #fff;
+  color: #fff;
 }
 
 #section {
-    background-color: #ffffff;
-    border-radius: 25px !important;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 3px;
-    max-width: 800px;
-    margin: 10px auto;
-    text-align: center;
-    color: #022149 !important;
+  background-color: #ffffff;
+  border-radius: 25px !important;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 3px;
+  max-width: 800px;
+  margin: 10px auto;
+  text-align: center;
+  color: #022149 !important;
 }
 
 .after::before {
-    content: "";
-    display: block;
-    padding-left: 20px;
-    border-left: 2px solid #ccc;
-    height: 40px;
-    margin-left: 10px;
+  content: "";
+  display: block;
+  padding-left: 20px;
+  border-left: 2px solid #ccc;
+  height: 40px;
+  margin-left: 10px;
 }
 
 .input {
-    background-color: #f4f7f7;
-    border: 2px solid #d3cfcf;
-    border-radius: 200px;
-    padding-bottom: 5px;
+  background-color: #f4f7f7;
+  border: 2px solid #d3cfcf;
+  border-radius: 200px;
+  padding-bottom: 5px;
 }
 
 input.form-control {
-    border-radius: 10px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background-color: #f4f7f7;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f4f7f7;
 }
 
 button.searchBtn {
-    background-color: #ff9900;
-    color: #ffffff;
-    border-radius: 200px;
-    padding: 8px 10px;
-    border: none;
-    font-size: 14px;
-    font-weight: bold;
-    width: 200px;
+  background-color: #ff9900;
+  color: #ffffff;
+  border-radius: 200px;
+  padding: 8px 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  width: 200px;
 }
 
 .suggestions {
-    font-size: 14px;
-    margin-bottom: 0 !important;
+  font-size: 14px;
+  margin-bottom: 0 !important;
 }
 
 .trending-keywords {
-    cursor: pointer;
-    color: #555 !important;
+  cursor: pointer;
+  color: #555 !important;
 }
 
 .suggestions p {
-    margin: 0;
-    text-align: left;
+  margin: 0;
+  text-align: left;
 }
 
 li.nav-item.megamenu::marker {
-    content: none;
+  content: none;
 }
 
 .suggestions span {
-    background-color: #f2f2f2;
-    border: 2px solid #a9a9a9;
-    padding: 5px 10px;
-    border-radius: 20px;
-    display: inline-block;
-    margin: 5px;
+  background-color: #f2f2f2;
+  border: 2px solid #a9a9a9;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 5px;
 }
 
 .card img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
 }
 
 .card-body {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: white;
-    padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: 10px;
 }
 
 .card-title {
-    margin-bottom: 0;
-    font-size: 20px;
-    color: #fff;
+  margin-bottom: 0;
+  font-size: 20px;
+  color: #fff;
 }
 
-
 .card-text {
-    font-size: 20px;
-    margin: 0;
+  font-size: 20px;
+  margin: 0;
 }
 
 .card {
-    position: relative;
-    overflow: hidden;
-    border: none;
+  position: relative;
+  overflow: hidden;
+  border: none;
 }
 
 .card:hover img {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .jobs {
-    color: #ff9900 !important;
+  color: #ff9900 !important;
 }
 
 .jobs:hover {
-
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .footer {
-    /* background-color: #022149; */
-    background: linear-gradient(90deg, #062846 0%, #1c518a 50%, #062846 100%);
-    background-size: cover;
-    position: relative;
-    color: white;
+  /* background-color: #022149; */
+  background: linear-gradient(90deg, #062846 0%, #1c518a 50%, #062846 100%);
+  background-size: cover;
+  position: relative;
+  color: white;
 }
 
 .footer .footer-logo img {
-    max-width: 120px;
+  max-width: 120px;
 }
 
 #newsletter-button {
-    background-color: #ff9900;
-    border-radius: 10px !important;
+  background-color: #ff9900;
+  border-radius: 10px !important;
 }
 
-
 .footer a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .footer a:hover {
-    color: #ff9900;
+  color: #ff9900;
 }
 
 .footer .social-icons a {
-    color: white;
-    margin-right: 10px;
+  color: white;
+  margin-right: 10px;
 }
 
 .footer .contact-info p a {
-    margin: 0;
+  margin: 0;
 }
 
 #sidebar-content {
-    padding: 10px;
-    height: 350px;
-    overflow-y: auto;
+  padding: 10px;
+  height: 350px;
+  overflow-y: auto;
 }
 
 #newsletter {
-    padding: 10px;
-    border-radius: 5px;
-    padding-bottom: 30px;
-    background-image: linear-gradient(to right, #06579e, #337ab7);
-    color: #fff;
-    margin-top: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  padding-bottom: 30px;
+  background-image: linear-gradient(to right, #06579e, #337ab7);
+  color: #fff;
+  margin-top: 25px;
 }
 
 #newsletter-email {
-    width: 80%;
-    padding: 8px;
-    margin-top: 25px;
-    font-family: "Heebo", sans-serif;
-    background-color: #ececec;
-    border-radius: 2px;
-    box-shadow: none;
-    border: none;
+  width: 80%;
+  padding: 8px;
+  margin-top: 25px;
+  font-family: "Heebo", sans-serif;
+  background-color: #ececec;
+  border-radius: 2px;
+  box-shadow: none;
+  border: none;
 }
 
 #newsletter-button {
-    width: 80%;
-    padding: 6px;
-    border-radius: 2px;
-    margin-top: 10px;
-    background-color: #ff9900;
-    color: #fff;
-    box-shadow: none;
-    border: none;
+  width: 80%;
+  padding: 6px;
+  border-radius: 2px;
+  margin-top: 10px;
+  background-color: #ff9900;
+  color: #fff;
+  box-shadow: none;
+  border: none;
 }
 
 #about-our-web {
-    padding: 15px;
-    background-color: #396893;
-    color: #fff;
-    border-radius: 15px;
+  padding: 15px;
+  background-color: #396893;
+  color: #fff;
+  border-radius: 15px;
 }
 
 #sidebar-content::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 #sidebar-content::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: #f1f1f1;
+  border-radius: 10px;
+  background: #f1f1f1;
 }
 
 #sidebar-content::-webkit-scrollbar-thumb {
-    background-color: #ff9900;
-    border-radius: 10px;
-    border: 2px solid #f1f1f1;
+  background-color: #ff9900;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
 }
 
 #sidebar-content::-webkit-scrollbar-thumb:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 #applyDiv {
-    margin-top: 130px;
+  margin-top: 130px;
 }
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    .logo {
-        margin-bottom: 20px;
-    }
+  .logo {
+    margin-bottom: 20px;
+  }
 
-    #searchBox {
-        padding: 30px;
-    }
+  #searchBox {
+    padding: 30px;
+  }
 
-    .box1 {
-        padding: 10px;
-    }
+  .box1 {
+    padding: 10px;
+  }
 
-    input[type="text"] {
-        border-radius: 10px;
-        padding: 10px;
-    }
+  input[type="text"] {
+    border-radius: 10px;
+    padding: 10px;
+  }
 
-    .searchBtn {
-        width: 150px !important;
-    }
+  .searchBtn {
+    width: 150px !important;
+  }
 
-    .navbar .has-megamenu {
-        position: static !important;
-    }
+  .navbar .has-megamenu {
+    position: static !important;
+  }
 
-    .navbar .megamenu {
-        left: 0;
-        right: 0;
-        margin-top: 0;
-    }
+  .navbar .megamenu {
+    left: 0;
+    right: 0;
+    margin-top: 0;
+  }
 
-    .nav-pills .nav-item {
-        margin-bottom: 15px;
-    }
+  .nav-pills .nav-item {
+    margin-bottom: 15px;
+  }
 
-    .nav-pills .nav-item a {
-        text-align: center;
-    }
-
+  .nav-pills .nav-item a {
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
-    .logo {
-        padding-top: 30px;
-    }
+  .logo {
+    padding-top: 30px;
+  }
 
-    #jobLocation {
-        font-size: 11px;
-    }
+  #jobLocation {
+    font-size: 11px;
+  }
 
-    #jobTitle {
-        font-size: 17px;
-    }
+  #jobTitle {
+    font-size: 17px;
+  }
 
-    #jobDescription {
-        font-size: 11px;
-    }
+  #jobDescription {
+    font-size: 11px;
+  }
 
-    .jobs-section {
-        padding: 3px;
-    }
+  .jobs-section {
+    padding: 3px;
+  }
 
-    .after::before {
-        padding-left: 0px;
-    }
+  .after::before {
+    padding-left: 0px;
+  }
 
-    #searchButton {
-        margin-left: 5px;
-        padding-top: 15px !important;
-        padding-bottom: 15px !important;
-    }
+  #searchButton {
+    margin-left: 5px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
 
-    #section h1 {
-        font-size: 30px !important;
-    }
+  #section h1 {
+    font-size: 30px !important;
+  }
 
-    #jobsBySomething {
-        display: none;
-    }
+  #jobsBySomething {
+    display: none;
+  }
 
-    .cityGoldenLink {
-        display: none;
-    }
+  .cityGoldenLink {
+    display: none;
+  }
 
-    section {
-        margin: 20px;
-        padding: 10px;
-    }
+  section {
+    margin: 20px;
+    padding: 10px;
+  }
 
-    .container-md {
-        width: 100% !important;
-        padding-right: 0px;
-        padding-left: 0px;
-    }
+  .container-md {
+    width: 100% !important;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 
-    #time {
-        display: none;
-    }
+  #time {
+    display: none;
+  }
 
-    #applyDiv {
-        margin-top: 0px;
-    }
+  #applyDiv {
+    margin-top: 0px;
+  }
 
-    .container-sm.primary-blue {
-        width: 100%;
-        padding: 0 10px;
-    }
+  .container-sm.primary-blue {
+    width: 100%;
+    padding: 0 10px;
+  }
 
-    .box1 {
-        padding: 10px;
-    }
+  .box1 {
+    padding: 10px;
+  }
 
-    input[type="text"] {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
-    .searchBtn {
-        width: 100% !important;
-    }
+  .searchBtn {
+    width: 100% !important;
+  }
 
-    .nav-pills .nav-item {
-        margin-bottom: 15px;
-    }
+  .nav-pills .nav-item {
+    margin-bottom: 15px;
+  }
 
-    .nav-pills .nav-item a {
-        text-align: center;
-    }
+  .nav-pills .nav-item a {
+    text-align: center;
+  }
 }
 
 @media (max-width: 576px) {
-    #searchBox {
-        padding: 20px;
-    }
+  #searchBox {
+    padding: 20px;
+  }
 
-    .box1 {
-        padding: 5px;
-    }
+  .box1 {
+    padding: 5px;
+  }
 
-    .input {
-        border-radius: 15px;
-    }
+  .input {
+    border-radius: 15px;
+  }
 
-    .searchBtn {
-        padding: 10px;
-        width: 100% !important;
-        font-size: 16px;
-    }
+  .searchBtn {
+    padding: 10px;
+    width: 100% !important;
+    font-size: 16px;
+  }
 
-    .after::before {
-        border: none;
-    }
+  .after::before {
+    border: none;
+  }
 
-    .nav-pills .nav-item {
-        margin-bottom: 15px;
-    }
+  .nav-pills .nav-item {
+    margin-bottom: 15px;
+  }
 
-    .nav-pills .nav-item a {
-        text-align: center;
-    }
+  .nav-pills .nav-item a {
+    text-align: center;
+  }
 }
