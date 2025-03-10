@@ -307,7 +307,7 @@ li.nav-item.megamenu::marker {
   content: none;
 }
 
-.suggestions span {
+.suggestions a {
   background-color: #f2f2f2;
   border: 2px solid #a9a9a9;
   padding: 5px 10px;
