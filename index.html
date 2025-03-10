@@ -65,10 +65,21 @@
     <link rel="canonical" href="https://minijobgermany.de/" />
 
     <!-- Google tag (gtag.js) -->
-    <script
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"
-    ></script>
+    ></script> -->
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          let script = document.createElement('script');
+          script.src = "https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301";
+          script.async = true;
+          document.head.appendChild(script);
+        }, 3000); // Load after 3s
+      });
+    </script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
