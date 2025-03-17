@@ -69,6 +69,8 @@
 
 .megamenu-content a:hover {
   color: #3c4043 !important;
+  background-color: #3c404321;
+  border-radius: 5px;
 }
 
 .navbar .megamenu {
