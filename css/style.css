@@ -11,6 +11,11 @@
   background-color: var(--primary);
 }
 
+#jobdetail-sidebar{
+  background-color: #044175;
+  border-radius: 10px;
+}
+
 .card {
   position: relative;
   display: inline-block;
