@@ -33,12 +33,12 @@ async function jobFilter(kw, page = 1, limit = 15) {
                 <div onClick="window.open('${jobUrl}', '_blank')">
                     <div class="text-end" id="datePosted">Date posted: ${date}</div>
                     <div class="d-flex">
-                        <img src="${companyLogo}" alt="Company Logo" class="company-logo" />
-                            <div>
-                                <div class="job-company">Company: ${companyName}</div>
-                                <div class="job-location">Location: ${location}</div>
-                            </div>
-                        </div>
+                      <img src="${companyLogo}" alt="Company Logo" class="company-logo" />
+                          <div>
+                            <div class="job-company">Company: ${companyName}</div>
+                            <div class="job-location">Location: ${location}</div>
+                          </div>
+                    </div>
                     <div class="job-title">${title}</div>
                     <div class="job-description">${description}</div>
                     <a  target="_blank" href="${jobUrl}" target="_blank" class="job-link">Apply Now</a>
@@ -116,6 +116,14 @@ function parseAndRenderJobs(xmlData) {
                 ${description}
             </div>
         `;
+
+        
+    // Add event listener to jobItem (the entire div)
+    jobItem.addEventListener('click', () => {
+      // Replace 'your-job-detail-page.html' with your actual detail page route
+      // You can pass jobId, jobUrl, or slug as query params
+      window.location.href = `job-detail.html?url=${encodeURIComponent(jobUrl)}`;
+    });
 
     // Append the job item to the job container
     jobContainer.appendChild(jobItem);
