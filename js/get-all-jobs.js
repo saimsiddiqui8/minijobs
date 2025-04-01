@@ -1,3 +1,4 @@
+const BASE_URL = 'http://localhost:8000/api/v1/';
 let currentPage = 1;
 const limit = 15;
 let isLoading = false;
@@ -61,11 +62,13 @@ async function fetchJobs(page = 1, limit = 15) {
   toggleLoader(true);
   try {
     const response = await fetch(
-      `https://minijob-backend.vercel.app/api/v1/job/stepstone?page=${page}&limit=${limit}`,
+      `${BASE_URL}job/get-job-by-type?page=${page}&limit=${limit}&jobtype=Part-time`,
     );
     if (!response.ok) throw new Error("Failed to fetch jobs");
-    const xmlData = await response.text();
-    parseAndRenderJobs(xmlData);
+    const res = await response.json();
+    console.log(res.data.data)
+    insertJobsinUi(res.data.data);
+    return res.data.data;
   } catch (error) {
     console.error("Error fetching jobs:", error);
   } finally {
@@ -75,24 +78,16 @@ async function fetchJobs(page = 1, limit = 15) {
 }
 
 // Function to parse XML and render jobs
-function parseAndRenderJobs(xmlData) {
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(xmlData, "application/xml");
-  const jobs = xmlDoc.getElementsByTagName("job");
+function insertJobsinUi(jobs) {
   const jobContainer = document.getElementById("job-container");
 
-  Array.from(jobs).forEach((job) => {
-    const title = job.getElementsByTagName("title")[0].textContent;
+  jobs.forEach((job) => {
     let description =
-      job.getElementsByTagName("description")[0].textContent.slice(0, 200) +
+      job.description.slice(0, 200) +
       "...";
-    const location = job.getElementsByTagName("location")[0].textContent;
-    const companyName = job.getElementsByTagName("companyName")[0].textContent;
-    const jobUrl = job.getElementsByTagName("url")[0].textContent;
-    const date = job.getElementsByTagName("date")[0].textContent;
-    const companyLogo =
-      job.getElementsByTagName("company_logo")[0]?.textContent ||
-      "./img/search icon.png"; // default image
+    const location = `${job.city}, ${job.country} - (${job.jobtype})`;
+    const companyLogo = job?.companyLogo ||
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSduZvFB87cOvLtQGxLzMnXVWZNOdgjCaPAOA&s"; // default image
 
     // Create the job item structure as per your HTML
     const jobItem = document.createElement("div");
@@ -100,33 +95,33 @@ function parseAndRenderJobs(xmlData) {
     jobItem.innerHTML = `
             <div class="d-flex d-inline-flex">
                 <span class="">
-                    <img src="${companyLogo}" style="width:75px;" alt="Company Logo" class="company-logo">
+                    <img src="${companyLogo}" style="width:50px;" alt="Company Logo" class="company-logo">
                 </span>
                 <span class="text-start ps-2">
                     <div class="d-flex d-inline-flex">
                         <span id="jobLocation">
-                           <i class="fa fa-map-marker-alt secondary-color-blue fs-5 me-2"></i>${location}
-                            <p>Company: ${companyName}</p>
+                            ${location}
+                            <p><b>${job.company}</b></p>
                         </span>
                     </div>
                 </span>
                 </div>
-                <h6 class="mb-2" id="jobTitle">${title}</h6>
+                <h6 class="mb-2" id="jobTitle">${job.title}</h6>
             <div class="mt-2" id="jobDescription">
                 ${description}
             </div>
         `;
 
-        
+
+
+    // Append the job item to the job container
+    jobContainer.appendChild(jobItem);
     // Add event listener to jobItem (the entire div)
     jobItem.addEventListener('click', () => {
       // Replace 'your-job-detail-page.html' with your actual detail page route
       // You can pass jobId, jobUrl, or slug as query params
-      window.location.href = `job-detail.html?url=${encodeURIComponent(jobUrl)}`;
+      window.location.href = `job-detail.html?guid=${encodeURIComponent(job.guid)}`;
     });
-
-    // Append the job item to the job container
-    jobContainer.appendChild(jobItem);
   });
 }
 
@@ -155,6 +150,7 @@ function getMoreJobs() {
 
 // Initial fetch
 fetchJobs(currentPage, limit);
+
 
 async function subscribeToEmail() {
   const email = document.getElementById("newsletter-input").value;

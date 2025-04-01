@@ -241,11 +241,6 @@ p.text-center.mt-3.mb-5.container {
   font-size: 17px;
 }
 
-.form-control,
-.btn {
-  width: 100%;
-  max-width: 500px;
-}
 
 .text-center.mt-5 {
   color: #fff;
