@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8000/api/v1/';
+const BASE_URL = 'http://13.61.80.205/api/v1/';
 let currentPage = 1;
 const city = document.body.dataset.city || "";
 const limit = 15;
