@@ -1,5 +1,6 @@
 const BASE_URL = 'http://localhost:8000/api/v1/';
 let currentPage = 1;
+const city = document.body.dataset.city || "";
 const limit = 15;
 let isLoading = false;
 async function jobFilter(kw, page = 1, limit = 15) {
@@ -61,9 +62,14 @@ async function fetchJobs(page = 1, limit = 15) {
   isLoading = true;
   toggleLoader(true);
   try {
-    const response = await fetch(
-      `${BASE_URL}job/get-job-by-type?page=${page}&limit=${limit}&jobtype=Part-time`,
-    );
+    let url = `${BASE_URL}job/get-job-by-type?page=${page}&limit=${limit}&jobtype=Part-time`;
+
+    if (city) {
+      url += `&city=${encodeURIComponent(city)}`;
+    }
+
+    const response = await fetch(url);
+
     if (!response.ok) throw new Error("Failed to fetch jobs");
     const res = await response.json();
     console.log(res.data.data)
@@ -80,6 +86,18 @@ async function fetchJobs(page = 1, limit = 15) {
 // Function to parse XML and render jobs
 function insertJobsinUi(jobs) {
   const jobContainer = document.getElementById("job-container");
+  const noJobsSection = document.getElementById("no-jobs");
+  const cityNameDisplay = document.getElementById("city-name");
+  const loadMore = document.querySelector(".load-more");
+
+  if (!jobs || jobs.length === 0) {
+    noJobsSection.style.display = "block";
+    loadMore.style.display = "none";
+    cityNameDisplay.textContent = city || "this city";
+  } else {
+    noJobsSection.style.display = "none";
+    // render jobs...
+  }
 
   jobs.forEach((job) => {
     let description =
