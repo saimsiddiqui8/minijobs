@@ -1,5 +1,6 @@
 const BASE_URL = 'https://www.backend.parttimejobsinberlin.com/api/v1/';
-let currentPage = 1;
+const urlParams = new URLSearchParams(window.location.search);
+let currentPage = parseInt(urlParams.get("page")) || 1
 const city = document.body.dataset.city || "";
 const limit = 12;
 let isLoading = false;
@@ -11,6 +12,13 @@ function updateJobInfo(totalJobs, currentPage, totalPages) {
   // Update page info dynamically
   document.getElementById("page-info").textContent = `Page ${currentPage} of ${totalPages}`;
 }
+
+function updatePageInUrl(page) {
+  const url = new URL(window.location);
+  url.searchParams.set("page", page);
+  window.history.pushState({}, "", url);
+}
+
 
 async function jobFilter(kw, page = 1, limit = 15) {
   try {
@@ -185,7 +193,10 @@ function generatePaginationButtons(totalPages, currentPage) {
     const prevButton = document.createElement("button");
     prevButton.textContent = "Previous";
     prevButton.classList.add("pagination-btn");
-    prevButton.onclick = () => fetchJobs(currentPage - 1);
+    prevButton.onclick = () => {
+      updatePageInUrl(currentPage - 1);
+      fetchJobs(currentPage - 1);
+    };
     paginationContainer.appendChild(prevButton);
   }
 
@@ -194,7 +205,10 @@ function generatePaginationButtons(totalPages, currentPage) {
     const pageButton = document.createElement("button");
     pageButton.textContent = i;
     pageButton.classList.add("pagination-btn");
-    pageButton.onclick = () => fetchJobs(i);
+    pageButton.onclick = () => {
+      updatePageInUrl(i);
+      fetchJobs(i);
+    };
     if (i === currentPage) pageButton.classList.add("active");
     paginationContainer.appendChild(pageButton);
   }
@@ -204,7 +218,10 @@ function generatePaginationButtons(totalPages, currentPage) {
     const nextButton = document.createElement("button");
     nextButton.textContent = "Next";
     nextButton.classList.add("pagination-btn");
-    nextButton.onclick = () => fetchJobs(currentPage + 1);
+    nextButton.onclick = () => {
+      updatePageInUrl(currentPage + 1);
+      fetchJobs(currentPage + 1);
+    };
     paginationContainer.appendChild(nextButton);
   }
 }
