@@ -328,7 +328,8 @@
                         <div id="job-description"> </div>
                     </div>
 
-                    <button class="btn btn-primary w-100" id="job-apply" type="submit">Apply Now</button>
+                    <button class="btn btn-primary w-100" id="job-apply" type="submit" disabled>Apply Now</button>
+                    <p id="apply-msg" class="mt-2 text-danger"></p>
 
                     <div id="share-job" class="share-wrapper mt-4 mb-4">
                         <h5 class="share-title">SHARE THIS JOB</h5>
@@ -638,6 +639,29 @@
         });
 
     </script>
+
+    <script>
+        fetch("https://ipwho.is/")
+            .then(res => res.json())
+            .then(data => {
+                const country = data.country;
+                const button = document.getElementById("job-apply");
+                const message = document.getElementById("apply-msg");
+
+                if (country === "Germany") {
+                    button.disabled = false;
+                    message.textContent = ""; // No error message
+                } else {
+                    button.disabled = true;
+                    message.textContent = "Sorry, you cannot apply from outside Germany.";
+                }
+            })
+            .catch(error => {
+                console.error("Geo check failed:", error);
+                document.getElementById("apply-msg").textContent = "Unable to verify your location.";
+            });
+    </script>
+
 
 </body>
 
