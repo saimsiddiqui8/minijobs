@@ -1,8 +1,17 @@
-const BASE_URL = 'http://localhost:8000/api/v1/';
+const BASE_URL = 'https://www.backend.parttimejobsinberlin.com/api/v1/';
 let currentPage = 1;
 const city = document.body.dataset.city || "";
-const limit = 15;
+const limit = 12;
 let isLoading = false;
+
+function updateJobInfo(totalJobs, currentPage, totalPages) {
+  // Update job count dynamically
+  document.getElementById("jobs-found").textContent = `We found ${totalJobs} jobs for you!`;
+
+  // Update page info dynamically
+  document.getElementById("page-info").textContent = `Page ${currentPage} of ${totalPages}`;
+}
+
 async function jobFilter(kw, page = 1, limit = 15) {
   try {
     const response = await fetch(
@@ -56,8 +65,9 @@ async function jobFilter(kw, page = 1, limit = 15) {
     toggleLoader(false);
   }
 }
+
 // Function to fetch paginated jobs
-async function fetchJobs(page = 1, limit = 15) {
+async function fetchJobs(page = 1, limit = 12) {
   if (isLoading) return;
   isLoading = true;
   toggleLoader(true);
@@ -72,8 +82,9 @@ async function fetchJobs(page = 1, limit = 15) {
 
     if (!response.ok) throw new Error("Failed to fetch jobs");
     const res = await response.json();
-    console.log(res.data.data)
-    insertJobsinUi(res.data.data);
+
+    updateJobInfo(res.data.total, page, res.data.totalPages);
+    insertJobsinUi(res.data.data, res.data.totalPages, page);
     return res.data.data;
   } catch (error) {
     console.error("Error fetching jobs:", error);
@@ -83,20 +94,36 @@ async function fetchJobs(page = 1, limit = 15) {
   }
 }
 
+function timeAgo(date) {
+  const now = new Date();
+  const postedDate = new Date(date);
+  const diffInSeconds = Math.floor((now - postedDate) / 1000);
+
+  if (diffInSeconds < 60) return `Posted just now`;
+  const diffInMinutes = Math.floor(diffInSeconds / 60);
+  if (diffInMinutes < 60) return `Posted ${diffInMinutes} minute(s) ago`;
+  const diffInHours = Math.floor(diffInMinutes / 60);
+  if (diffInHours < 24) return `Posted ${diffInHours} hour(s) ago`;
+  const diffInDays = Math.floor(diffInHours / 24);
+  return `Posted ${diffInDays} day(s) ago`;
+}
+
 // Function to parse XML and render jobs
-function insertJobsinUi(jobs) {
+function insertJobsinUi(jobs, totalPages, currentPage) {
   const jobContainer = document.getElementById("job-container");
+  jobContainer.innerHTML = "";  // This clears the previous jobs
   const noJobsSection = document.getElementById("no-jobs");
   const cityNameDisplay = document.getElementById("city-name");
-  const loadMore = document.querySelector(".load-more");
+  generatePaginationButtons(totalPages, currentPage);
+  const paginationContainer = document.getElementById("pagination-container");
 
   if (!jobs || jobs.length === 0) {
     noJobsSection.style.display = "block";
-    loadMore.style.display = "none";
+    paginationContainer.style.display = "none";
     cityNameDisplay.textContent = city || "this city";
   } else {
     noJobsSection.style.display = "none";
-    // render jobs...
+    paginationContainer.style.display = "block";
   }
 
   jobs.forEach((job) => {
@@ -128,6 +155,7 @@ function insertJobsinUi(jobs) {
             <div class="mt-2" id="jobDescription">
                 ${description}
             </div>
+            <div class="text-end" style="font-size: 11px; padding:0; margin: 0px" id="datePosted">${timeAgo(job.date_updated)}</div>
         `;
 
 
@@ -142,6 +170,45 @@ function insertJobsinUi(jobs) {
     });
   });
 }
+
+function generatePaginationButtons(totalPages, currentPage) {
+  const paginationContainer = document.getElementById("pagination-container");
+
+  paginationContainer.innerHTML = ""; // Clear previous pagination buttons
+
+  const maxVisiblePages = 5;  // Show only 5 page numbers
+  const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+  const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+  // First button for page number 1
+  if (currentPage > 1) {
+    const prevButton = document.createElement("button");
+    prevButton.textContent = "Previous";
+    prevButton.classList.add("pagination-btn");
+    prevButton.onclick = () => fetchJobs(currentPage - 1);
+    paginationContainer.appendChild(prevButton);
+  }
+
+  // Generate buttons for each page within the limited range
+  for (let i = startPage; i <= endPage; i++) {
+    const pageButton = document.createElement("button");
+    pageButton.textContent = i;
+    pageButton.classList.add("pagination-btn");
+    pageButton.onclick = () => fetchJobs(i);
+    if (i === currentPage) pageButton.classList.add("active");
+    paginationContainer.appendChild(pageButton);
+  }
+
+  // Next button for the next page
+  if (currentPage < totalPages) {
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Next";
+    nextButton.classList.add("pagination-btn");
+    nextButton.onclick = () => fetchJobs(currentPage + 1);
+    paginationContainer.appendChild(nextButton);
+  }
+}
+
 
 // Helper function to toggle loader
 function toggleLoader(show) {

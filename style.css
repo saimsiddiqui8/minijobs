@@ -35,10 +35,10 @@
   border: none;
 }
 
-/*toggle icon*/ 
+/*toggle icon*/
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-  background-color: transparent !important;   
+  background-color: transparent !important;
 }
 
 .navbar a:hover {
@@ -104,6 +104,7 @@
 
 /* ============ mobile view ============ */
 @media (max-width: 991px) {
+
   .navbar.fixed-top .navbar-collapse,
   .navbar.sticky-top .navbar-collapse {
     overflow-y: auto;
@@ -132,6 +133,70 @@
   font-family: sans-serif !important;
   margin-top: 5px !important;
 }
+
+/* pagination  */
+
+.pagination-btn {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.pagination-btn.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination-btn:hover {
+  background-color: #f0f0f0;
+}
+
+#jobs-found {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin: 20px 0px;
+  padding: 12px 20px;
+  background-color: #f7f9fc;
+  border-left: 5px solid #007bff;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#jobs-found span {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#jobs-found:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.page-info {
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+  text-align: right !important;  /* Align the text to the right */
+
+  margin-top: 8px;
+  font-style: italic;
+}
+
+
+@media (max-width: 600px) {
+  #jobs-found {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+
 
 /* search container end  */
 
@@ -259,9 +324,20 @@ p.text-center.mt-3.mb-5.container {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.8; }
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
 }
 
 .no-jobs-wrapper h3 {
@@ -296,12 +372,15 @@ p.text-center.mt-3.mb-5.container {
   .no-jobs-wrapper {
     color: #ccc;
   }
+
   .no-jobs-wrapper p {
     color: #aaa;
   }
+
   .cta-btn {
     background-color: #1e88e5;
   }
+
   .cta-btn:hover {
     background-color: #1565c0;
   }
