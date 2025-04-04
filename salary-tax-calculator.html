@@ -1,93 +1,84 @@
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Germany Salary Tax Calculator</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
-    <link
-      rel="canonical"
-      href="https://minijobgermany.de/salary-tax-calculator"
-    />
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: #f5f5f5;
-        color: #495057;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Germany Salary Tax Calculator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 
-      .container {
-        margin-top: 50px;
-      }
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="canonical" href="https://minijobgermany.de/salary-tax-calculator" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f5f5f5;
+      color: #495057;
+    }
 
-      h1 {
-        color: #007bff;
-        font-weight: 600;
-        margin-bottom: 30px;
-      }
+    .container {
+      margin-top: 50px;
+    }
 
-      .card {
-        border: none;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 10px;
-      }
+    h1 {
+      color: #007bff;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
 
-      .btn-primary {
-        background-color: #007bff;
-        border: none;
-        font-weight: 600;
-        padding: 10px 20px;
-        transition: background-color 0.3s ease;
-      }
+    .card {
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+    }
 
-      .btn-primary:hover {
-        background-color: #0056b3;
-      }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
 
-      .list-group-item {
-        font-size: 1.1em;
-        padding: 15px 20px;
-        border: none;
-      }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
 
-      .result {
-        margin-top: 30px;
-      }
+    .list-group-item {
+      font-size: 1.1em;
+      padding: 15px 20px;
+      border: none;
+    }
 
-      .result h3 {
-        color: #28a745;
-        font-weight: 600;
-      }
+    .result {
+      margin-top: 30px;
+    }
 
-      .result ul {
-        margin-top: 20px;
-      }
+    .result h3 {
+      color: #28a745;
+      font-weight: 600;
+    }
 
-      .result .list-group-item span {
-        float: right;
-        font-weight: 600;
-      }
-    </style>
-  </head>
+    .result ul {
+      margin-top: 20px;
+    }
 
-  <body>
-    <nav
-      style="
+    .result .list-group-item span {
+      float: right;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <nav style="
         z-index: 1000 !important;
         background: linear-gradient(
           90deg,
@@ -95,548 +86,282 @@
           #074a91 50%,
           #044175 100%
         );
-      "
-      class="navbar navbar-expand-lg navbar-light"
-    >
-      <a
-        href="/"
-        class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5"
-      >
-        <img class="logo" src="./img/logo2.webp" width="110px" alt="logo" />
-      </a>
-      <button
-        type="button"
-        class="navbar-toggler me-4"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-          <a
-            target="_blank"
-            class="nav-link dropdown-toggle"
-            id="jobsMenuLink"
-            href="#"
-            data-bs-toggle="dropdown"
-            >More Jobs</a
-          >
-          <div class="dropdown-menu megamenu mx-5" role="menu">
-            <ul class="navbar-navs">
-              <li class="nav-item megamenu">
-                <div
-                  class="megamenu-content"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                      <a target="_blank" href="#">
-                        <p style="color: #000; font-weight: 700">
-                          JOBS BY CITY
-                        </p>
-                      </a>
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-berlin"
-                        >Berlin</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-hamburg"
-                        >Hamburg</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-munich"
-                        >Munich</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-koln"
-                        >Koln</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-frankfurt"
-                        >Frankfurt</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-leipzig"
-                        >Leipzig</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-dortmund"
-                        >Dortmund</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-bonn"
-                        >Bonn</a
-                      >
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                      <a target="_blank" href="">
-                        <p style="color: #000; font-weight: 700">
-                          JOBS IN TOWN
-                        </p>
-                      </a>
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-charlottenburg"
-                        >Charlottenburg</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-kreuzberg"
-                        >Kreuzberg</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-tempelhof"
-                        >Tempelhof</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-treptow-kopenick"
-                        >Treptow-Köpenick</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-frankfurt-oder"
-                        >Frankfurt (Oder)</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-brandenburg"
-                        >Brandenburg</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-oranienburg"
-                        >Oranienburg</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="minijob-eberswalde"
-                        >Eberswalde</a
-                      >
-                    </div>
-                    <div class="col-lg-2 col-md-6">
-                      <a target="_blank" href="">
-                        <p style="color: #000; font-weight: 700">MORE JOBS</p>
-                      </a>
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="english-speaking-jobs"
-                        >English Jobs</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="weekend-jobs"
-                        >Weekend Jobs</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="student-jobs"
-                        >Students Jobs</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="part-time-jobs"
-                        >Part Time Jobs</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="450-euro-jobs"
-                        >450 Euro Jobs</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="13-euro-hourly-job"
-                        >13 € Hourly Job</a
-                      >
-                    </div>
-                    <div class="col-lg-2 col-md-6">
-                      <a target="_blank" href="">
-                        <p style="color: #000; font-weight: 700">
-                          MORE JOB TYPES
-                        </p>
-                      </a>
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="kuechen-jobs"
-                        >Kuechen</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="finanzwesen-jobs"
-                        >Finanzwesen</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="bauwesen-jobs"
-                        >Bauwesen</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="pharmaindustrie-jobs"
-                        >Pharmaindustrie</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="lebensmittel-getraenke-jobs"
-                        >Lebensmittel & Getränke</a
-                      >
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="personalwesen-jobs"
-                        >Personalwesen</a
-                      >
-                    </div>
-                    <div class="col-lg-2 col-md-6">
-                      <a target="_blank" href="">
-                        <p style="color: #000; font-weight: 700">MORE</p>
-                      </a>
-                      <a target="_blank" class="dropdown-item" href="contact-us"
-                        >Contact Us</a
-                      >
-                    </div>
+      " class="navbar navbar-expand-lg navbar-light">
+    <a href="/" class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5">
+      <img class="logo" src="./img/logo2.webp" width="110px" alt="logo" />
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <a target="_blank" class="nav-link dropdown-toggle" id="jobsMenuLink" href="#" data-bs-toggle="dropdown">More
+          Jobs</a>
+        <div class="dropdown-menu megamenu mx-5" role="menu">
+          <ul class="navbar-navs">
+            <li class="nav-item megamenu">
+              <div class="megamenu-content" aria-labelledby="navbarDropdownMenuLink">
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <a target="_blank" href="#">
+                      <p style="color: #000; font-weight: 700">
+                        JOBS BY CITY
+                      </p>
+                    </a>
+                    <a target="_blank" class="dropdown-item" href="minijob-berlin">Berlin</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-hamburg">Hamburg</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-munich">Munich</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-koln">Koln</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-frankfurt">Frankfurt</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-leipzig">Leipzig</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-dortmund">Dortmund</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-bonn">Bonn</a>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <a target="_blank" href="">
+                      <p style="color: #000; font-weight: 700">
+                        JOBS IN TOWN
+                      </p>
+                    </a>
+                    <a target="_blank" class="dropdown-item" href="minijob-charlottenburg">Charlottenburg</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-kreuzberg">Kreuzberg</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-tempelhof">Tempelhof</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-treptow-kopenick">Treptow-Köpenick</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-frankfurt-oder">Frankfurt (Oder)</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-brandenburg">Brandenburg</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-oranienburg">Oranienburg</a>
+                    <a target="_blank" class="dropdown-item" href="minijob-eberswalde">Eberswalde</a>
+                  </div>
+                  <div class="col-lg-2 col-md-6">
+                    <a target="_blank" href="">
+                      <p style="color: #000; font-weight: 700">MORE JOBS</p>
+                    </a>
+                    <a target="_blank" class="dropdown-item" href="english-speaking-jobs">English Jobs</a>
+                    <a target="_blank" class="dropdown-item" href="weekend-jobs">Weekend Jobs</a>
+                    <a target="_blank" class="dropdown-item" href="student-jobs">Students Jobs</a>
+                    <a target="_blank" class="dropdown-item" href="part-time-jobs">Part Time Jobs</a>
+                    <a target="_blank" class="dropdown-item" href="450-euro-jobs">450 Euro Jobs</a>
+                    <a target="_blank" class="dropdown-item" href="13-euro-hourly-job">13 € Hourly Job</a>
+                  </div>
+                  <div class="col-lg-2 col-md-6">
+                    <a target="_blank" href="">
+                      <p style="color: #000; font-weight: 700">
+                        MORE JOB TYPES
+                      </p>
+                    </a>
+                    <a target="_blank" class="dropdown-item" href="kuechen-jobs">Kuechen</a>
+                    <a target="_blank" class="dropdown-item" href="finanzwesen-jobs">Finanzwesen</a>
+                    <a target="_blank" class="dropdown-item" href="bauwesen-jobs">Bauwesen</a>
+                    <a target="_blank" class="dropdown-item" href="pharmaindustrie-jobs">Pharmaindustrie</a>
+                    <a target="_blank" class="dropdown-item" href="lebensmittel-getraenke-jobs">Lebensmittel &
+                      Getränke</a>
+                    <a target="_blank" class="dropdown-item" href="personalwesen-jobs">Personalwesen</a>
+                  </div>
+                  <div class="col-lg-2 col-md-6">
+                    <a target="_blank" href="">
+                      <p style="color: #000; font-weight: 700">MORE</p>
+                    </a>
+                    <a target="_blank" class="dropdown-item" href="contact-us">Contact Us</a>
                   </div>
                 </div>
-              </li>
-            </ul>
-          </div>
-          <a target="_blank" href="contact-us" class="nav-item nav-link"
-            >Contact</a
-          >
-          <!-- <a  target="_blank" href="blogs" class="nav-item nav-link">Blogs</a> -->
+              </div>
+            </li>
+          </ul>
         </div>
+        <a target="_blank" href="contact-us" class="nav-item nav-link">Contact</a>
+        <!-- <a  target="_blank" href="blogs" class="nav-item nav-link">Blogs</a> -->
       </div>
-    </nav>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <h1 class="text-center">Germany Salary Tax Calculator</h1>
-          <div class="card">
-            <form id="salaryForm">
-              <div class="mb-3">
-                <label for="grossSalary" class="form-label"
-                  >Enter Gross Salary (€)</label
-                >
-                <input
-                  type="number"
-                  class="form-control"
-                  id="grossSalary"
-                  placeholder="e.g., 50000"
-                  required
-                />
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Calculate</button>
-              </div>
-            </form>
-          </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1 class="text-center">Germany Salary Tax Calculator</h1>
+        <div class="card">
+          <form id="salaryForm">
+            <div class="mb-3">
+              <label for="grossSalary" class="form-label">Enter Gross Salary (€)</label>
+              <input type="number" class="form-control" id="grossSalary" placeholder="e.g., 50000" required />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Calculate</button>
+            </div>
+          </form>
+        </div>
 
-          <div class="result text-center mt-4">
-            <h3>Results</h3>
-            <ul class="list-group">
-              <li class="list-group-item">
-                Income Tax (Est.): <span id="incomeTax">€0.00</span>
-              </li>
-              <li class="list-group-item">
-                Solidarity Surcharge: <span id="solidarity">€0.00</span>
-              </li>
-              <li class="list-group-item">
-                Social Security (Est.): <span id="socialSecurity">€0.00</span>
-              </li>
-              <li class="list-group-item">
-                Net Salary: <span id="netSalary">€0.00</span>
-              </li>
-            </ul>
-          </div>
+        <div class="result text-center mt-4">
+          <h3>Results</h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              Income Tax (Est.): <span id="incomeTax">€0.00</span>
+            </li>
+            <li class="list-group-item">
+              Solidarity Surcharge: <span id="solidarity">€0.00</span>
+            </li>
+            <li class="list-group-item">
+              Social Security (Est.): <span id="socialSecurity">€0.00</span>
+            </li>
+            <li class="list-group-item">
+              Net Salary: <span id="netSalary">€0.00</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Footer Start -->
-    <div class="text-white footer wow fadeIn" data-wow-delay="0.1s">
-      <div class="px-5 py-5">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 mb-4">
-            <div class="footer-logo">
-              <img src="./img/logo2.webp" alt="Logo" />
-            </div>
-            <p class="footer-description mt-3">
-              MiniJobGermany.de hilft Ihnen dabei, Minijobs und Nebenjobs in
-              ganz Deutschland zu finden und macht Ihre Jobsuche einfach und
-              stressfrei. Egal ob Sie Student, Rentner oder auf der Suche nach
-              einem Nebenverdienst sind, wir haben Stellenangebote, die Ihren
-              Bedürfnissen entsprechen.
+  <!-- Footer Start -->
+  <div class="text-white footer wow fadeIn" data-wow-delay="0.1s">
+    <div class="px-5 py-5">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-logo">
+            <img src="./img/logo2.webp" alt="Logo" />
+          </div>
+          <p class="footer-description mt-3">
+            MiniJobGermany.de hilft Ihnen dabei, Minijobs und Nebenjobs in
+            ganz Deutschland zu finden und macht Ihre Jobsuche einfach und
+            stressfrei. Egal ob Sie Student, Rentner oder auf der Suche nach
+            einem Nebenverdienst sind, wir haben Stellenangebote, die Ihren
+            Bedürfnissen entsprechen.
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <p style="font-size: 25px; font-weight: 700" class="text-white mb-4">
+            Contact
+          </p>
+          <div class="contact-info">
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i><a
+                href="mailto:contact@minijobgermany.de">contact@minijobgermany.de</a>
+            </p>
+            <p class="mb-2">
+              <i class="fab fa-linkedin me-3"></i><a
+                href="https://www.linkedin.com/company/minijobgermany-de/">linkedIn/minijobgermany</a>
+            </p>
+            <p class="mb-2">
+              <i class="fab fa-facebook me-3"></i><a
+                href="https://www.facebook.com/minijobgermany.de">facebook/minijobgermany</a>
+            </p>
+
+            <p class="mb-2">
+              <i class="fa-brands fa-instagram me-3"></i>
+              <a href="https://www.instagram.com/minijobgermany.de/">instagram/minijobgermany</a>
+            </p>
+            <p class="mb-2">
+              <i class="fa-brands fa-pinterest me-3"></i>
+              <a href="https://de.pinterest.com/minijobgermany/">pinterest/minijobgermany</a>
+            </p>
+            <p class="mb-2">
+              <i class="fa-brands fa-youtube me-3"></i>
+              <a href="https://www.youtube.com/@minijobgermany-de">youtube/minijobgermany</a>
             </p>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <p
-              style="font-size: 25px; font-weight: 700"
-              class="text-white mb-4"
-            >
-              Contact
-            </p>
-            <div class="contact-info">
-              <p class="mb-2">
-                <i class="fa fa-envelope me-3"></i
-                ><a href="mailto:contact@minijobgermany.de"
-                  >contact@minijobgermany.de</a
-                >
-              </p>
-              <p class="mb-2">
-                <i class="fab fa-linkedin me-3"></i
-                ><a href="https://www.linkedin.com/company/minijobgermany-de/"
-                  >linkedIn/minijobgermany</a
-                >
-              </p>
-              <p class="mb-2">
-                <i class="fab fa-facebook me-3"></i
-                ><a href="https://www.facebook.com/minijobgermany.de"
-                  >facebook/minijobgermany</a
-                >
-              </p>
-
-              <p class="mb-2">
-                <i class="fa-brands fa-instagram me-3"></i>
-                <a href="https://www.instagram.com/minijobgermany.de/"
-                  >instagram/minijobgermany</a
-                >
-              </p>
-              <p class="mb-2">
-                <i class="fa-brands fa-pinterest me-3"></i>
-                <a href="https://de.pinterest.com/minijobgermany/"
-                  >pinterest/minijobgermany</a
-                >
-              </p>
-              <p class="mb-2">
-                <i class="fa-brands fa-youtube me-3"></i>
-                <a href="https://www.youtube.com/@minijobgermany-de"
-                  >youtube/minijobgermany</a
-                >
-              </p>
-            </div>
-            <p
-              style="font-size: 25px; font-weight: 700"
-              class="text-white pt-2 mb-1 mt-5"
-            >
-              Newsletter
-            </p>
-            <p>
-              Abonnieren Sie unsere E-Mail-Updates und erhalten Sie die neuesten
-              Stellenangebote direkt in Ihren Posteingang.
-            </p>
-            <div class="position-relative" style="max-width: 400px">
-              <input
-                class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-                type="email"
-                required
-                placeholder="Your email"
-                id="newsletter-input"
-              />
-              <button
-                type="button"
-                id="newsletter-button"
-                onclick="subscribeToEmail();"
-                aria-label="Subscribe to Newsletter"
-                class="btn w-25 py-2 position-absolute top-0 end-0 mt-2 me-2"
-              >
-                Sign Up
-              </button>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-12 mb-4">
-            <p
-              style="font-size: 25px; font-weight: 700"
-              class="text-white mb-4"
-            >
-              Quick Links
-            </p>
-            <div class="row">
-              <div class="col-md-6">
-                <!-- <a  target="_blank" class="d-block mb-2 btn btn-link" href="contact-us">Contact Us</a> -->
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-berlin"
-                  >Jobs in Berlin</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-essen"
-                  >Jobs in Essen</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-bonn"
-                  >Jobs in Bonn</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-dussledorf"
-                  >Jobs in Dussledorf</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-falkensee"
-                  >Jobs in Falkensee</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-frankfurt"
-                  >Jobs in Frankfurt</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-lunen"
-                  >Jobs in Lünen</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-hamburg"
-                  >Jobs in Hamburg</a
-                >
-              </div>
-              <div class="col-md-6">
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-potsdam"
-                  >Jobs in Potsdam</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-munich"
-                  >Jobs in Cologne</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-nurtingen"
-                  >Jobs in Nürtingen</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-vienna"
-                  >Jobs in Vienna
-                </a>
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-wurzburg"
-                  >Jobs in Würzburg</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-zurich"
-                  >Jobs in Zurich</a
-                >
-                <a
-                  target="_blank"
-                  class="d-block mb-2 btn btn-link"
-                  href="minijob-stuttgart"
-                  >Jobs in Stuttgart</a
-                >
-              </div>
-            </div>
+          <p style="font-size: 25px; font-weight: 700" class="text-white pt-2 mb-1 mt-5">
+            Newsletter
+          </p>
+          <p>
+            Abonnieren Sie unsere E-Mail-Updates und erhalten Sie die neuesten
+            Stellenangebote direkt in Ihren Posteingang.
+          </p>
+          <div class="position-relative" style="max-width: 400px">
+            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" required
+              placeholder="Your email" id="newsletter-input" />
+            <button type="button" id="newsletter-button" onclick="subscribeToEmail();"
+              aria-label="Subscribe to Newsletter" class="btn w-25 py-2 position-absolute top-0 end-0 mt-2 me-2">
+              Sign Up
+            </button>
           </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="copyright py-3">
+        <div class="col-lg-5 col-md-12 mb-4">
+          <p style="font-size: 25px; font-weight: 700" class="text-white mb-4">
+            Quick Links
+          </p>
           <div class="row">
-            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-              &copy; 2025 Minijobgermany.de. All rights reserved
+            <div class="col-md-6">
+              <!-- <a  target="_blank" class="d-block mb-2 btn btn-link" href="contact-us">Contact Us</a> -->
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-berlin">Jobs in Berlin</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-essen">Jobs in Essen</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-bonn">Jobs in Bonn</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-dussledorf">Jobs in Dussledorf</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-falkensee">Jobs in Falkensee</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-frankfurt">Jobs in Frankfurt</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-lunen">Jobs in Lünen</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-hamburg">Jobs in Hamburg</a>
             </div>
-            <div class="col-md-8 text-center text-md-end">
-              <div class="footer-menu">
-                <a target="_blank" href="about-us">About Us</a>
-                <a target="_blank" href="disclaimer">Disclaimer</a>
-                <a target="_blank" href="terms-condition"
-                  >Terms and condition</a
-                >
-                <a target="_blank" href="privacy-policy">Privacy Policy</a>
-              </div>
+            <div class="col-md-6">
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-potsdam">Jobs in Potsdam</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-munich">Jobs in Cologne</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-nurtingen">Jobs in Nürtingen</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-vienna">Jobs in Vienna
+              </a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-wurzburg">Jobs in Würzburg</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-zurich">Jobs in Zurich</a>
+              <a target="_blank" class="d-block mb-2 btn btn-link" href="minijob-stuttgart">Jobs in Stuttgart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size: 25px; font-weight: 700" class="text-white mb-3">
+        📍 Unser Standort
+      </p>
+      <div class="google-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.1640150449757!2d12.443471876154968!3d51.363281421222055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6573717169d2d%3A0xb2996461c2c5affe!2sMinijob%20Germany.de!5e0!3m2!1sen!2s!4v1743758961069!5m2!1sen!2s"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright py-3">
+        <div class="row">
+          <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+            &copy; 2025 Minijobgermany.de. All rights reserved
+          </div>
+          <div class="col-md-8 text-center text-md-end">
+            <div class="footer-menu">
+              <a target="_blank" href="about-us">About Us</a>
+              <a target="_blank" href="disclaimer">Disclaimer</a>
+              <a target="_blank" href="terms-condition">Terms and condition</a>
+              <a target="_blank" href="privacy-policy">Privacy Policy</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Footers End -->
+  </div>
+  <!-- Footers End -->
 
-    <script>
-      document
-        .getElementById("salaryForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const grossSalary = parseFloat(
-            document.getElementById("grossSalary").value,
-          );
-          const incomeTaxRate = 0.2;
-          const solidarityRate = 0.055;
-          const socialSecurityRate = 0.2;
+  <script>
+    document
+      .getElementById("salaryForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const grossSalary = parseFloat(
+          document.getElementById("grossSalary").value,
+        );
+        const incomeTaxRate = 0.2;
+        const solidarityRate = 0.055;
+        const socialSecurityRate = 0.2;
 
-          const incomeTax = grossSalary * incomeTaxRate;
-          const solidaritySurcharge = incomeTax * solidarityRate;
-          const socialSecurity = grossSalary * socialSecurityRate;
-          const netSalary =
-            grossSalary - incomeTax - solidaritySurcharge - socialSecurity;
+        const incomeTax = grossSalary * incomeTaxRate;
+        const solidaritySurcharge = incomeTax * solidarityRate;
+        const socialSecurity = grossSalary * socialSecurityRate;
+        const netSalary =
+          grossSalary - incomeTax - solidaritySurcharge - socialSecurity;
 
-          document.getElementById("incomeTax").textContent =
-            `€${incomeTax.toFixed(2)}`;
-          document.getElementById("solidarity").textContent =
-            `€${solidaritySurcharge.toFixed(2)}`;
-          document.getElementById("socialSecurity").textContent =
-            `€${socialSecurity.toFixed(2)}`;
-          document.getElementById("netSalary").textContent =
-            `€${netSalary.toFixed(2)}`;
-        });
-    </script>
-  </body>
+        document.getElementById("incomeTax").textContent =
+          `€${incomeTax.toFixed(2)}`;
+        document.getElementById("solidarity").textContent =
+          `€${solidaritySurcharge.toFixed(2)}`;
+        document.getElementById("socialSecurity").textContent =
+          `€${socialSecurity.toFixed(2)}`;
+        document.getElementById("netSalary").textContent =
+          `€${netSalary.toFixed(2)}`;
+      });
+  </script>
+</body>
+
 </html>
