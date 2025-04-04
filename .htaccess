@@ -6,6 +6,11 @@ RewriteRule ^in-(.*)$ /minijob-$1 [R=301,L]
 # Serve "in-{city}.html" when "minijob-{city}" is requested (without redirection)
 RewriteRule ^minijob-(.*)$ /in-$1.html [L]
 
+# Redirect /redirect/{encoded-url} to /redirect.html?url={encoded-url}
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^redirect/(.*)$ /redirect.html?url=$1 [L,QSA]
+
 # Check if the requested file exists as .html
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]

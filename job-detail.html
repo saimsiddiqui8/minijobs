@@ -583,7 +583,8 @@
                 document.getElementById('job-apply').addEventListener('click', () => {
                     const jobUrl = job.data.url; // Make sure job.data.url is defined
                     if (jobUrl) {
-                        window.open(jobUrl, '_blank');
+                        const encodedUrl = encodeURIComponent(jobUrl);
+                        window.open(`/redirect/${encodedUrl}`, '_blank');
                     } else {
                         console.error('Job URL is not defined.');
                     }
