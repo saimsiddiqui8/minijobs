@@ -1,103 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Redirecting...</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #f8f9fa, #e9ecef);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      color: #343a40;
-      animation: fadeIn 1s ease-in-out;
-    }
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #343a40;
+            animation: fadeIn 1s ease-in-out;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to   { opacity: 1; transform: scale(1); }
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
 
-    .logo {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #007bff;
-      margin-bottom: 10px;
-      animation: popIn 0.6s ease-in-out forwards;
-    }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-    @keyframes popIn {
-      from { transform: translateY(-20px); opacity: 0; }
-      to   { transform: translateY(0); opacity: 1; }
-    }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+            animation: popIn 0.6s ease-in-out forwards;
+        }
 
-    .loader {
-      width: 60px;
-      height: 60px;
-      border: 6px solid #dee2e6;
-      border-top: 6px solid #007bff;
-      border-radius: 50%;
-      animation: spin 1s linear infinite, pulse 1.5s ease-in-out infinite;
-      margin: 20px 0;
-    }
+        @keyframes popIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #dee2e6;
+            border-top: 6px solid #007bff;
+            border-radius: 50%;
+            animation: spin 0.5s linear infinite, pulse 1s ease-in-out infinite;
+            margin: 20px 0;
+        }
 
-    h2 {
-      margin: 10px 0;
-      text-align: center;
-      font-size: 1.4rem;
-      color: #495057;
-      animation: fadeInText 1.2s ease;
-    }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
-    @keyframes fadeInText {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-    .fallback {
-      font-size: 0.95rem;
-      color: #6c757d;
-      text-align: center;
-      margin-top: 10px;
-    }
-  </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const fullPath = window.location.pathname;
-      const queryString = window.location.search;
-      const redirectBase = "/redirect/";
+        @keyframes pulse {
 
-      if (fullPath.startsWith(redirectBase)) {
-        const destination = fullPath.slice(redirectBase.length);
-        const fullUrl = `https://${decodeURIComponent(destination)}${queryString}`;
-        window.location.href = fullUrl;
-      } else {
-        document.querySelector('h2').textContent = "Invalid redirect path.";
-        document.querySelector('.loader').style.display = "none";
-      }
-    });
-  </script>
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        h2 {
+            margin: 10px 0;
+            text-align: center;
+            font-size: 1.4rem;
+            color: #495057;
+            animation: fadeInText 1.2s ease;
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fallback {
+            font-size: 0.95rem;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fullPath = window.location.pathname;
+            const queryString = window.location.search;
+            const redirectBase = "/redirect/";
+
+            if (fullPath.startsWith(redirectBase)) {
+                const destination = fullPath.slice(redirectBase.length);
+                const fullUrl = `https://${decodeURIComponent(destination)}${queryString}`;
+                window.location.href = fullUrl;
+            } else {
+                document.querySelector('h2').textContent = "Invalid redirect path.";
+                document.querySelector('.loader').style.display = "none";
+            }
+        });
+    </script>
 </head>
+
 <body>
-  <div class="logo">MinijobGermany</div>
-  <div class="loader"></div>
-  <h2>Redirecting to job application…</h2>
-  <p class="fallback">If you're not redirected automatically, please check the job link or try again later.</p>
+    <div class="logo">MinijobGermany</div>
+    <div class="loader"></div>
+    <h2>Redirecting to job application…</h2>
+    <p class="fallback">If you're not redirected automatically, please check the job link or try again later.</p>
 </body>
+
 </html>
