@@ -581,10 +581,10 @@
                 cityLink.href = `/${citySlug}`;
 
                 document.getElementById('job-apply').addEventListener('click', () => {
-                    const jobUrl = job.data.url; // Make sure job.data.url is defined
-                    if (jobUrl) {
-                        const encodedUrl = encodeURIComponent(jobUrl);
-                        window.open(`/redirect/${encodedUrl}`, '_blank');
+                    const cleanUrl = job.data.url.replace(/^https?:\/\//, '');
+                    if (cleanUrl) {
+                        const encodedUrl = encodeURIComponent(cleanUrl);
+                        window.open(`/redirect/${cleanUrl}`, '_blank');
                     } else {
                         console.error('Job URL is not defined.');
                     }
