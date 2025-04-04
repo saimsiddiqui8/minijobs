@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Redirecting...</title>
-    <script>
-        // Get the 'url' parameter from the query string
-        const params = new URLSearchParams(window.location.search);
-        const targetUrl = params.get("url");
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const fullPath = window.location.pathname; // e.g., /redirect/de.jooble.org/external/abc
+      const queryString = window.location.search; // e.g., ?cpc=xxx&utm_source=...
 
-        if (targetUrl) {
-            // Redirect to the decoded URL
-            window.location.href = decodeURIComponent(targetUrl);
-        } else {
-            document.addEventListener("DOMContentLoaded", () => {
-                document.body.innerHTML = "<h2>No redirect URL provided.</h2>";
-            });
-        }
-    </script>
+      const redirectBase = "/redirect/";
+      if (fullPath.startsWith(redirectBase)) {
+        const destination = fullPath.slice(redirectBase.length); // Remove '/redirect/'
+        const fullUrl = `https://${decodeURIComponent(destination)}${queryString}`;
+        window.location.href = fullUrl;
+      } else {
+        document.body.innerHTML = "<h2>Invalid redirect path.</h2>";
+      }
+    });
+  </script>
 </head>
-
 <body>
-    <p>Redirecting to job application…</p>
+  <p>Redirecting to job application…</p>
 </body>
-
 </html>
