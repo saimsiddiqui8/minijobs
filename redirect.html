@@ -1,25 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Redirecting...</title>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const fullPath = window.location.pathname; // e.g., /redirect/de.jooble.org/external/abc
-      const queryString = window.location.search; // e.g., ?cpc=xxx&utm_source=...
 
-      const redirectBase = "/redirect/";
-      if (fullPath.startsWith(redirectBase)) {
-        const destination = fullPath.slice(redirectBase.length); // Remove '/redirect/'
-        const fullUrl = `https://${decodeURIComponent(destination)}${queryString}`;
-        window.location.href = fullUrl;
-      } else {
-        document.body.innerHTML = "<h2>Invalid redirect path.</h2>";
-      }
-    });
-  </script>
+<head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .loader {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #007bff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .fallback {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fullPath = window.location.pathname;
+            const queryString = window.location.search;
+            const redirectBase = "/redirect/";
+
+            if (fullPath.startsWith(redirectBase)) {
+                const destination = fullPath.slice(redirectBase.length);
+                const fullUrl = `https://${decodeURIComponent(destination)}${queryString}`;
+                window.location.href = fullUrl;
+            } else {
+                document.querySelector('h2').textContent = "Invalid redirect path.";
+                document.querySelector('.loader').style.display = "none";
+            }
+        });
+    </script>
 </head>
+
 <body>
-  <p>Redirecting to job application…</p>
+    <div class="loader"></div>
+    <h2>Redirecting to job application…</h2>
+    <p class="fallback">If you're not redirected automatically, please check the job link or try again later.</p>
 </body>
+
 </html>
