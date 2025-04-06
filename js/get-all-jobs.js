@@ -170,11 +170,17 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
 
     // Append the job item to the job container
     jobContainer.appendChild(jobItem);
-    // Add event listener to jobItem (the entire div)
+
     jobItem.addEventListener('click', () => {
-      // Replace 'your-job-detail-page.html' with your actual detail page route
-      // You can pass jobId, jobUrl, or slug as query params
-      window.location.href = `job-detail.html?guid=${encodeURIComponent(job.guid)}`;
+
+      // Create a slug from the job title
+      const slug = job.title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, "") // Remove special characters
+        .replace(/\s+/g, "-")        // Replace spaces with hyphens
+        .trim();
+      const url = `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`;
+      window.location.href = url;
     });
   });
 }
