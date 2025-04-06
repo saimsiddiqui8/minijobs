@@ -48,6 +48,7 @@ async function loadJobDetail() {
         // cityLink.textContent = city;
         // cityLink.href = `/${citySlug}`;
 
+        
         document.getElementById('job-apply').addEventListener('click', () => {
             const cleanUrl = job.data.url.replace(/^https?:\/\//, '').replace(/^de\.jooble\.org\/external\//, '');
             if (cleanUrl) {
