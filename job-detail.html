@@ -600,7 +600,7 @@
                 cityLink.href = `/${citySlug}`;
 
                 document.getElementById('job-apply').addEventListener('click', () => {
-                    const cleanUrl = job.data.url.replace(/^https?:\/\//, '');
+                    const cleanUrl = job.data.url.replace(/^https?:\/\//, '').replace(/^de\.jooble\.org\/external\//, '');
                     if (cleanUrl) {
                         const encodedUrl = encodeURIComponent(cleanUrl);
                         window.open(`/redirect/${cleanUrl}`, '_blank');
