@@ -130,11 +130,11 @@
         document.addEventListener("DOMContentLoaded", () => {
             const fullPath = window.location.pathname;
             const queryString = window.location.search;
-            const redirectBase = "/redirect/de.jooble.org/external/";
+            const redirectBase = "/redirect/";
 
             if (fullPath.startsWith(redirectBase)) {
                 const destination = fullPath.slice(redirectBase.length);
-                const fullUrl = `https://${decodeURIComponent(destination)}${queryString}`;
+                const fullUrl = `https://de.jooble.org/external/${decodeURIComponent(destination)}${queryString}`;
                 window.location.href = fullUrl;
             } else {
                 document.querySelector('h2').textContent = "Invalid redirect path.";
