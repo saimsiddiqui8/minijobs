@@ -1,16 +1,16 @@
 fetch("https://ipwho.is/")
     .then(res => res.json())
     .then(data => {
-        const country = data.country;
+        const continent = data.continent;
         const button = document.getElementById("job-apply");
         const message = document.getElementById("apply-msg");
 
-        if (country === "Germany") {
+        if (continent === "Europe") {
             button.disabled = false;
-            message.textContent = ""; // No error message
+            message.textContent = "";
         } else {
-            button.disabled = false;
-            message.textContent = "Sorry, you cannot apply from outside Germany.";
+            button.disabled = true;
+            message.textContent = "Sorry, you can only apply from Europe.";
         }
     })
     .catch(error => {
