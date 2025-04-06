@@ -15,15 +15,15 @@
   <link href="img/favicon.png" rel="icon" alt="Minijob Germany.de" />
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-45J6RCD301');
-</script>  <!-- Google Web Fonts -->
+    gtag('config', 'G-45J6RCD301');
+  </script> <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
@@ -42,8 +42,13 @@
   <link rel="stylesheet" href="./style.css" />
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+  </script>
+  <script type="text/javascript">
+    var onloadCallback = function () {
+      alert("grecaptcha is ready!");
+    };
+  </script>
 </head>
 
 <body>
@@ -228,7 +233,7 @@
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <div class="g-recaptcha" data-sitekey="6LdbkAsrAAAAAIJLL7guFNJzSFezGnjouwkTLWLD"></div>
+                      <div class="g-recaptcha" data-sitekey="6LcykQsrAAAAADaJEgIhcE7AXuwovVvJOLA21Q4t"></div>
                       <!-- Replace 'your-site-key' with your actual site key -->
                     </div>
                     <div class="col-12">
