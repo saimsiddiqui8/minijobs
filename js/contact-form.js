@@ -31,7 +31,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     }
 
     try {
-        const res = await fetch(`${BASE_URL}/contact`, {
+        const res = await fetch(`${BASE_URL}contact`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
