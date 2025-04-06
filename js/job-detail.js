@@ -41,12 +41,12 @@ async function loadJobDetail() {
 
         //Nav (Breadcrums)
         document.getElementById('breadcrumb-title').textContent = job.data.title || 'Job Detail';
-        const city = job.data.city || 'Unknown City';
-        const citySlug = `minijob-${city.toLowerCase().replace(/\s+/g, '-')}`;
+        // const city = job.data.city || 'Unknown City';
+        // const citySlug = `minijob-${city.toLowerCase().replace(/\s+/g, '-')}`;
 
-        const cityLink = document.getElementById('city-crumb-link');
-        cityLink.textContent = city;
-        cityLink.href = `/${citySlug}`;
+        // const cityLink = document.getElementById('city-crumb-link');
+        // cityLink.textContent = city;
+        // cityLink.href = `/${citySlug}`;
 
         document.getElementById('job-apply').addEventListener('click', () => {
             const cleanUrl = job.data.url.replace(/^https?:\/\//, '').replace(/^de\.jooble\.org\/external\//, '');
