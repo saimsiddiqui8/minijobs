@@ -207,7 +207,7 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
       "datePosted": job.date_updated,
       "url": `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`
     };
-
+    console.log(job.guid)
     // Append schema to the head
     const scriptTag = document.createElement("script");
     scriptTag.type = "application/ld+json";
