@@ -159,6 +159,7 @@
 
             // Save destination URL for later redirection
             window.redirectAfterVerification = `https://${decodeURIComponent(fullPath.slice(redirectBase.length))}${queryString}`;
+            console.log(`https://${decodeURIComponent(fullPath.slice(redirectBase.length))}${queryString}`)
         });
 
         function onHumanVerified() {
