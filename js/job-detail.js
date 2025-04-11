@@ -50,7 +50,7 @@ async function loadJobDetail() {
 
         
         document.getElementById('job-apply').addEventListener('click', () => {
-            const cleanUrl = job.data.url.replace(/^https?:\/\//, '').replace(/^de\.jooble\.org\/external\//, '');
+            const cleanUrl = job.data.url.replace(/^https?:\/\//, '');
             if (cleanUrl) {
                 const encodedUrl = encodeURIComponent(cleanUrl);
                 window.open(`/redirect/${cleanUrl}`, '_blank');
