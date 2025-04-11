@@ -153,9 +153,11 @@
             document.body.appendChild(recaptchaDiv);
 
             // Render reCAPTCHA
-            if (typeof grecaptcha !== "undefined") {
+            if (typeof grecaptcha !== "undefined" && grecaptcha.render) {
+            grecaptcha.ready(() => {
                 grecaptcha.render(recaptchaDiv);
-            }
+            });
+        }
 
             // Save destination URL for later redirection
             window.redirectAfterVerification = `https://${decodeURIComponent(fullPath.slice(redirectBase.length))}${queryString}`;
