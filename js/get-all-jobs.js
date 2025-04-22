@@ -64,6 +64,7 @@ async function jobFilter(kw, page = 1, limit = 15) {
                 </div>
                 `;
         jobContainer.appendChild(jobCard);
+
       }
     });
   } catch (error) {
@@ -166,22 +167,53 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
             <div class="text-end" style="font-size: 11px; padding:0; margin: 0px" id="datePosted">${timeAgo(job.date_updated)}</div>
         `;
 
-
-
     // Append the job item to the job container
     jobContainer.appendChild(jobItem);
 
-    jobItem.addEventListener('click', () => {
+    const slug = job.title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, "") // Remove special characters
+      .replace(/\s+/g, "-")        // Replace spaces with hyphens
+      .trim();
 
-      // Create a slug from the job title
-      const slug = job.title
-        .toLowerCase()
-        .replace(/[^a-z0-9\s]/g, "") // Remove special characters
-        .replace(/\s+/g, "-")        // Replace spaces with hyphens
-        .trim();
+    jobItem.addEventListener('click', () => {
       const url = `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`;
       window.location.href = url;
     });
+
+    const jobSchema = {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "title": job.title,
+      "description": job.description,
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": job.city,
+          "addressRegion": job.state, // You can replace with the state if available
+          "addressCountry": job.country
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": job.currency || "EUR",
+      },
+      "employmentType": job.jobtype,
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": job.company,
+      },
+      "datePosted": job.date_updated,
+      "url": `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`
+    };
+    console.log(job.guid)
+    // Append schema to the head
+    const scriptTag = document.createElement("script");
+    scriptTag.type = "application/ld+json";
+    scriptTag.textContent = JSON.stringify(jobSchema);
+    document.head.appendChild(scriptTag);
+
   });
 }
 

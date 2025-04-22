@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -132,16 +133,47 @@
             const queryString = window.location.search;
             const redirectBase = "/redirect/";
 
-            if (fullPath.startsWith(redirectBase)) {
-                const destination = fullPath.slice(redirectBase.length);
-                const fullUrl = `https://de.jooble.org/external/${decodeURIComponent(destination)}${queryString}`;
-                window.location.href = fullUrl;
-            } else {
+            if (!fullPath.startsWith(redirectBase)) {
                 document.querySelector('h2').textContent = "Invalid redirect path.";
                 document.querySelector('.loader').style.display = "none";
+                return;
             }
+
+            // Hide loader until verified
+            document.querySelector('.loader').style.display = "none";
+
+            // Show reCAPTCHA verification message
+            document.querySelector('h2').textContent = "Please verify you're human to continue";
+
+            // Append reCAPTCHA widget container
+            const recaptchaDiv = document.createElement("div");
+            recaptchaDiv.className = "g-recaptcha";
+            recaptchaDiv.setAttribute("data-sitekey", "6LeIkgsrAAAAAH_TYLbWpH1S3GbQXeXUHRDvz-qd");
+            recaptchaDiv.setAttribute("data-callback", "onHumanVerified");
+            document.body.appendChild(recaptchaDiv);
+
+            // Render reCAPTCHA
+            if (typeof grecaptcha !== "undefined" && grecaptcha.render) {
+            grecaptcha.ready(() => {
+                grecaptcha.render(recaptchaDiv);
+            });
+        }
+
+            // Save destination URL for later redirection
+            window.redirectAfterVerification = `https://${decodeURIComponent(fullPath.slice(redirectBase.length))}${queryString}`;
+            console.log(`https://${decodeURIComponent(fullPath.slice(redirectBase.length))}${queryString}`)
         });
+
+        function onHumanVerified() {
+            document.querySelector('h2').textContent = "Verification successful. Redirecting...";
+            document.querySelector('.loader').style.display = "block";
+
+            setTimeout(() => {
+                window.location.href = window.redirectAfterVerification;
+            }, 1500);
+        }
     </script>
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
