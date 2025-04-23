@@ -135,10 +135,15 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
     paginationContainer.style.display = "block";
   }
 
+  function truncateHTML(html, maxLength) {
+    const div = document.createElement("div");
+    div.innerHTML = html;
+    const text = div.textContent || div.innerText || "";
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  }
+
   jobs.forEach((job) => {
-    let description =
-      job.description.slice(0, 200) +
-      "...";
+    const description = truncateHTML(job.description, 200);
     const location = `${job.city}, ${job.country} - (${job.jobtype})`;
     const companyLogo = job?.companyLogo ||
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSduZvFB87cOvLtQGxLzMnXVWZNOdgjCaPAOA&s"; // default image
