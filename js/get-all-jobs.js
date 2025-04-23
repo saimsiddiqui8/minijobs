@@ -243,7 +243,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     prevButton.onclick = () => {
       updatePageInUrl(currentPage - 1);
       fetchJobs(currentPage - 1).then(() => {
-        const firstJob = document.querySelector(".job-item");
+        const firstJob = document.getElementById("jobs-found");
         if (firstJob) {
           firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -260,7 +260,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     pageButton.onclick = () => {
       updatePageInUrl(i);
       fetchJobs(i).then(() => {
-        const firstJob = document.querySelector(".job-item");
+        const firstJob = document.getElementById("jobs-found");
         if (firstJob) {
           firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -278,7 +278,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     nextButton.onclick = () => {
       updatePageInUrl(currentPage + 1);
       fetchJobs(currentPage + 1).then(() => {
-        const firstJob = document.querySelector(".job-item");
+        const firstJob = document.getElementById("jobs-found");
         if (firstJob) {
           firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
         }
