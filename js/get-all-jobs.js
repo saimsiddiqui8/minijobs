@@ -245,7 +245,9 @@ function generatePaginationButtons(totalPages, currentPage) {
       fetchJobs(currentPage - 1).then(() => {
         const firstJob = document.getElementById("jobs-found");
         if (firstJob) {
-          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
+          const yOffset = -10; // Scroll 10px above the element
+          const y = firstJob.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
       });
     };
@@ -262,7 +264,9 @@ function generatePaginationButtons(totalPages, currentPage) {
       fetchJobs(i).then(() => {
         const firstJob = document.getElementById("jobs-found");
         if (firstJob) {
-          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
+          const yOffset = -10; // Scroll 10px above the element
+          const y = firstJob.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
       });
     };
@@ -280,7 +284,9 @@ function generatePaginationButtons(totalPages, currentPage) {
       fetchJobs(currentPage + 1).then(() => {
         const firstJob = document.getElementById("jobs-found");
         if (firstJob) {
-          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
+          const yOffset = -10; // Scroll 10px above the element
+          const y = firstJob.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
       });
     };
