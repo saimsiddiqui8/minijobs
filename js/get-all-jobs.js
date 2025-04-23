@@ -181,11 +181,15 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
       .replace(/\s+/g, "-")        // Replace spaces with hyphens
       .trim();
 
+    // jobItem.addEventListener('click', () => {
+    //   const url = `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`;
+    //   window.location.href = url;
+    // });
     jobItem.addEventListener('click', () => {
       const url = `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`;
-      window.location.href = url;
+      window.open(url, '_blank');
     });
-
+    
     const jobSchema = {
       "@context": "https://schema.org",
       "@type": "JobPosting",
