@@ -243,6 +243,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     prevButton.onclick = () => {
       updatePageInUrl(currentPage - 1);
       fetchJobs(currentPage - 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     paginationContainer.appendChild(prevButton);
   }
@@ -255,6 +256,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     pageButton.onclick = () => {
       updatePageInUrl(i);
       fetchJobs(i);
+      window.scrollTo({ top: 0, behavior: 'smooth' }); 
     };
     if (i === currentPage) pageButton.classList.add("active");
     paginationContainer.appendChild(pageButton);
@@ -268,6 +270,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     nextButton.onclick = () => {
       updatePageInUrl(currentPage + 1);
       fetchJobs(currentPage + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     paginationContainer.appendChild(nextButton);
   }
