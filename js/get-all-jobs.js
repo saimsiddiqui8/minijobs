@@ -243,11 +243,9 @@ function generatePaginationButtons(totalPages, currentPage) {
     prevButton.onclick = () => {
       updatePageInUrl(currentPage - 1);
       fetchJobs(currentPage - 1).then(() => {
-        const firstJob = document.getElementById("jobs-found");
+        const firstJob = document.querySelector("container-xxl pb-5 pt-2");
         if (firstJob) {
-          const yOffset = -10; // Scroll 10px above the element
-          const y = firstJob.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: "smooth" });
+          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       });
     };
@@ -262,11 +260,9 @@ function generatePaginationButtons(totalPages, currentPage) {
     pageButton.onclick = () => {
       updatePageInUrl(i);
       fetchJobs(i).then(() => {
-        const firstJob = document.getElementById("jobs-found");
+        const firstJob = document.querySelector("container-xxl pb-5 pt-2");
         if (firstJob) {
-          const yOffset = -10; // Scroll 10px above the element
-          const y = firstJob.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: "smooth" });
+          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       });
     };
@@ -282,11 +278,9 @@ function generatePaginationButtons(totalPages, currentPage) {
     nextButton.onclick = () => {
       updatePageInUrl(currentPage + 1);
       fetchJobs(currentPage + 1).then(() => {
-        const firstJob = document.getElementById("jobs-found");
+        const firstJob = document.querySelector("container-xxl pb-5 pt-2");
         if (firstJob) {
-          const yOffset = -10; // Scroll 10px above the element
-          const y = firstJob.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: "smooth" });
+          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       });
     };

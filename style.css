@@ -611,6 +611,28 @@ li.nav-item.megamenu::marker {
   margin-top: 130px;
 }
 
+/* suggestions */
+.autocomplete-results {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+  z-index: 10;
+  margin-top: 2px;
+}
+
+.autocomplete-results li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-results li:hover {
+  background: #f0f0f0;
+}
+
+
 /* Google Maps  */
 
 .map-wrapper {
@@ -636,7 +658,8 @@ li.nav-item.megamenu::marker {
   width: 100%;
   height: 200px;
   border-radius: 10px;
-  border: 1px solid #0d6efd10; /* subtle border */
+  border: 1px solid #0d6efd10;
+  /* subtle border */
   transition: all 0.3s ease;
 }
 
