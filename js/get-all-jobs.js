@@ -189,7 +189,7 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
       const url = `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`;
       window.open(url, '_blank');
     });
-    
+
     const jobSchema = {
       "@context": "https://schema.org",
       "@type": "JobPosting",
@@ -242,8 +242,12 @@ function generatePaginationButtons(totalPages, currentPage) {
     prevButton.classList.add("pagination-btn");
     prevButton.onclick = () => {
       updatePageInUrl(currentPage - 1);
-      fetchJobs(currentPage - 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      fetchJobs(currentPage - 1).then(() => {
+        const firstJob = document.querySelector(".job-item");
+        if (firstJob) {
+          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
     };
     paginationContainer.appendChild(prevButton);
   }
@@ -255,8 +259,12 @@ function generatePaginationButtons(totalPages, currentPage) {
     pageButton.classList.add("pagination-btn");
     pageButton.onclick = () => {
       updatePageInUrl(i);
-      fetchJobs(i);
-      window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      fetchJobs(i).then(() => {
+        const firstJob = document.querySelector(".job-item");
+        if (firstJob) {
+          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
     };
     if (i === currentPage) pageButton.classList.add("active");
     paginationContainer.appendChild(pageButton);
@@ -269,8 +277,12 @@ function generatePaginationButtons(totalPages, currentPage) {
     nextButton.classList.add("pagination-btn");
     nextButton.onclick = () => {
       updatePageInUrl(currentPage + 1);
-      fetchJobs(currentPage + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      fetchJobs(currentPage + 1).then(() => {
+        const firstJob = document.querySelector(".job-item");
+        if (firstJob) {
+          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
     };
     paginationContainer.appendChild(nextButton);
   }
