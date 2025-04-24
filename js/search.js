@@ -3,7 +3,7 @@ const keywordInput = document.getElementById("keyword");
 const locationInput = document.getElementById("location");
 const suggestionsContainer = document.createElement("ul");
 suggestionsContainer.classList.add("autocomplete-results");
-document.querySelector(".search").appendChild(suggestionsContainer);
+document.querySelector(".searches2").appendChild(suggestionsContainer);
 
 let debounceTimer;
 
