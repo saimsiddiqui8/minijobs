@@ -598,7 +598,6 @@
     keywordInput.parentElement.appendChild(suggestions);
 
     let debounceTimer;
-
     keywordInput.addEventListener("input", (e) => {
       const query = e.target.value;
       clearTimeout(debounceTimer);

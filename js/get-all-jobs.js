@@ -19,61 +19,53 @@ function updatePageInUrl(page) {
   window.history.pushState({}, "", url);
 }
 
-
-async function jobFilter(kw, page = 1, limit = 15) {
+async function jobFilter(keyword, page = 1, limit = 15) {
   try {
-    const response = await fetch(
-      `https://minijob-backend.vercel.app/api/v1/job/stepstone?page=${page}&limit=${limit}`,
-    );
+    const URL = `${BASE_URL}job/search?q=${encodeURIComponent(keyword)}&page=${page}&limit=${limit}`;
+    const response = await fetch(URL);
     if (!response.ok) throw new Error("Failed to fetch jobs");
-    const xmlData = await response.text();
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xmlData, "application/xml");
-    const jobs = xmlDoc.getElementsByTagName("job");
-    const jobContainer = document.getElementById("job-container");
 
-    Array.from(jobs).forEach((job) => {
-      const title = job.getElementsByTagName("title")[0].textContent;
-      let description = job.getElementsByTagName("description")[0].textContent;
-      const location = job.getElementsByTagName("location")[0].textContent;
-      const companyName =
-        job.getElementsByTagName("companyName")[0].textContent;
-      const jobUrl = job.getElementsByTagName("url")[0].textContent;
-      const date = job.getElementsByTagName("date")[0].textContent;
-      const companyLogo =
-        job.getElementsByTagName("company_logo")[0]?.textContent ||
-        "https://via.placeholder.com/150";
+    const result = await response.json();
+    const jobs = result.data; // assume jobs come in data array
 
-      if (title.includes(kw)) {
-        const jobCard = document.createElement("div");
-        jobCard.classList.add("job-card");
-        description = decodeHtml(description).slice(0, 150) + "...";
-        jobCard.innerHTML = `
-                <div onClick="window.open('${jobUrl}', '_blank')">
-                    <div class="text-end" id="datePosted">Date posted: ${date}</div>
-                    <div class="d-flex">
-                      <img src="${companyLogo}" alt="Company Logo" class="company-logo" />
-                          <div>
-                            <div class="job-company">Company: ${companyName}</div>
-                            <div class="job-location">Location: ${location}</div>
-                          </div>
-                    </div>
-                    <div class="job-title">${title}</div>
-                    <div class="job-description">${description}</div>
-                    <a  target="_blank" href="${jobUrl}" target="_blank" class="job-link">Apply Now</a>
-                </div>
-                `;
-        jobContainer.appendChild(jobCard);
-
-      }
+    // Normalize and filter client-side in case backend doesn't filter both title + description
+    const filteredJobs = jobs.filter(job => {
+      const title = job.title?.toLowerCase() || "";
+      const desc = job.description?.replace(/<[^>]*>/g, "").toLowerCase(); // strip HTML tags
+      const kw = keyword.toLowerCase();
+      return title.includes(kw) || desc.includes(kw);
     });
+
+    updateJobInfo(result.data.total, page, result.data.totalPages);
+    insertJobsinUi(filteredJobs, 1, 1); // display results
   } catch (error) {
-    console.error("Error fetching jobs:", error);
+    console.error("Error filtering jobs:", error);
   } finally {
     isLoading = false;
     toggleLoader(false);
   }
 }
+
+
+
+document.getElementById("searchButton").addEventListener("click", () => {
+  const keyword = document.getElementById("keyword").value.trim();
+  const jobContainer = document.getElementById("job-container");
+  const noJobsSection = document.getElementById("no-jobs");
+  const paginationContainer = document.getElementById("pagination-container");
+
+  // Reset UI
+  jobContainer.innerHTML = "";
+  noJobsSection.style.display = "none";
+  paginationContainer.style.display = "none";
+
+  if (keyword.length < 2) {
+    alert("Please enter at least 2 characters");
+    return;
+  }
+
+  jobFilter(keyword.toLowerCase(), 1, limit);
+});
 
 // Function to fetch paginated jobs
 async function fetchJobs(page = 1, limit = 12) {
