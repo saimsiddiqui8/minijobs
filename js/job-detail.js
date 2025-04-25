@@ -8,6 +8,20 @@ document.getElementById('share-li').href = `https://www.linkedin.com/sharing/sha
 document.getElementById('share-wa').href = `https://api.whatsapp.com/send?text=Check%20out%20this%20job:%20${currentUrl}`;
 document.getElementById('share-mail').href = `mailto:?subject=Check%20out%20this%20job&body=${currentUrl}`;
 
+function showJobExpiredMessage() {
+    document.querySelector('.col-lg-8').innerHTML = `
+        <div class="text-center py-5">
+            <h2 class="text-danger mb-4">This job is expired or no longer available.</h2>
+            <a href="/" class="btn btn-primary">Back to Homepage</a>
+        </div>
+    `;
+    document.title = 'Job Expired | MiniJobGermany.de';
+    document.querySelector('meta[name="description"]').setAttribute(
+        'content',
+        'This job listing has expired or is no longer available on MiniJobGermany.de.'
+    );
+}
+
 async function loadJobDetail() {
     try {
         const urlParams = new URLSearchParams(window.location.search);
@@ -18,10 +32,17 @@ async function loadJobDetail() {
         }
 
         const response = await fetch(`${BASE_URL}job/get-job/${id}`);
-        if (!response.ok) throw new Error("Failed to fetch job");
-
+        if (!response.ok) {
+            showJobExpiredMessage();
+            return;
+        }
+        
         const job = await response.json();
-
+        if (!job || !job.data) {
+            showJobExpiredMessage();
+            return;
+        }
+        
         // Set Meta title and desc
         document.title = `${job.data.title} | MiniJobGermany.de`;
         document.querySelector('meta[name="description"]').setAttribute(

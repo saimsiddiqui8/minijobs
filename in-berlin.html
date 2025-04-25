@@ -13,15 +13,15 @@
   <link href="img/favicon.png" rel="icon" alt="Minijob Germany.de" />
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-45J6RCD301');
-</script>
+    gtag('config', 'G-45J6RCD301');
+  </script>
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -157,7 +157,7 @@
           <div class="row g-2 input">
             <div class="col-md-8">
               <div class="row g-2">
-                <div class="col-md-6 d-flex align-items-center keyword ps-3">
+                <div class="col-md-6 d-flex align-items-center keyword">
                   <i class="fa-solid fa-magnifying-glass ps-3" style="font-size: 22px"></i>
                   <input type="text" id="keyword" class="form-control border-0 py-3" placeholder="Search Jobs" />
                 </div>
@@ -587,6 +587,57 @@
 
   <!-- Template Javascript -->
   <script src="js/get-all-jobs.js"></script>
+  <script>
+
+    const keywordInput = document.getElementById("keyword");
+
+    // Create suggestions container
+    const suggestions = document.createElement("ul");
+    suggestions.className = "autocomplete-city-results";
+    keywordInput.parentElement.style.position = "relative";
+    keywordInput.parentElement.appendChild(suggestions);
+
+    let debounceTimer;
+
+    keywordInput.addEventListener("input", (e) => {
+      const query = e.target.value;
+      clearTimeout(debounceTimer);
+
+      if (query.length < 2) {
+        suggestions.innerHTML = "";
+        return;
+      }
+
+      debounceTimer = setTimeout(async () => {
+        try {
+          const res = await fetch(`${BASE_URL}job/suggestions?q=${encodeURIComponent(query)}`);
+          const data = await res.json();
+
+          suggestions.innerHTML = data
+            .filter(item => item.type !== "city") // Hide cities
+            .map(item => `
+              <li onclick="selectSuggestion('${item.value}', '${item.type}')">
+                <strong>${item.value}</strong>
+              </li>
+            `).join("");
+        } catch (err) {
+          console.error("Autocomplete error:", err);
+        }
+      }, 300);
+    });
+
+    function selectSuggestion(value, type) {
+      keywordInput.value = value;
+      suggestions.innerHTML = "";
+      fetchJobs(1); // re-fetch jobs if needed
+    }
+
+    document.addEventListener("click", (e) => {
+      if (!suggestions.contains(e.target) && e.target !== keywordInput) {
+        suggestions.innerHTML = "";
+      }
+    });
+  </script>
 
 </body>
 
