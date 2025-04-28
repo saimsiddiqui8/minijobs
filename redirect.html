@@ -1,189 +1,211 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Minijob Germany - Redirecting... | Apply Now</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <meta name="description" content="Redirecting MiniJob Germany" />
     <link href="img/favicon.png" rel="icon" alt="Minijob Germany.de" />
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png" />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"
+    ></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-45J6RCD301');
+      gtag("config", "G-45J6RCD301");
     </script>
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #f8f9fa, #e9ecef);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: #343a40;
-            animation: fadeIn 1s ease-in-out;
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #343a40;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
 
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 10px;
+        animation: popIn 0.6s ease-in-out forwards;
+      }
+
+      @keyframes popIn {
+        from {
+          transform: translateY(-20px);
+          opacity: 0;
         }
 
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 10px;
-            animation: popIn 0.6s ease-in-out forwards;
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .loader {
+        width: 60px;
+        height: 60px;
+        border: 6px solid #dee2e6;
+        border-top: 6px solid #007bff;
+        border-radius: 50%;
+        animation:
+          spin 0.5s linear infinite,
+          pulse 1s ease-in-out infinite;
+        margin: 20px 0;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
 
-        @keyframes popIn {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
         }
 
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 6px solid #dee2e6;
-            border-top: 6px solid #007bff;
-            border-radius: 50%;
-            animation: spin 0.5s linear infinite, pulse 1s ease-in-out infinite;
-            margin: 20px 0;
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      h2 {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 1.4rem;
+        color: #495057;
+        animation: fadeInText 1.2s ease;
+      }
+
+      @keyframes fadeInText {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
         }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        h2 {
-            margin: 10px 0;
-            text-align: center;
-            font-size: 1.4rem;
-            color: #495057;
-            animation: fadeInText 1.2s ease;
-        }
-
-        @keyframes fadeInText {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fallback {
-            font-size: 0.95rem;
-            color: #6c757d;
-            text-align: center;
-            margin-top: 10px;
-        }
+      .fallback {
+        font-size: 0.95rem;
+        color: #6c757d;
+        text-align: center;
+        margin-top: 10px;
+      }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const fullPath = window.location.pathname;
-            const queryString = window.location.search;
-            const redirectBase = "/redirect/";
+      document.addEventListener("DOMContentLoaded", () => {
+        const fullPath = window.location.pathname;
+        const queryString = window.location.search;
+        const redirectBase = "/redirect/";
 
-            if (!fullPath.startsWith(redirectBase)) {
-                document.querySelector('h2').textContent = "Invalid redirect path.";
-                document.querySelector('.loader').style.display = "none";
-                return;
-            }
-
-            // Hide loader until verified
-            document.querySelector('.loader').style.display = "none";
-
-            // Show reCAPTCHA verification message
-            document.querySelector('h2').textContent = "Please verify you're human to continue";
-
-            // Append reCAPTCHA widget container
-            const recaptchaDiv = document.createElement("div");
-            recaptchaDiv.className = "g-recaptcha";
-            recaptchaDiv.setAttribute("data-sitekey", "6LeIkgsrAAAAAH_TYLbWpH1S3GbQXeXUHRDvz-qd");
-            recaptchaDiv.setAttribute("data-callback", "onHumanVerified");
-            document.body.appendChild(recaptchaDiv);
-
-            // Render reCAPTCHA
-            if (typeof grecaptcha !== "undefined" && grecaptcha.render) {
-            grecaptcha.ready(() => {
-                grecaptcha.render(recaptchaDiv);
-            });
+        if (!fullPath.startsWith(redirectBase)) {
+          document.querySelector("h2").textContent = "Invalid redirect path.";
+          document.querySelector(".loader").style.display = "none";
+          return;
         }
 
-            // Save destination URL for later redirection
-            window.redirectAfterVerification = `https://${decodeURIComponent(fullPath.slice(redirectBase.length))}${queryString}`;
-            console.log(`https://${decodeURIComponent(fullPath.slice(redirectBase.length))}${queryString}`)
-        });
+        // Hide loader until verified
+        document.querySelector(".loader").style.display = "none";
 
-        function onHumanVerified() {
-            document.querySelector('h2').textContent = "Verification successful. Redirecting...";
-            document.querySelector('.loader').style.display = "block";
+        // Show reCAPTCHA verification message
+        document.querySelector("h2").textContent =
+          "Please verify you're human to continue";
 
-            setTimeout(() => {
-                window.location.href = window.redirectAfterVerification;
-            }, 1500);
+        // Append reCAPTCHA widget container
+        const recaptchaDiv = document.createElement("div");
+        recaptchaDiv.className = "g-recaptcha";
+        recaptchaDiv.setAttribute(
+          "data-sitekey",
+          "6LeIkgsrAAAAAH_TYLbWpH1S3GbQXeXUHRDvz-qd",
+        );
+        recaptchaDiv.setAttribute("data-callback", "onHumanVerified");
+        document.body.appendChild(recaptchaDiv);
+
+        // Render reCAPTCHA
+        if (typeof grecaptcha !== "undefined" && grecaptcha.render) {
+          grecaptcha.ready(() => {
+            grecaptcha.render(recaptchaDiv);
+          });
         }
+
+        // Save destination URL for later redirection
+        window.redirectAfterVerification = `https://${decodeURIComponent(fullPath.slice(redirectBase.length))}${queryString}`;
+        console.log(
+          `https://${decodeURIComponent(fullPath.slice(redirectBase.length))}${queryString}`,
+        );
+      });
+
+      function onHumanVerified() {
+        document.querySelector("h2").textContent =
+          "Verification successful. Redirecting...";
+        document.querySelector(".loader").style.display = "block";
+
+        setTimeout(() => {
+          window.location.href = window.redirectAfterVerification;
+        }, 1500);
+      }
     </script>
-
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -191,14 +213,15 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     <link rel="canonical" href="https://minijobgermany.de/redirect" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="logo">MinijobGermany</div>
     <div class="loader"></div>
     <h2>Redirecting to job application…</h2>
-    <p class="fallback">If you're not redirected automatically, please check the job link or try again later.</p>
-</body>
-
+    <p class="fallback">
+      If you're not redirected automatically, please check the job link or try
+      again later.
+    </p>
+  </body>
 </html>

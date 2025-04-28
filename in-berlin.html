@@ -43,26 +43,26 @@
   <link href="css/style.css" rel="stylesheet" />
   <link rel="canonical" href="https://minijobgermany.de/minijob-berlin" />
 
-    <!-- Choices.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <!-- Choices.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 
-    <!-- Choices.js JS -->
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const cityDropdown = document.getElementById('cityDropdown');
-        const choices = new Choices(cityDropdown, {
-          searchEnabled: true,
-          itemSelectText: '',
-          placeholder: true,
-          placeholderValue: 'Select City',
-          removeItemButton: true,
-          searchChoices: false, // Important
-          renderSelectedChoices: 'always', // Important
-          shouldSort: false,
-        });
+  <!-- Choices.js JS -->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cityDropdown = document.getElementById('cityDropdown');
+      const choices = new Choices(cityDropdown, {
+        searchEnabled: true,
+        itemSelectText: '',
+        placeholder: true,
+        placeholderValue: 'Select City',
+        removeItemButton: true,
+        searchChoices: false, // Important
+        renderSelectedChoices: 'always', // Important
+        shouldSort: false,
       });
-    </script>
+    });
+  </script>
 </head>
 
 <body data-city="berlin">
@@ -193,69 +193,69 @@
               </button>
             </div>
           </div>
-            <div class="d-flex justify-content-center mt-2">
-              <div class="d-flex flex-wrap gap-3">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Part-time" id="partTime" checked>
-                  <label class="form-check-label" for="partTime">
-                    Part-time
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Full-time" id="fullTime" checked>
-                  <label class="form-check-label" for="fullTime">
-                    Full-time
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Remote" id="remote">
-                  <label class="form-check-label" for="remote">
-                    Remote
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Internship" id="internship">
-                  <label class="form-check-label" for="internship">
-                    Internship
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Contract" id="contract">
-                  <label class="form-check-label" for="contract">
-                    Contract
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Temporary" id="temporary">
-                  <label class="form-check-label" for="temporary">
-                    Temporary
-                  </label>
-                </div>
+          <div class="d-flex justify-content-center mt-2">
+            <div class="d-flex flex-wrap gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Part-time" id="partTime" checked>
+                <label class="form-check-label" for="partTime">
+                  Part-time
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Full-time" id="fullTime" checked>
+                <label class="form-check-label" for="fullTime">
+                  Full-time
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Remote" id="remote">
+                <label class="form-check-label" for="remote">
+                  Remote
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Internship" id="internship">
+                <label class="form-check-label" for="internship">
+                  Internship
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Contract" id="contract">
+                <label class="form-check-label" for="contract">
+                  Contract
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Temporary" id="temporary">
+                <label class="form-check-label" for="temporary">
+                  Temporary
+                </label>
               </div>
             </div>
           </div>
-          <div class="suggestions mt-4 mb-0 pb-0">
-            <p>
-              More Jobs :
-              <a target="_blank" href="mart-jobs" class="trending-keywords">Mart</a>
-              <a target="_blank" href="verwaltung-jobs" class="trending-keywords">Verwaltung</a>
-              <a target="_blank" href="chat-unterstuetzung-jobs" class="trending-keywords">Chat-Unterstützung</a>
-              <a target="_blank" href="kellner-jobs" class="trending-keywords">Kellner</a>
-              <a target="_blank" href="immobilienmakler-jobs" class="trending-keywords">Immobilienmakler</a>
-              <a target="_blank" href="verlader-jobs" class="trending-keywords">Verlader</a>
-              <a target="_blank" href="bueroassistent-jobs" class="trending-keywords">Büroassistent</a>
-              <a target="_blank" href="veranstaltungspersonal-jobs" class="trending-keywords">Veranstaltungspersonal</a>
-              <a target="_blank" href="kurierdienst-jobs" class="trending-keywords">Kurierdienst</a>
-            </p>
-          </div>
-          <!-- <div class="d-flex justify-content-between align-items-center mb-2">
+        </div>
+        <div class="suggestions mt-4 mb-0 pb-0">
+          <p>
+            More Jobs :
+            <a target="_blank" href="mart-jobs" class="trending-keywords">Mart</a>
+            <a target="_blank" href="verwaltung-jobs" class="trending-keywords">Verwaltung</a>
+            <a target="_blank" href="chat-unterstuetzung-jobs" class="trending-keywords">Chat-Unterstützung</a>
+            <a target="_blank" href="kellner-jobs" class="trending-keywords">Kellner</a>
+            <a target="_blank" href="immobilienmakler-jobs" class="trending-keywords">Immobilienmakler</a>
+            <a target="_blank" href="verlader-jobs" class="trending-keywords">Verlader</a>
+            <a target="_blank" href="bueroassistent-jobs" class="trending-keywords">Büroassistent</a>
+            <a target="_blank" href="veranstaltungspersonal-jobs" class="trending-keywords">Veranstaltungspersonal</a>
+            <a target="_blank" href="kurierdienst-jobs" class="trending-keywords">Kurierdienst</a>
+          </p>
+        </div>
+        <!-- <div class="d-flex justify-content-between align-items-center mb-2">
             <p class="mb-0 text-primary" style="font-size: 14px; cursor: pointer;">More Filters</p>
             <p class="mb-0 text-primary" style="font-size: 14px; cursor: pointer;">Clear Filters</p>
           </div> -->
-          
-        </div>
+
       </div>
-    </section>
+  </div>
+  </section>
   </div>
 
   <!-- </div> -->

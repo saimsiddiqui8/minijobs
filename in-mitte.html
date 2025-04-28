@@ -14,17 +14,22 @@
       content="Are you looking for a mini job in Mitte? We list many part-time jobs. Easy to apply, flexible working hours."
     />
     <link href="img/favicon.png" rel="icon" alt="Minijob Germany.de" />
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-45J6RCD301');
-</script>
+      gtag("config", "G-45J6RCD301");
+    </script>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,8 +53,6 @@
     />
 
     <!-- Libraries Stylesheet -->
-     
-     
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -438,35 +441,46 @@
       <div class="container-fluid">
         <div class="container-md">
           <div class="row">
-          <div class="col-lg-8 col-md-8 col-12 col-sm-12 col-xxl-8">
-            <div class="container-md">
-              <div class="d-flex justify-content-between align-items-center">
-                <p id="jobs-found">We found 0 jobs for you!</p>
-                <span class="page-info" id="page-info">Page 1 of 0</span>
-              </div>
-              <!-- job start -->
-              <div id="job-container"></div>
-              <!-- job end -->
-
-              <!-- Pagination Controls -->
-              <div class="pagination-container text-center my-3" id="pagination-container">
-                <!-- Pagination buttons will be added dynamically here -->
-              </div>
-
-              <!-- No Jobs Found Section -->
-              <div id="no-jobs" class="no-jobs-wrapper" style="display: none;">
-                <div class="icon-wrapper">
-                  <img src="https://cdn-icons-png.flaticon.com/512/10437/10437306.png" alt="No Jobs"
-                    class="pulse-icon" />
+            <div class="col-lg-8 col-md-8 col-12 col-sm-12 col-xxl-8">
+              <div class="container-md">
+                <div class="d-flex justify-content-between align-items-center">
+                  <p id="jobs-found">We found 0 jobs for you!</p>
+                  <span class="page-info" id="page-info">Page 1 of 0</span>
                 </div>
-                <h3>No Jobs Found in <span id="city-name">this city</span></h3>
-                <p>We couldn't find any listings for this location. Try a different city or check back later.</p>
-                <a href="/" class="cta-btn">Go Back</a>
-              </div>
+                <!-- job start -->
+                <div id="job-container"></div>
+                <!-- job end -->
 
-              <div class="loader" id="loader"></div>
+                <!-- Pagination Controls -->
+                <div
+                  class="pagination-container text-center my-3"
+                  id="pagination-container"
+                >
+                  <!-- Pagination buttons will be added dynamically here -->
+                </div>
+
+                <!-- No Jobs Found Section -->
+                <div id="no-jobs" class="no-jobs-wrapper" style="display: none">
+                  <div class="icon-wrapper">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/10437/10437306.png"
+                      alt="No Jobs"
+                      class="pulse-icon"
+                    />
+                  </div>
+                  <h3>
+                    No Jobs Found in <span id="city-name">this city</span>
+                  </h3>
+                  <p>
+                    We couldn't find any listings for this location. Try a
+                    different city or check back later.
+                  </p>
+                  <a href="/" class="cta-btn">Go Back</a>
+                </div>
+
+                <div class="loader" id="loader"></div>
+              </div>
             </div>
-          </div>
             <div class="col-xxl-4 col-lg-4 col-md-4 col-12 col-sm-12">
               <div>
                 <section id="about-our-web" class="shadow">
@@ -755,8 +769,13 @@
         <div class="google-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.1640150449757!2d12.443471876154968!3d51.363281421222055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6573717169d2d%3A0xb2996461c2c5affe!2sMinijob%20Germany.de!5e0!3m2!1sen!2s!4v1743758961069!5m2!1sen!2s"
-            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
           </iframe>
         </div>
       </div>
@@ -785,7 +804,7 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
- 
+
     <script>
       const navbar = document.querySelector("nav");
       window.addEventListener("scroll", () => {
@@ -803,6 +822,5 @@
 
     <!-- Template Javascript -->
     <script src="js/get-all-jobs.js"></script>
-     
   </body>
 </html>

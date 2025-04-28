@@ -1,176 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Minijob Germany - Job Detail | Apply Now</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <meta name="description" content="Job detail MiniJob Germany" />
     <link href="/img/favicon.png" rel="icon" alt="Minijob Germany.de" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-45J6RCD301');
-</script>
+      gtag("config", "G-45J6RCD301");
+    </script>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Libraries Stylesheet -->
 
     <style>
+      .share-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .share-title {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 12px;
+        color: #031d2c;
+      }
+
+      .share-icons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .share-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background-color: #031d2c;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .share-icon:hover {
+        background-color: #065e9f;
+        transform: scale(1.1);
+      }
+
+      .share-icon i {
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+      }
+
+      #job-description {
+        margin-bottom: 30px;
+      }
+
+      .breadcrumb-wrapper {
+        background: #f8f9fa;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .breadcrumb {
+        margin: 0 !important;
+        background: none;
+        padding: 0 !important;
+        font-size: 14px;
+      }
+
+      .breadcrumb-item + .breadcrumb-item::before {
+        content: ">";
+        padding: 0 8px;
+        color: #6c757d;
+      }
+
+      .breadcrumb a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .breadcrumb a:hover {
+        color: #00488b;
+        text-decoration: underline;
+      }
+
+      .breadcrumb-item.active {
+        font-weight: 600;
+        color: #6c757d;
+      }
+
+      #job-description {
+        background-color: #ffffff;
+        padding: 32px;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        font-size: 16.5px;
+        line-height: 1.9;
+        color: #212529;
+        transition: box-shadow 0.3s ease;
+      }
+
+      #job-description:hover {
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      #job-description h4,
+      #job-description h5 {
+        font-weight: 600;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        color: #044175;
+      }
+
+      #job-description ul {
+        padding-left: 1.2rem;
+        margin-bottom: 0;
+        list-style-type: disc;
+      }
+
+      #job-description ul li {
+        margin-bottom: 12px;
+        font-size: 15.8px;
+        color: #444;
+        position: relative;
+        padding-left: 8px;
+      }
+
+      #job-description ul li::marker {
+        color: #044175;
+        font-size: 1.1rem;
+      }
+
+      @media (max-width: 768px) {
         .share-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+          align-items: center;
+          text-align: center;
         }
-
-        .share-title {
-            font-weight: 700;
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #031d2c;
-        }
-
-        .share-icons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .share-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background-color: #031d2c;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: 0.3s;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .share-icon:hover {
-            background-color: #065e9f;
-            transform: scale(1.1);
-        }
-
-        .share-icon i {
-            text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-        }
-
-
-        #job-description {
-            margin-bottom: 30px;
-        }
-
-        .breadcrumb-wrapper {
-            background: #f8f9fa;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .breadcrumb {
-            margin: 0 !important;
-            background: none;
-            padding: 0 !important;
-            font-size: 14px;
-        }
-
-
-        .breadcrumb-item+.breadcrumb-item::before {
-            content: ">";
-            padding: 0 8px;
-            color: #6c757d;
-        }
-
-        .breadcrumb a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .breadcrumb a:hover {
-            color: #00488b;
-            text-decoration: underline;
-        }
-
-        .breadcrumb-item.active {
-            font-weight: 600;
-            color: #6c757d;
-        }
-
-        #job-description {
-            background-color: #ffffff;
-            padding: 32px;
-            border-radius: 12px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-            font-size: 16.5px;
-            line-height: 1.9;
-            color: #212529;
-            transition: box-shadow 0.3s ease;
-        }
-
-        #job-description:hover {
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        #job-description h4,
-        #job-description h5 {
-            font-weight: 600;
-            margin-top: 24px;
-            margin-bottom: 16px;
-            color: #044175;
-        }
-
-        #job-description ul {
-            padding-left: 1.2rem;
-            margin-bottom: 0;
-            list-style-type: disc;
-        }
-
-        #job-description ul li {
-            margin-bottom: 12px;
-            font-size: 15.8px;
-            color: #444;
-            position: relative;
-            padding-left: 8px;
-        }
-
-        #job-description ul li::marker {
-            color: #044175;
-            font-size: 1.1rem;
-        }
-
-
-
-        @media (max-width: 768px) {
-            .share-wrapper {
-                align-items: center;
-                text-align: center;
-            }
-        }
+      }
     </style>
-
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
@@ -178,11 +188,12 @@
     <!-- Template Stylesheet -->
     <link href="/css/style.css" rel="stylesheet" />
     <link rel="canonical" href="https://minijobgermany.de/minijob-berlin" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Navbar Start -->
-    <nav style="
+    <nav
+      style="
         z-index: 1000 !important;
         background: linear-gradient(
           90deg,
@@ -190,157 +201,330 @@
           #074a91 50%,
           #044175 100%
         );
-      " class="navbar navbar-expand-lg navbar-light">
-        <a href="/" class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5">
-            <img class="logo" src="/img/logo2.webp" width="110px" alt="logo" />
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a target="_blank" class="nav-link dropdown-toggle" id="jobsMenuLink" href="#"
-                    data-bs-toggle="dropdown">More Jobs</a>
-                <div class="dropdown-menu megamenu mx-5" role="menu">
-                    <ul class="navbar-navs">
-                        <li class="nav-item megamenu">
-                            <div class="megamenu-content" aria-labelledby="navbarDropdownMenuLink">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-6">
-                                        <a target="_blank" href="#">
-                                            <p style="color: #000; font-weight: 700">
-                                                JOBS BY CITY
-                                            </p>
-                                        </a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-berlin">Berlin</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-hamburg">Hamburg</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-munich">Munich</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-koln">Koln</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-frankfurt">Frankfurt</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-leipzig">Leipzig</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-dortmund">Dortmund</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-bonn">Bonn</a>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <a target="_blank" href="/">
-                                            <p style="color: #000; font-weight: 700">
-                                                JOBS IN TOWN
-                                            </p>
-                                        </a>
-                                        <a target="_blank" class="dropdown-item"
-                                            href="/minijob-charlottenburg">Charlottenburg</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-kreuzberg">Kreuzberg</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-tempelhof">Tempelhof</a>
-                                        <a target="_blank" class="dropdown-item"
-                                            href="/minijob-treptow-kopenick">Treptow-Köpenick</a>
-                                        <a target="_blank" class="dropdown-item" href="/minijob-frankfurt-oder">Frankfurt
-                                            (Oder)</a>
-                                        <a target="_blank" class="dropdown-item"
-                                            href="/minijob-brandenburg">Brandenburg</a>
-                                        <a target="_blank" class="dropdown-item"
-                                            href="/minijob-oranienburg">Oranienburg</a>
-                                        <a target="_blank" class="dropdown-item"
-                                            href="/minijob-eberswalde">Eberswalde</a>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6">
-                                        <a target="_blank" href="/">
-                                            <p style="color: #000; font-weight: 700">MORE JOBS</p>
-                                        </a>
-                                        <a target="_blank" class="dropdown-item" href="/english-speaking-jobs">English
-                                            Jobs</a>
-                                        <a target="_blank" class="dropdown-item" href="/weekend-jobs">Weekend Jobs</a>
-                                        <a target="_blank" class="dropdown-item" href="/student-jobs">Students Jobs</a>
-                                        <a target="_blank" class="dropdown-item" href="/part-time-jobs">Part Time
-                                            Jobs</a>
-                                        <a target="_blank" class="dropdown-item" href="/450-euro-jobs">450 Euro Jobs</a>
-                                        <a target="_blank" class="dropdown-item" href="/13-euro-hourly-job">13 € Hourly
-                                            Job</a>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6">
-                                        <a target="_blank" href="/">
-                                            <p style="color: #000; font-weight: 700">
-                                                MORE JOB TYPES
-                                            </p>
-                                        </a>
-                                        <a target="_blank" class="dropdown-item" href="/kuechen-jobs">Kuechen</a>
-                                        <a target="_blank" class="dropdown-item" href="/finanzwesen-jobs">Finanzwesen</a>
-                                        <a target="_blank" class="dropdown-item" href="/bauwesen-jobs">Bauwesen</a>
-                                        <a target="_blank" class="dropdown-item"
-                                            href="/pharmaindustrie-jobs">Pharmaindustrie</a>
-                                        <a target="_blank" class="dropdown-item"
-                                            href="/lebensmittel-getraenke-jobs">Lebensmittel & Getränke</a>
-                                        <a target="_blank" class="dropdown-item"
-                                            href="/personalwesen-jobs">Personalwesen</a>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6">
-                                        <a target="_blank" href="/">
-                                            <p style="color: #000; font-weight: 700">MORE</p>
-                                        </a>
-                                        <a target="_blank" class="dropdown-item" href="/contact-us">Contact Us</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+      "
+      class="navbar navbar-expand-lg navbar-light"
+    >
+      <a
+        href="/"
+        class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5"
+      >
+        <img class="logo" src="/img/logo2.webp" width="110px" alt="logo" />
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a
+            target="_blank"
+            class="nav-link dropdown-toggle"
+            id="jobsMenuLink"
+            href="#"
+            data-bs-toggle="dropdown"
+            >More Jobs</a
+          >
+          <div class="dropdown-menu megamenu mx-5" role="menu">
+            <ul class="navbar-navs">
+              <li class="nav-item megamenu">
+                <div
+                  class="megamenu-content"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                      <a target="_blank" href="#">
+                        <p style="color: #000; font-weight: 700">
+                          JOBS BY CITY
+                        </p>
+                      </a>
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-berlin"
+                        >Berlin</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-hamburg"
+                        >Hamburg</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-munich"
+                        >Munich</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-koln"
+                        >Koln</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-frankfurt"
+                        >Frankfurt</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-leipzig"
+                        >Leipzig</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-dortmund"
+                        >Dortmund</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-bonn"
+                        >Bonn</a
+                      >
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                      <a target="_blank" href="/">
+                        <p style="color: #000; font-weight: 700">
+                          JOBS IN TOWN
+                        </p>
+                      </a>
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-charlottenburg"
+                        >Charlottenburg</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-kreuzberg"
+                        >Kreuzberg</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-tempelhof"
+                        >Tempelhof</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-treptow-kopenick"
+                        >Treptow-Köpenick</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-frankfurt-oder"
+                        >Frankfurt (Oder)</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-brandenburg"
+                        >Brandenburg</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-oranienburg"
+                        >Oranienburg</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/minijob-eberswalde"
+                        >Eberswalde</a
+                      >
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                      <a target="_blank" href="/">
+                        <p style="color: #000; font-weight: 700">MORE JOBS</p>
+                      </a>
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/english-speaking-jobs"
+                        >English Jobs</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/weekend-jobs"
+                        >Weekend Jobs</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/student-jobs"
+                        >Students Jobs</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/part-time-jobs"
+                        >Part Time Jobs</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/450-euro-jobs"
+                        >450 Euro Jobs</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/13-euro-hourly-job"
+                        >13 € Hourly Job</a
+                      >
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                      <a target="_blank" href="/">
+                        <p style="color: #000; font-weight: 700">
+                          MORE JOB TYPES
+                        </p>
+                      </a>
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/kuechen-jobs"
+                        >Kuechen</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/finanzwesen-jobs"
+                        >Finanzwesen</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/bauwesen-jobs"
+                        >Bauwesen</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/pharmaindustrie-jobs"
+                        >Pharmaindustrie</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/lebensmittel-getraenke-jobs"
+                        >Lebensmittel & Getränke</a
+                      >
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/personalwesen-jobs"
+                        >Personalwesen</a
+                      >
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                      <a target="_blank" href="/">
+                        <p style="color: #000; font-weight: 700">MORE</p>
+                      </a>
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="/contact-us"
+                        >Contact Us</a
+                      >
+                    </div>
+                  </div>
                 </div>
-                <a target="_blank" href="/contact-us" class="nav-item nav-link">Contact</a>
-                <!-- <a  target="_blank" href="blogs" class="nav-item nav-link">Blogs</a> -->
-            </div>
+              </li>
+            </ul>
+          </div>
+          <a target="_blank" href="/contact-us" class="nav-item nav-link"
+            >Contact</a
+          >
+          <!-- <a  target="_blank" href="blogs" class="nav-item nav-link">Blogs</a> -->
         </div>
+      </div>
     </nav>
     <!-- Navbar End -->
 
     <!-- Job Detail Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <a href="javascript:void(0);" onclick="window.history.back();"
-                class="text-dark text-decoration-none mb-3 d-inline-block">
-                <i class="fa fa-arrow-left me-1"></i> Back to Jobs
-            </a>
-            <div class="row gy-5 gx-4">
-                <div class="col-lg-8">
-
-                    <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
-                        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-                            <li class="breadcrumb-item"><a href="/">MiniJobGermany <span
-                                        class="text-primary">.de</span></a></li>
-                            <!-- <li class="breadcrumb-item">
+      <div class="container">
+        <a
+          href="javascript:void(0);"
+          onclick="window.history.back();"
+          class="text-dark text-decoration-none mb-3 d-inline-block"
+        >
+          <i class="fa fa-arrow-left me-1"></i> Back to Jobs
+        </a>
+        <div class="row gy-5 gx-4">
+          <div class="col-lg-8">
+            <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+              <ol
+                class="breadcrumb"
+                itemscope
+                itemtype="https://schema.org/BreadcrumbList"
+              >
+                <li class="breadcrumb-item">
+                  <a href="/"
+                    >MiniJobGermany <span class="text-primary">.de</span></a
+                  >
+                </li>
+                <!-- <li class="breadcrumb-item">
                                 <a id="city-crumb-link" href="#">City</a>
                             </li> -->
-                            <li class="breadcrumb-item active" id="breadcrumb-title" aria-current="page">Loading...</li>
-                        </ol>
-                    </nav>
+                <li
+                  class="breadcrumb-item active"
+                  id="breadcrumb-title"
+                  aria-current="page"
+                >
+                  Loading...
+                </li>
+              </ol>
+            </nav>
 
-                    <div class="d-flex align-items-center mb-5">
-                        <div class="text-start ps-4">
-                            <h1 class="mb-3" id="job-title">Marketing Manager</h1>
-                            <span class="text-truncate me-3"><i class="fa fa-briefcase logo-icon me-2"></i>
-                                <span id="job-company">Berlin</span>
-                            </span>
-                            <span class="text-truncate me-3"><i class="fa fa-map-marker-alt me-2"></i>
-                                <span id="job-location">Berlin, DE</span>
-                            </span>
-                            <span class="text-truncate me-3">
-                                <i class="far fa-clock me-2"></i>
-                                <span id="job-type">Part Time</span>
-                            </span>
-                            <!-- <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>$123
+            <div class="d-flex align-items-center mb-5">
+              <div class="text-start ps-4">
+                <h1 class="mb-3" id="job-title">Marketing Manager</h1>
+                <span class="text-truncate me-3"
+                  ><i class="fa fa-briefcase logo-icon me-2"></i>
+                  <span id="job-company">Berlin</span>
+                </span>
+                <span class="text-truncate me-3"
+                  ><i class="fa fa-map-marker-alt me-2"></i>
+                  <span id="job-location">Berlin, DE</span>
+                </span>
+                <span class="text-truncate me-3">
+                  <i class="far fa-clock me-2"></i>
+                  <span id="job-type">Part Time</span>
+                </span>
+                <!-- <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>$123
                                     - $456</span> -->
-                        </div>
-                    </div>
+              </div>
+            </div>
 
-                    <hr class="my-3">
+            <hr class="my-3" />
 
-                    <div class="mb-5 job-description-box">
-                        <h4 class="mb-3">Job description</h4>
-                        <div id="job-description"> </div>
-                    </div>
+            <div class="mb-5 job-description-box">
+              <h4 class="mb-3">Job description</h4>
+              <div id="job-description"></div>
+            </div>
 
-                    <button class="btn btn-primary w-100" id="job-apply" type="submit">Apply Now</button>
-                    <p id="apply-msg" class="mt-2 text-danger"></p>
+            <button class="btn btn-primary w-100" id="job-apply" type="submit">
+              Apply Now
+            </button>
+            <p id="apply-msg" class="mt-2 text-danger"></p>
 
-                    <!-- <div class="">
+            <!-- <div class="">
                         <h4 class="mb-4">Apply For The Job</h4>
                         <form>
                             <div class="row g-3">
@@ -365,11 +549,10 @@
                             </div>
                         </form>
                     </div> -->
+          </div>
 
-                </div>
-
-                <div class="col-lg-4">
-                    <!-- <div id="jobdetail-sidebar" class=" text-white p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
+          <div class="col-lg-4">
+            <!-- <div id="jobdetail-sidebar" class=" text-white p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
                         <h4 class="mb-4 text-white">Job Summery</h4>
                         <p><i class="fa fa-angle-right text-primary me-2"></i>Published On: 01 Jan, 2045</p>
                         <p><i class="fa fa-angle-right text-primary me-2"></i>Vacancy: 123 Position</p>
@@ -378,53 +561,82 @@
                         <p><i class="fa fa-angle-right text-primary me-2"></i>Location: New York, USA</p>
                         <p class="m-0"><i class="fa fa-angle-right text-primary me-2"></i>Date Line: 01 Jan, 2045</p>
                     </div> -->
-                    <!-- <div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
+            <!-- <div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
                         <h4 class="mb-4">Company Detail</h4>
                         <p class="m-0">Ipsum dolor ipsum accusam stet et et diam dolores, sed rebum sadipscing elitr
                             vero dolores. Lorem dolore elitr justo et no gubergren sadipscing, ipsum et takimata
                             aliquyam et rebum est ipsum lorem diam. Et lorem magna eirmod est et et sanctus et, kasd
                             clita labore.</p>
                     </div> -->
-                    <!-- <div class="col-xxl-4 col-lg-4 col-md-4 col-12 col-sm-12"> -->
-                    <!-- <div> -->
-                    <section id="about-our-web" class="shadow">
-                        <h2 style="font-size: 20px" class="mt-1 mb-2 text-white">
-                            Willkommen auf MinijobGermany.de
-                        </h2>
-                        <p style="font-size: 13.5px">
-                            Finden Sie die besten Karrierechancen und bewerben Sie sich
-                            auf Nebenjobs in Deutschland mit MinijobGermany.de. Wenn Sie
-                            Student, Rentner oder Hausfrau sind und Ihre finanzielle
-                            Existenz sichern wollen, bewerben Sie sich auf unsere
-                            in-Angebote in Deutschland und starten Sie Ihre berufliche
-                            Karriere. Genießen Sie flexible Arbeitszeiten ohne Steuern
-                            und verdienen Sie in Deutschland bis zu 500 Euro im Monat.
-                            Mehr als 1.000 Menschen haben über unser Portal bereits
-                            einen Job gefunden. Wir bieten zahlreiche Jobs in
-                            verschiedenen Branchen, darunter auch Zeitarbeits- und
-                            Schichtarbeitsstellen.
-                        </p>
-                    </section>
-                    <div id="share-job" class="share-wrapper mt-4 mb-4">
-                        <h5 class="share-title">SHARE THIS JOB</h5>
-                        <div class="share-icons">
-                            <a id="share-fb" class="share-icon" title="Share on Facebook" target="_blank"
-                                aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a id="share-tw" class="share-icon" target="_blank" aria-label="Twitter"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a id="share-li" class="share-icon" target="_blank" aria-label="LinkedIn"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a id="share-wa" class="share-icon" target="_blank" aria-label="WhatsApp"><i
-                                    class="fab fa-whatsapp"></i></a>
-                            <a id="share-mail" class="share-icon" target="_blank" aria-label="Email"><i
-                                    class="fas fa-envelope"></i></a>
-                            <a href="javascript:void(0);" id="copy-link" class="share-icon" title="Copy Link">
-                                <i class="fa fa-link"></i>
-                            </a>
-
-                        </div>
-                    </div>
-                    <!-- <div class="mt-3 text-center">
+            <!-- <div class="col-xxl-4 col-lg-4 col-md-4 col-12 col-sm-12"> -->
+            <!-- <div> -->
+            <section id="about-our-web" class="shadow">
+              <h2 style="font-size: 20px" class="mt-1 mb-2 text-white">
+                Willkommen auf MinijobGermany.de
+              </h2>
+              <p style="font-size: 13.5px">
+                Finden Sie die besten Karrierechancen und bewerben Sie sich auf
+                Nebenjobs in Deutschland mit MinijobGermany.de. Wenn Sie
+                Student, Rentner oder Hausfrau sind und Ihre finanzielle
+                Existenz sichern wollen, bewerben Sie sich auf unsere
+                in-Angebote in Deutschland und starten Sie Ihre berufliche
+                Karriere. Genießen Sie flexible Arbeitszeiten ohne Steuern und
+                verdienen Sie in Deutschland bis zu 500 Euro im Monat. Mehr als
+                1.000 Menschen haben über unser Portal bereits einen Job
+                gefunden. Wir bieten zahlreiche Jobs in verschiedenen Branchen,
+                darunter auch Zeitarbeits- und Schichtarbeitsstellen.
+              </p>
+            </section>
+            <div id="share-job" class="share-wrapper mt-4 mb-4">
+              <h5 class="share-title">SHARE THIS JOB</h5>
+              <div class="share-icons">
+                <a
+                  id="share-fb"
+                  class="share-icon"
+                  title="Share on Facebook"
+                  target="_blank"
+                  aria-label="Facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  id="share-tw"
+                  class="share-icon"
+                  target="_blank"
+                  aria-label="Twitter"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                  id="share-li"
+                  class="share-icon"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a
+                  id="share-wa"
+                  class="share-icon"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a
+                  id="share-mail"
+                  class="share-icon"
+                  target="_blank"
+                  aria-label="Email"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+                <a
+                  href="javascript:void(0);"
+                  id="copy-link"
+                  class="share-icon"
+                  title="Copy Link"
+                >
+                  <i class="fa fa-link"></i>
+                </a>
+              </div>
+            </div>
+            <!-- <div class="mt-3 text-center">
                         <a href="https://www.youtube.com/@minijobgermany-de"><i class="fa-brands fa-youtube me-3 fs-3"
                                 style="color: #5a5d5f;"></i></a>
                         <a href="https://de.pinterest.com/minijobgermany/"><i class="fa-brands fa-pinterest me-3 fs-3"
@@ -438,107 +650,141 @@
                                 style="color: #5a5d5f;"></i></a>
 
                     </div> -->
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Job Detail End -->
 
     <!-- Footer Start -->
     <div class="text-white footer wow fadeIn" data-wow-delay="0.1s">
-        <div class="px-5 py-5">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-logo">
-                        <img src="/img/logo2.webp" alt="Logo" />
-                    </div>
-                    <p class="footer-description mt-3">
-                        MiniJobGermany.de hilft Ihnen dabei, Minijobs und Nebenjobs in
-                        ganz Deutschland zu finden und macht Ihre Jobsuche einfach und
-                        stressfrei. Egal ob Sie Student, Rentner oder auf der Suche nach
-                        einem Nebenverdienst sind, wir haben Stellenangebote, die Ihren
-                        Bedürfnissen entsprechen.
-                    </p>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <p style="font-size: 25px; font-weight: 700" class="text-white mb-4 mt-5">
-                        Contact
-                    </p>
-                    <div class="contact-info">
-                        <p class="mb-2">
-                            <i class="fa fa-envelope me-3"></i><a
-                                href="mailto:contact@minijobgermany.de">contact@minijobgermany.de</a>
-                        </p>
-                        <p class="mb-2">
-                            <i class="fab fa-linkedin me-3"></i><a
-                                href="https://www.linkedin.com/company/minijobgermany-de/">linkedIn/minijobgermany</a>
-                        </p>
-                        <p class="mb-2">
-                            <i class="fab fa-facebook me-3"></i><a
-                                href="https://www.facebook.com/minijobgermany.de">facebook/minijobgermany</a>
-                        </p>
-
-                        <p class="mb-2">
-                            <i class="fa-brands fa-instagram me-3"></i>
-                            <a href="https://www.instagram.com/minijobgermany.de/">instagram/minijobgermany</a>
-                        </p>
-                        <p class="mb-2">
-                            <i class="fa-brands fa-pinterest me-3"></i>
-                            <a href="https://de.pinterest.com/minijobgermany/">pinterest/minijobgermany</a>
-                        </p>
-                        <p class="mb-2">
-                            <i class="fa-brands fa-youtube me-3"></i>
-                            <a href="https://www.youtube.com/@minijobgermany-de">youtube/minijobgermany</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <p style="font-size: 25px; font-weight: 700" class="text-white pt-2 mb-1 mt-5">
-                        Newsletter
-                    </p>
-                    <p>
-                        Abonnieren Sie unsere E-Mail-Updates und erhalten Sie die neuesten
-                        Stellenangebote direkt in Ihren Posteingang.
-                    </p>
-                    <div class="position-relative" style="max-width: 400px">
-                        <input class="form-control bg-white text-dark w-100 py-3 ps-4 pe-5" type="email" required
-                            placeholder="Your email" id="newsletter-input" />
-                        <button type="button" id="newsletter-button" onclick="subscribeToEmail();"
-                            aria-label="Subscribe to Newsletter"
-                            class="btn w-25 py-2 position-absolute top-0 end-0 mt-2 me-2">
-                            <span class="fa fa-paper-plane"></span>
-                        </button>
-                    </div>
-                </div>
+      <div class="px-5 py-5">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo">
+              <img src="/img/logo2.webp" alt="Logo" />
             </div>
-            <p style="font-size: 25px; font-weight: 700" class="text-white mb-3">
-                📍 Unser Standort
+            <p class="footer-description mt-3">
+              MiniJobGermany.de hilft Ihnen dabei, Minijobs und Nebenjobs in
+              ganz Deutschland zu finden und macht Ihre Jobsuche einfach und
+              stressfrei. Egal ob Sie Student, Rentner oder auf der Suche nach
+              einem Nebenverdienst sind, wir haben Stellenangebote, die Ihren
+              Bedürfnissen entsprechen.
             </p>
-            <div class="google-map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.1640150449757!2d12.443471876154968!3d51.363281421222055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6573717169d2d%3A0xb2996461c2c5affe!2sMinijob%20Germany.de!5e0!3m2!1sen!2s!4v1743758961069!5m2!1sen!2s"
-                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <p
+              style="font-size: 25px; font-weight: 700"
+              class="text-white mb-4 mt-5"
+            >
+              Contact
+            </p>
+            <div class="contact-info">
+              <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i
+                ><a href="mailto:contact@minijobgermany.de"
+                  >contact@minijobgermany.de</a
+                >
+              </p>
+              <p class="mb-2">
+                <i class="fab fa-linkedin me-3"></i
+                ><a href="https://www.linkedin.com/company/minijobgermany-de/"
+                  >linkedIn/minijobgermany</a
+                >
+              </p>
+              <p class="mb-2">
+                <i class="fab fa-facebook me-3"></i
+                ><a href="https://www.facebook.com/minijobgermany.de"
+                  >facebook/minijobgermany</a
+                >
+              </p>
+
+              <p class="mb-2">
+                <i class="fa-brands fa-instagram me-3"></i>
+                <a href="https://www.instagram.com/minijobgermany.de/"
+                  >instagram/minijobgermany</a
+                >
+              </p>
+              <p class="mb-2">
+                <i class="fa-brands fa-pinterest me-3"></i>
+                <a href="https://de.pinterest.com/minijobgermany/"
+                  >pinterest/minijobgermany</a
+                >
+              </p>
+              <p class="mb-2">
+                <i class="fa-brands fa-youtube me-3"></i>
+                <a href="https://www.youtube.com/@minijobgermany-de"
+                  >youtube/minijobgermany</a
+                >
+              </p>
             </div>
-        </div>
-        <div class="container">
-            <div class="copyright py-3">
-                <div class="row">
-                    <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-                        &copy; 2025 Minijobgermany.de. All rights reserved
-                    </div>
-                    <div class="col-md-8 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a target="_blank" href="/about-us">About Us</a>
-                            <a target="_blank" href="/disclaimer">Disclaimer</a>
-                            <a target="_blank" href="/terms-condition">Terms and condition</a>
-                            <a target="_blank" href="/privacy-policy">Privacy Policy</a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <p
+              style="font-size: 25px; font-weight: 700"
+              class="text-white pt-2 mb-1 mt-5"
+            >
+              Newsletter
+            </p>
+            <p>
+              Abonnieren Sie unsere E-Mail-Updates und erhalten Sie die neuesten
+              Stellenangebote direkt in Ihren Posteingang.
+            </p>
+            <div class="position-relative" style="max-width: 400px">
+              <input
+                class="form-control bg-white text-dark w-100 py-3 ps-4 pe-5"
+                type="email"
+                required
+                placeholder="Your email"
+                id="newsletter-input"
+              />
+              <button
+                type="button"
+                id="newsletter-button"
+                onclick="subscribeToEmail();"
+                aria-label="Subscribe to Newsletter"
+                class="btn w-25 py-2 position-absolute top-0 end-0 mt-2 me-2"
+              >
+                <span class="fa fa-paper-plane"></span>
+              </button>
             </div>
+          </div>
         </div>
+        <p style="font-size: 25px; font-weight: 700" class="text-white mb-3">
+          📍 Unser Standort
+        </p>
+        <div class="google-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.1640150449757!2d12.443471876154968!3d51.363281421222055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6573717169d2d%3A0xb2996461c2c5affe!2sMinijob%20Germany.de!5e0!3m2!1sen!2s!4v1743758961069!5m2!1sen!2s"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright py-3">
+          <div class="row">
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+              &copy; 2025 Minijobgermany.de. All rights reserved
+            </div>
+            <div class="col-md-8 text-center text-md-end">
+              <div class="footer-menu">
+                <a target="_blank" href="/about-us">About Us</a>
+                <a target="_blank" href="/disclaimer">Disclaimer</a>
+                <a target="_blank" href="/terms-condition"
+                  >Terms and condition</a
+                >
+                <a target="_blank" href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Footers End -->
 
@@ -550,8 +796,5 @@
 
     <script src="/js/job-detail.js"></script>
     <script src="/js/block-world.js"></script>
-
-
-</body>
-
+  </body>
 </html>

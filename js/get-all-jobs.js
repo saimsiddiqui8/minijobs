@@ -1,8 +1,8 @@
-const BASE_URL = 'https://www.backend.parttimejobsinberlin.com/api/v1/';
+const BASE_URL = "https://www.backend.parttimejobsinberlin.com/api/v1/";
 // const BASE_URL = 'http://localhost:8000/api/v1/';
 
 const urlParams = new URLSearchParams(window.location.search);
-let currentPage = parseInt(urlParams.get("page")) || 1
+let currentPage = parseInt(urlParams.get("page")) || 1;
 const keyword = urlParams.get("keyword") || "";
 const types = urlParams.get("types") ? urlParams.get("types").split(",") : [];
 
@@ -23,7 +23,7 @@ function updateUrlParams() {
   window.history.pushState({}, "", newUrl);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // Fill search input
   const searchInput = document.getElementById("keyword");
   if (searchInput && keyword) {
@@ -43,23 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchJobs(currentPage, limit);
 });
 
-
-
 function updateJobInfo(totalJobs, currentPage, totalPages) {
   const jobsFoundElement = document.getElementById("jobs-found");
 
   const selectedJobTypes = getSelectedJobTypes(); // Already available
   const cityName = city.charAt(0).toUpperCase() + city.slice(1); // Capitalize first letter
   const desiredCity = cityName || "Germany";
-  let jobTypesText = selectedJobTypes.length > 0
-    ? selectedJobTypes.join(", ")
-    : "Jobs";
+  let jobTypesText =
+    selectedJobTypes.length > 0 ? selectedJobTypes.join(", ") : "Jobs";
 
   jobsFoundElement.textContent = `Found ${totalJobs} ${jobTypesText} jobs for you in ${desiredCity}`;
 
-  document.getElementById("page-info").textContent = `Page ${currentPage} of ${totalPages}`;
+  document.getElementById("page-info").textContent =
+    `Page ${currentPage} of ${totalPages}`;
 }
-
 
 function getSelectedJobTypes() {
   const selected = [];
@@ -105,7 +102,6 @@ function updateCheckboxLabels(counts) {
       // label.innerHTML = `${type} (0)`;
     }
   });
-
 }
 async function fetchJobTypeCounts() {
   try {
@@ -119,8 +115,7 @@ async function fetchJobTypeCounts() {
   }
 }
 
-fetchJobTypeCounts();   
-
+fetchJobTypeCounts();
 
 function updatePageInUrl(page) {
   const url = new URL(window.location);
@@ -141,7 +136,7 @@ async function jobFilter(keyword, page = 1, limit = 15) {
     const jobs = result.data; // assume jobs come in data array
 
     // Normalize and filter client-side in case backend doesn't filter both title + description
-    const filteredJobs = jobs.filter(job => {
+    const filteredJobs = jobs.filter((job) => {
       const title = job.title?.toLowerCase() || "";
       const desc = job.description?.replace(/<[^>]*>/g, "").toLowerCase(); // strip HTML tags
       const kw = keyword.toLowerCase();
@@ -237,7 +232,7 @@ function timeAgo(date) {
 // Function to parse XML and render jobs
 function insertJobsinUi(jobs, totalPages, currentPage) {
   const jobContainer = document.getElementById("job-container");
-  jobContainer.innerHTML = "";  // This clears the previous jobs
+  jobContainer.innerHTML = ""; // This clears the previous jobs
   const noJobsSection = document.getElementById("no-jobs");
   const cityNameDisplay = document.getElementById("city-name");
   generatePaginationButtons(totalPages, currentPage);
@@ -263,7 +258,8 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
   jobs.forEach((job) => {
     const description = truncateHTML(job.description, 200);
     const location = `${job.city}, ${job.country} - (${job.jobtype})`;
-    const companyLogo = job?.companyLogo ||
+    const companyLogo =
+      job?.companyLogo ||
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSduZvFB87cOvLtQGxLzMnXVWZNOdgjCaPAOA&s"; // default image
 
     // Create the job item structure as per your HTML
@@ -296,43 +292,43 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
     const slug = job.title
       .toLowerCase()
       .replace(/[^a-z0-9\s]/g, "") // Remove special characters
-      .replace(/\s+/g, "-")        // Replace spaces with hyphens
+      .replace(/\s+/g, "-") // Replace spaces with hyphens
       .trim();
 
     // jobItem.addEventListener('click', () => {
     //   const url = `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`;
     //   window.location.href = url;
     // });
-    jobItem.addEventListener('click', () => {
+    jobItem.addEventListener("click", () => {
       const url = `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`;
-      window.open(url, '_blank');
+      window.open(url, "_blank");
     });
 
     allJobsSchema.push({
       "@context": "https://schema.org",
       "@type": "JobPosting",
-      "title": job.title,
-      "description": job.description,
-      "jobLocation": {
+      title: job.title,
+      description: job.description,
+      jobLocation: {
         "@type": "Place",
-        "address": {
+        address: {
           "@type": "PostalAddress",
-          "addressLocality": job.city,
-          "addressRegion": job.state || "", // optional
-          "addressCountry": job.country || "DE" // Germany default
-        }
+          addressLocality: job.city,
+          addressRegion: job.state || "", // optional
+          addressCountry: job.country || "DE", // Germany default
+        },
       },
-      "baseSalary": {
+      baseSalary: {
         "@type": "MonetaryAmount",
-        "currency": job.currency || "EUR",
+        currency: job.currency || "EUR",
       },
-      "employmentType": job.jobtype,
-      "hiringOrganization": {
+      employmentType: job.jobtype,
+      hiringOrganization: {
         "@type": "Organization",
-        "name": job.company,
+        name: job.company,
       },
-      "datePosted": job.date_updated,
-      "url": `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`
+      datePosted: job.date_updated,
+      url: `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`,
     });
   });
 
@@ -348,7 +344,7 @@ function generatePaginationButtons(totalPages, currentPage) {
 
   paginationContainer.innerHTML = ""; // Clear previous pagination buttons
 
-  const maxVisiblePages = 5;  // Show only 5 page numbers
+  const maxVisiblePages = 5; // Show only 5 page numbers
   const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
   const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
@@ -405,7 +401,6 @@ function generatePaginationButtons(totalPages, currentPage) {
   }
 }
 
-
 // Helper function to toggle loader
 function toggleLoader(show) {
   const loader = document.getElementById("loader");
@@ -428,4 +423,3 @@ function getMoreJobs() {
   currentPage++;
   fetchJobs(currentPage, limit);
 }
-
