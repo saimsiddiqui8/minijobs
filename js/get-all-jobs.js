@@ -1,17 +1,126 @@
-const BASE_URL = 'https://www.backend.parttimejobsinberlin.com/api/v1/';
+// const BASE_URL = 'https://www.backend.parttimejobsinberlin.com/api/v1/';
+const BASE_URL = 'http://localhost:8000/api/v1/';
+
 const urlParams = new URLSearchParams(window.location.search);
 let currentPage = parseInt(urlParams.get("page")) || 1
+const keyword = urlParams.get("keyword") || "";
+const types = urlParams.get("types") ? urlParams.get("types").split(",") : [];
+
 const city = document.body.dataset.city || "";
-const limit = 12;
+const limit = 20;
 let isLoading = false;
 
-function updateJobInfo(totalJobs, currentPage, totalPages) {
-  // Update job count dynamically
-  document.getElementById("jobs-found").textContent = `We found ${totalJobs} jobs for you!`;
+function updateUrlParams() {
+  const keyword = document.getElementById("keyword").value.trim();
+  const selectedTypes = getSelectedJobTypes(); // array
 
-  // Update page info dynamically
+  const params = new URLSearchParams();
+  if (keyword) params.set("keyword", keyword);
+  if (selectedTypes.length > 0) params.set("types", selectedTypes.join(","));
+  params.set("page", currentPage);
+
+  const newUrl = `${window.location.pathname}?${params.toString()}`;
+  window.history.pushState({}, "", newUrl);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Fill search input
+  const searchInput = document.getElementById("keyword");
+  if (searchInput && keyword) {
+    searchInput.value = keyword;
+  }
+
+  // Check the checkboxes based on types from URL
+  const checkboxes = document.querySelectorAll(".form-check-input");
+  if (types.length > 0) {
+    // Only override checkboxes if URL has types
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = types.includes(checkbox.value);
+    });
+  }
+
+  // 3. Now fetch jobs AFTER restoring UI state
+  fetchJobs(currentPage, limit);
+});
+
+
+
+function updateJobInfo(totalJobs, currentPage, totalPages) {
+  const jobsFoundElement = document.getElementById("jobs-found");
+
+  const selectedJobTypes = getSelectedJobTypes(); // Already available
+  const cityName = city.charAt(0).toUpperCase() + city.slice(1); // Capitalize first letter
+  const desiredCity = cityName || "Germany";
+  let jobTypesText = selectedJobTypes.length > 0
+    ? selectedJobTypes.join(", ")
+    : "Jobs";
+
+  jobsFoundElement.textContent = `Found ${totalJobs} ${jobTypesText} jobs for you in ${desiredCity}`;
+
   document.getElementById("page-info").textContent = `Page ${currentPage} of ${totalPages}`;
 }
+
+
+function getSelectedJobTypes() {
+  const selected = [];
+  const checkboxes = document.querySelectorAll(".form-check-input");
+
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      selected.push(checkbox.value);
+    }
+  });
+
+  return selected;
+}
+
+const checkboxes = document.querySelectorAll(".form-check-input");
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    // Whenever a checkbox is changed, refetch jobs
+    currentPage = 1;
+    fetchJobs(currentPage, limit);
+  });
+});
+
+// Checkbox Job Count
+function updateCheckboxLabels(counts) {
+  const checkboxes = document.querySelectorAll(".form-check-input");
+
+  checkboxes.forEach((checkbox) => {
+    const label = checkbox.parentElement.querySelector("label");
+    const type = checkbox.value;
+
+    const count = counts[type] || 0;
+
+    if (count > 0) {
+      label.innerHTML = `${type} (${count})`;
+      checkbox.parentElement.style.display = "inline-block"; // Show
+      checkbox.disabled = false;
+    } else {
+      checkbox.parentElement.style.display = "none";
+
+      // Option 2: (If you prefer greyed out instead of hiding)
+      // checkbox.disabled = true;
+      // label.innerHTML = `${type} (0)`;
+    }
+  });
+
+}
+async function fetchJobTypeCounts() {
+  try {
+    const response = await fetch(`${BASE_URL}job/job-type-counts?city=${city}`);
+    if (!response.ok) throw new Error("Failed to fetch job type counts");
+
+    const result = await response.json();
+    updateCheckboxLabels(result.counts);
+  } catch (error) {
+    console.error("Error fetching job type counts:", error);
+  }
+}
+
+fetchJobTypeCounts();   
+
 
 function updatePageInUrl(page) {
   const url = new URL(window.location);
@@ -21,7 +130,10 @@ function updatePageInUrl(page) {
 
 async function jobFilter(keyword, page = 1, limit = 15) {
   try {
-    const URL = `${BASE_URL}job/search?q=${encodeURIComponent(keyword)}&page=${page}&limit=${limit}`;
+    let URL = `${BASE_URL}job/search?q=${encodeURIComponent(keyword)}&page=${page}&limit=${limit}`;
+    if (city) {
+      URL += `&city=${encodeURIComponent(city)}`;
+    }
     const response = await fetch(URL);
     if (!response.ok) throw new Error("Failed to fetch jobs");
 
@@ -35,9 +147,9 @@ async function jobFilter(keyword, page = 1, limit = 15) {
       const kw = keyword.toLowerCase();
       return title.includes(kw) || desc.includes(kw);
     });
-
-    updateJobInfo(result.data.total, page, result.data.totalPages);
-    insertJobsinUi(filteredJobs, 1, 1); // display results
+    updateUrlParams();
+    updateJobInfo(result.total, page, result.totalPages);
+    insertJobsinUi(filteredJobs, result.totalPages, page); // display results
   } catch (error) {
     console.error("Error filtering jobs:", error);
   } finally {
@@ -45,8 +157,6 @@ async function jobFilter(keyword, page = 1, limit = 15) {
     toggleLoader(false);
   }
 }
-
-
 
 document.getElementById("searchButton").addEventListener("click", () => {
   const keyword = document.getElementById("keyword").value.trim();
@@ -67,13 +177,27 @@ document.getElementById("searchButton").addEventListener("click", () => {
   jobFilter(keyword.toLowerCase(), 1, limit);
 });
 
+function getInitialSelectedJobTypes() {
+  if (types.length > 0) {
+    return types; // Use types from URL
+  } else {
+    return getSelectedJobTypes(); // Fallback to default checked
+  }
+}
+
 // Function to fetch paginated jobs
 async function fetchJobs(page = 1, limit = 12) {
   if (isLoading) return;
   isLoading = true;
   toggleLoader(true);
   try {
-    let url = `${BASE_URL}job/get-job-by-type?page=${page}&limit=${limit}&jobtype=Part-time`;
+    const selectedJobTypes = getInitialSelectedJobTypes();
+
+    let url = `${BASE_URL}job/get-job-by-type?page=${page}&limit=${limit}`;
+
+    if (selectedJobTypes.length > 0) {
+      url += `&jobtype=${encodeURIComponent(selectedJobTypes.join(","))}`; // comma separated if needed
+    }
 
     if (city) {
       url += `&city=${encodeURIComponent(city)}`;
@@ -84,6 +208,7 @@ async function fetchJobs(page = 1, limit = 12) {
     if (!response.ok) throw new Error("Failed to fetch jobs");
     const res = await response.json();
 
+    updateUrlParams();
     updateJobInfo(res.data.total, page, res.data.totalPages);
     insertJobsinUi(res.data.data, res.data.totalPages, page);
     return res.data.data;
@@ -133,6 +258,7 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
     const text = div.textContent || div.innerText || "";
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
   }
+  const allJobsSchema = [];
 
   jobs.forEach((job) => {
     const description = truncateHTML(job.description, 200);
@@ -182,7 +308,7 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
       window.open(url, '_blank');
     });
 
-    const jobSchema = {
+    allJobsSchema.push({
       "@context": "https://schema.org",
       "@type": "JobPosting",
       "title": job.title,
@@ -192,8 +318,8 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
         "address": {
           "@type": "PostalAddress",
           "addressLocality": job.city,
-          "addressRegion": job.state, // You can replace with the state if available
-          "addressCountry": job.country
+          "addressRegion": job.state || "", // optional
+          "addressCountry": job.country || "DE" // Germany default
         }
       },
       "baseSalary": {
@@ -207,15 +333,14 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
       },
       "datePosted": job.date_updated,
       "url": `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`
-    };
-    console.log(job.guid)
-    // Append schema to the head
-    const scriptTag = document.createElement("script");
-    scriptTag.type = "application/ld+json";
-    scriptTag.textContent = JSON.stringify(jobSchema);
-    document.head.appendChild(scriptTag);
-
+    });
   });
+
+  // Append schema to the head
+  const scriptTag = document.createElement("script");
+  scriptTag.type = "application/ld+json";
+  scriptTag.textContent = JSON.stringify(allJobsSchema, null, 2);
+  document.head.appendChild(scriptTag);
 }
 
 function generatePaginationButtons(totalPages, currentPage) {
@@ -303,8 +428,4 @@ function getMoreJobs() {
   currentPage++;
   fetchJobs(currentPage, limit);
 }
-
-// Initial fetch
-fetchJobs(currentPage, limit);
-
 

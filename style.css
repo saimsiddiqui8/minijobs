@@ -611,6 +611,84 @@ li.nav-item.megamenu::marker {
   margin-top: 130px;
 }
 
+ /* Dropdown City & Checkbox */
+
+ .form-check-input {
+  opacity: 0;
+  position: absolute;
+}
+
+/* Custom checkbox */
+.form-check-label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.form-check-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  background: white;
+}
+
+/* Show tick when checked */
+.form-check-input:checked+.form-check-label::after {
+  content: "✓";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.choices__inner {
+  display: flex !important;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  /* Important: stick everything to left */
+  gap: 8px;
+  overflow-x: auto;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+}
+
+.choices__input--cloned {
+  flex: 1 1 auto;
+  min-width: 150px;
+  text-align: left !important;
+  padding-left: 32px !important;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/54/54481.png');
+  background-position: 8px center;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  height: 36px;
+  font-size: 15px;
+  border: none;
+  box-shadow: none;
+}
+
+.choices__input--cloned:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Blue background when checked */
+.form-check-input:checked+.form-check-label::before {
+  background-color: #007bff;
+}
+
 /* suggestions */
 
 .autocomplete-results {

@@ -75,6 +75,27 @@
     })(window, document, "clarity", "script", "qimq1xviaj");
   </script>
 
+  <!-- Choices.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+  <!-- Choices.js JS -->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cityDropdown = document.getElementById('cityDropdown');
+      const choices = new Choices(cityDropdown, {
+        searchEnabled: true,
+        itemSelectText: '',
+        placeholder: true,
+        placeholderValue: 'Select City',
+        removeItemButton: true,
+        searchChoices: false, // Important
+        renderSelectedChoices: 'always', // Important
+        shouldSort: false,
+      });
+    });
+  </script>
+
 </head>
 
 <body>
@@ -196,11 +217,11 @@
                   <i class="fa-solid fa-magnifying-glass ps-3" style="font-size: 22px"></i>
                   <input type="text" id="keyword" class="form-control border-0 py-3" placeholder="Search Jobs" />
                 </div>
-                <div class="ps-2 col-md-6 d-flex align-items-center after">
+                <!-- <div class="ps-2 col-md-6 d-flex align-items-center after">
                   <i class="fa-solid fa-location-dot ps-3" style="font-size: 23px"></i>
                   <input type="text" id="location" class="form-control border-0 py-3"
                     placeholder="Search by Location..." />
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="col-md-4 pe-3 searches2" style="align-items: end !important">
@@ -212,6 +233,73 @@
               </button>
             </div>
           </div>
+
+          <!-- Row Container -->
+          <div class="row align-items-center g-3 my-1">
+            <!-- City Dropdown -->
+            <div class="col-12 col-md-6">
+              <div class="position-relative">
+                <select class="form-select" id="cityDropdown" aria-label="Select City" multiple>
+                  <optgroup label="Bayern (Bavaria)">
+                    <option value="munich">🇩🇪 Munich</option>
+                    <option value="nuremberg">🇩🇪 Nuremberg</option>
+                    <option value="augsburg">🇩🇪 Augsburg</option>
+                  </optgroup>
+                  <optgroup label="Nordrhein-Westfalen (NRW)">
+                    <option value="dusseldorf">🇩🇪 Düsseldorf</option>
+                    <option value="cologne">🇩🇪 Cologne</option>
+                    <option value="dortmund">🇩🇪 Dortmund</option>
+                  </optgroup>
+                  <optgroup label="Berlin">
+                    <option value="berlin">🇩🇪 Berlin</option>
+                  </optgroup>
+                  <optgroup label="Hamburg">
+                    <option value="hamburg">🇩🇪 Hamburg</option>
+                  </optgroup>
+                  <optgroup label="Hessen">
+                    <option value="frankfurt">🇩🇪 Frankfurt</option>
+                  </optgroup>
+                  <!-- Add more states and cities here -->
+                </select>
+              </div>
+            </div>
+            <!-- Job Type Checkboxes -->
+            <div class="col-12 col-md-6">
+              <div class="d-flex flex-wrap gap-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Part-time" id="partTime" checked>
+                  <label class="form-check-label" for="partTime">
+                    Part-time
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Full-time" id="fullTime" checked>
+                  <label class="form-check-label" for="fullTime">
+                    Full-time
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Remote" id="remote">
+                  <label class="form-check-label" for="remote">
+                    Remote
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Internship" id="internship">
+                  <label class="form-check-label" for="internship">
+                    Internship
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Contract" id="contract">
+                  <label class="form-check-label" for="contract">
+                    Contract
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="suggestions mt-4 mb-0 pb-0">
             <p>
               More Jobs :
@@ -230,7 +318,7 @@
       </div>
     </section>
   </div>
-  
+
   <!-- tabs start  -->
   <div class="container-fluid">
     <div class="tab-class text-center mt-3 container w-75 py-5">
