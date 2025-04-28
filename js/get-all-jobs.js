@@ -1,5 +1,5 @@
-// const BASE_URL = 'https://www.backend.parttimejobsinberlin.com/api/v1/';
-const BASE_URL = 'http://localhost:8000/api/v1/';
+const BASE_URL = 'https://www.backend.parttimejobsinberlin.com/api/v1/';
+// const BASE_URL = 'http://localhost:8000/api/v1/';
 
 const urlParams = new URLSearchParams(window.location.search);
 let currentPage = parseInt(urlParams.get("page")) || 1
