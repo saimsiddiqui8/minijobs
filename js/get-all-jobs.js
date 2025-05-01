@@ -52,10 +52,10 @@ function updateJobInfo(totalJobs, currentPage, totalPages) {
   let jobTypesText =
     selectedJobTypes.length > 0 ? selectedJobTypes.join(", ") : "Jobs";
 
-  jobsFoundElement.textContent = `Found ${totalJobs} ${jobTypesText} jobs for you in ${desiredCity}`;
+  jobsFoundElement.textContent = `Wir gefunden ${totalJobs} ${jobTypesText} Arbeitsplätze für Sie in ${desiredCity}`;
 
   document.getElementById("page-info").textContent =
-    `Page ${currentPage} of ${totalPages}`;
+    `Seite ${currentPage} von ${totalPages}`;
 }
 
 function getSelectedJobTypes() {
