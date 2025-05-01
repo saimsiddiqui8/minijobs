@@ -54,8 +54,13 @@
     <link rel="stylesheet" href="./style.css" />
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="canonical" href="https://minijobgermany.de/our-team" />
-    <style>
+    <script>
+      const canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      canonicalLink.setAttribute("href", window.location.href);
+      document.head.appendChild(canonicalLink);
+    </script>
+        <style>
       .team-section {
         background-color: #f9f9f9;
         padding: 50px 0;

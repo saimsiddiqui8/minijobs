@@ -21,6 +21,15 @@ function updateUrlParams() {
 
   const newUrl = `${window.location.pathname}?${params.toString()}`;
   window.history.pushState({}, "", newUrl);
+
+  // Update canonical tag
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", window.location.origin + newUrl);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -356,10 +365,8 @@ function generatePaginationButtons(totalPages, currentPage) {
     prevButton.onclick = () => {
       updatePageInUrl(currentPage - 1);
       fetchJobs(currentPage - 1).then(() => {
-        const firstJob = document.querySelector("container-xxl pb-5 pt-2");
-        if (firstJob) {
-          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+      document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
+
       });
     };
     paginationContainer.appendChild(prevButton);
@@ -373,10 +380,8 @@ function generatePaginationButtons(totalPages, currentPage) {
     pageButton.onclick = () => {
       updatePageInUrl(i);
       fetchJobs(i).then(() => {
-        const firstJob = document.querySelector("container-xxl pb-5 pt-2");
-        if (firstJob) {
-          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+      document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
+
       });
     };
     if (i === currentPage) pageButton.classList.add("active");
@@ -391,10 +396,8 @@ function generatePaginationButtons(totalPages, currentPage) {
     nextButton.onclick = () => {
       updatePageInUrl(currentPage + 1);
       fetchJobs(currentPage + 1).then(() => {
-        const firstJob = document.querySelector("container-xxl pb-5 pt-2");
-        if (firstJob) {
-          firstJob.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+      document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
+
       });
     };
     paginationContainer.appendChild(nextButton);

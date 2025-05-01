@@ -76,8 +76,13 @@
     <link rel="stylesheet" href="./style.css" />
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="canonical" href="https://minijobgermany.de/" />
-
+    <script>
+      const canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      canonicalLink.setAttribute("href", window.location.href);
+      document.head.appendChild(canonicalLink);
+    </script>
+    
     <!-- Google tag (gtag.js) -->
     <script
       async

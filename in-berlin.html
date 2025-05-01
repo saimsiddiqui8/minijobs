@@ -41,7 +41,12 @@
   <link rel="stylesheet" href="./style.css" />
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
-  <link rel="canonical" href="https://minijobgermany.de/minijob-berlin" />
+  <script>
+    const canonicalLink = document.createElement("link");
+    canonicalLink.setAttribute("rel", "canonical");
+    canonicalLink.setAttribute("href", window.location.href);
+    document.head.appendChild(canonicalLink);
+  </script>
 
   <!-- Choices.js CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />

@@ -1,67 +1,58 @@
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <title>JobEntry - Job Portal Website Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
 
-    <!-- Favicon -->
-    <link href="img/favicon.png" rel="icon" alt="Minijob Germany.de" />
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<head>
+  <meta charset="utf-8" />
+  <title>JobEntry - Job Portal Website Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
 
-      gtag("config", "G-45J6RCD301");
-    </script>
+  <!-- Favicon -->
+  <link href="img/favicon.png" rel="icon" alt="Minijob Germany.de" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-45J6RCD301"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-    <!-- Icon Font Stylesheet -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    gtag("config", "G-45J6RCD301");
+  </script>
 
-    <!-- Libraries Stylesheet -->
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
-    <link rel="canonical" href="https://minijobgermany.de/404" />
-  </head>
+  <!-- Libraries Stylesheet -->
 
-  <body>
-    <div class="bg-white p-0">
-      <!-- Navbar Start -->
-      <nav
-        style="
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+  <script>
+    const canonicalLink = document.createElement("link");
+    canonicalLink.setAttribute("rel", "canonical");
+    canonicalLink.setAttribute("href", window.location.href);
+    document.head.appendChild(canonicalLink);
+  </script>
+</head>
+
+<body>
+  <div class="bg-white p-0">
+    <!-- Navbar Start -->
+    <nav style="
           z-index: 1000 !important;
           background: linear-gradient(
             90deg,
@@ -69,423 +60,216 @@
             #074a91 50%,
             #044175 100%
           );
-        "
-        class="navbar navbar-expand-lg navbar-light"
-      >
-        <a
-          target="_blank"
-          href="/"
-          class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5"
-        >
-          <img class="logo" src="./img/logo2.webp" width="110px" alt="logo" />
-        </a>
-        <button
-          type="button"
-          class="navbar-toggler me-4"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a
-              target="_blank"
-              class="nav-link dropdown-toggle"
-              id="jobsMenuLink"
-              href="#"
-              data-bs-toggle="dropdown"
-              >More Jobs</a
-            >
-            <div class="dropdown-menu megamenu mx-5" role="menu">
-              <ul class="navbar-navs">
-                <li class="nav-item megamenu">
-                  <div
-                    class="megamenu-content"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <div class="row">
-                      <div class="col-lg-3 col-md-6">
-                        <a target="_blank" href="#">
-                          <p style="color: #000; font-weight: 700">
-                            JOBS BY CITY
-                          </p>
-                        </a>
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-berlin"
-                          >Berlin</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-hamburg"
-                          >Hamburg</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-munich"
-                          >Munich</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-koln"
-                          >Koln</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-frankfurt"
-                          >Frankfurt</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-leipzig"
-                          >Leipzig</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-dortmund"
-                          >Dortmund</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-bonn"
-                          >Bonn</a
-                        >
-                      </div>
-                      <div class="col-lg-3 col-md-6">
-                        <a target="_blank" href="">
-                          <p style="color: #000; font-weight: 700">
-                            JOBS IN TOWN
-                          </p>
-                        </a>
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-charlottenburg"
-                          >Charlottenburg</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-kreuzberg"
-                          >Kreuzberg</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-tempelhof"
-                          >Tempelhof</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-treptow-kopenick"
-                          >Treptow-Köpenick</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-frankfurt-oder"
-                          >Frankfurt (Oder)</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-brandenburg"
-                          >Brandenburg</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-oranienburg"
-                          >Oranienburg</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="minijob-eberswalde"
-                          >Eberswalde</a
-                        >
-                      </div>
-                      <div class="col-lg-2 col-md-6">
-                        <a target="_blank" href="">
-                          <p style="color: #000; font-weight: 700">MORE JOBS</p>
-                        </a>
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="english-speaking-jobs"
-                          >English Jobs</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="weekend-jobs"
-                          >Weekend Jobs</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="student-jobs"
-                          >Students Jobs</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="part-time-jobs"
-                          >Part Time Jobs</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="450-euro-jobs"
-                          >450 Euro Jobs</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="13-euro-hourly-job"
-                          >13 € Hourly Job</a
-                        >
-                      </div>
-                      <div class="col-lg-2 col-md-6">
-                        <a target="_blank" href="">
-                          <p style="color: #000; font-weight: 700">
-                            MORE JOB TYPES
-                          </p>
-                        </a>
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="kuechen-jobs"
-                          >Kuechen</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="finanzwesen-jobs"
-                          >Finanzwesen</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="bauwesen-jobs"
-                          >Bauwesen</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="pharmaindustrie-jobs"
-                          >Pharmaindustrie</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="lebensmittel-getränke-jobs"
-                          >Lebensmittel & Getränke</a
-                        >
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="personalwesen-jobs"
-                          >Personalwesen</a
-                        >
-                      </div>
-                      <div class="col-lg-2 col-md-6">
-                        <a target="_blank" href="">
-                          <p style="color: #000; font-weight: 700">MORE</p>
-                        </a>
-                        <a
-                          target="_blank"
-                          class="dropdown-item"
-                          href="contact-us"
-                          >Contact Us</a
-                        >
-                      </div>
+        " class="navbar navbar-expand-lg navbar-light">
+      <a target="_blank" href="/" class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5">
+        <img class="logo" src="./img/logo2.webp" width="110px" alt="logo" />
+      </a>
+      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a target="_blank" class="nav-link dropdown-toggle" id="jobsMenuLink" href="#" data-bs-toggle="dropdown">More
+            Jobs</a>
+          <div class="dropdown-menu megamenu mx-5" role="menu">
+            <ul class="navbar-navs">
+              <li class="nav-item megamenu">
+                <div class="megamenu-content" aria-labelledby="navbarDropdownMenuLink">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                      <a target="_blank" href="#">
+                        <p style="color: #000; font-weight: 700">
+                          JOBS BY CITY
+                        </p>
+                      </a>
+                      <a target="_blank" class="dropdown-item" href="minijob-berlin">Berlin</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-hamburg">Hamburg</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-munich">Munich</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-koln">Koln</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-frankfurt">Frankfurt</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-leipzig">Leipzig</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-dortmund">Dortmund</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-bonn">Bonn</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                      <a target="_blank" href="">
+                        <p style="color: #000; font-weight: 700">
+                          JOBS IN TOWN
+                        </p>
+                      </a>
+                      <a target="_blank" class="dropdown-item" href="minijob-charlottenburg">Charlottenburg</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-kreuzberg">Kreuzberg</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-tempelhof">Tempelhof</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-treptow-kopenick">Treptow-Köpenick</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-frankfurt-oder">Frankfurt (Oder)</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-brandenburg">Brandenburg</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-oranienburg">Oranienburg</a>
+                      <a target="_blank" class="dropdown-item" href="minijob-eberswalde">Eberswalde</a>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                      <a target="_blank" href="">
+                        <p style="color: #000; font-weight: 700">MORE JOBS</p>
+                      </a>
+                      <a target="_blank" class="dropdown-item" href="english-speaking-jobs">English Jobs</a>
+                      <a target="_blank" class="dropdown-item" href="weekend-jobs">Weekend Jobs</a>
+                      <a target="_blank" class="dropdown-item" href="student-jobs">Students Jobs</a>
+                      <a target="_blank" class="dropdown-item" href="part-time-jobs">Part Time Jobs</a>
+                      <a target="_blank" class="dropdown-item" href="450-euro-jobs">450 Euro Jobs</a>
+                      <a target="_blank" class="dropdown-item" href="13-euro-hourly-job">13 € Hourly Job</a>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                      <a target="_blank" href="">
+                        <p style="color: #000; font-weight: 700">
+                          MORE JOB TYPES
+                        </p>
+                      </a>
+                      <a target="_blank" class="dropdown-item" href="kuechen-jobs">Kuechen</a>
+                      <a target="_blank" class="dropdown-item" href="finanzwesen-jobs">Finanzwesen</a>
+                      <a target="_blank" class="dropdown-item" href="bauwesen-jobs">Bauwesen</a>
+                      <a target="_blank" class="dropdown-item" href="pharmaindustrie-jobs">Pharmaindustrie</a>
+                      <a target="_blank" class="dropdown-item" href="lebensmittel-getränke-jobs">Lebensmittel &
+                        Getränke</a>
+                      <a target="_blank" class="dropdown-item" href="personalwesen-jobs">Personalwesen</a>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                      <a target="_blank" href="">
+                        <p style="color: #000; font-weight: 700">MORE</p>
+                      </a>
+                      <a target="_blank" class="dropdown-item" href="contact-us">Contact Us</a>
                     </div>
                   </div>
-                </li>
-              </ul>
-            </div>
-            <a target="_blank" href="contact-us" class="nav-item nav-link"
-              >Contact</a
-            >
-            <!-- <a  target="_blank" href="blogs" class="nav-item nav-link">Blogs</a> -->
-          </div>
-        </div>
-      </nav>
-
-      <!-- 404 Start -->
-      <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container text-center">
-          <div class="row justify-content-center">
-            <div class="col-lg-6">
-              <i
-                class="bi bi-exclamation-triangle display-1 primary-color-blue"
-              ></i>
-              <h1 class="display-1">404</h1>
-              <h1 class="mb-4">Page Not Found</h1>
-              <p class="mb-4">
-                We’re sorry, the page you have looked for does not exist in our
-                website! Maybe go to our home page or try to use a search?
-              </p>
-              <a
-                target="_blank"
-                class="btn primary-blue text-white py-3 px-5"
-                href="/"
-                >Go Back To Home</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 404 End -->
-
-      <!-- Footer Start -->
-      <div class="text-white footer wow fadeIn" data-wow-delay="0.1s">
-        <div class="px-5 py-5">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4">
-              <div class="footer-logo">
-                <img src="./img/logo2.webp" alt="Logo" />
-              </div>
-              <p class="footer-description mt-3">
-                MiniJobGermany.de hilft Ihnen dabei, Minijobs und Nebenjobs in
-                ganz Deutschland zu finden und macht Ihre Jobsuche einfach und
-                stressfrei. Egal ob Sie Student, Rentner oder auf der Suche nach
-                einem Nebenverdienst sind, wir haben Stellenangebote, die Ihren
-                Bedürfnissen entsprechen.
-              </p>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <p
-                style="font-size: 25px; font-weight: 700"
-                class="text-white mb-4 mt-5"
-              >
-                Contact
-              </p>
-              <div class="contact-info">
-                <p class="mb-2">
-                  <i class="fa fa-envelope me-3"></i
-                  ><a href="mailto:contact@minijobgermany.de"
-                    >contact@minijobgermany.de</a
-                  >
-                </p>
-                <p class="mb-2">
-                  <i class="fab fa-linkedin me-3"></i
-                  ><a href="https://www.linkedin.com/company/minijobgermany-de/"
-                    >linkedIn/minijobgermany</a
-                  >
-                </p>
-                <p class="mb-2">
-                  <i class="fab fa-facebook me-3"></i
-                  ><a href="https://www.facebook.com/minijobgermany.de"
-                    >facebook/minijobgermany</a
-                  >
-                </p>
-
-                <p class="mb-2">
-                  <i class="fa-brands fa-instagram me-3"></i>
-                  <a href="https://www.instagram.com/minijobgermany.de/"
-                    >instagram/minijobgermany</a
-                  >
-                </p>
-                <p class="mb-2">
-                  <i class="fa-brands fa-pinterest me-3"></i>
-                  <a href="https://de.pinterest.com/minijobgermany/"
-                    >pinterest/minijobgermany</a
-                  >
-                </p>
-                <p class="mb-2">
-                  <i class="fa-brands fa-youtube me-3"></i>
-                  <a href="https://www.youtube.com/@minijobgermany-de"
-                    >youtube/minijobgermany</a
-                  >
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <p
-                style="font-size: 25px; font-weight: 700"
-                class="text-white pt-2 mb-1 mt-5"
-              >
-                Newsletter
-              </p>
-              <p>
-                Abonnieren Sie unsere E-Mail-Updates und erhalten Sie die
-                neuesten Stellenangebote direkt in Ihren Posteingang.
-              </p>
-              <div class="position-relative" style="max-width: 400px">
-                <input
-                  class="form-control bg-white text-dark w-100 py-3 ps-4 pe-5"
-                  type="email"
-                  required
-                  placeholder="Your email"
-                  id="newsletter-input"
-                />
-                <button
-                  type="button"
-                  id="newsletter-button"
-                  onclick="subscribeToEmail();"
-                  aria-label="Subscribe to Newsletter"
-                  class="btn w-25 py-2 position-absolute top-0 end-0 mt-2 me-2"
-                >
-                  <span class="fa fa-paper-plane"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <p style="font-size: 25px; font-weight: 700" class="text-white mb-3">
-            📍 Unser Standort
-          </p>
-          <div class="google-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.1640150449757!2d12.443471876154968!3d51.363281421222055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6573717169d2d%3A0xb2996461c2c5affe!2sMinijob%20Germany.de!5e0!3m2!1sen!2s!4v1743758961069!5m2!1sen!2s"
-              width="100%"
-              height="250"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            >
-            </iframe>
-          </div>
-        </div>
-        <div class="container">
-          <div class="copyright py-3">
-            <div class="row">
-              <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-                &copy; 2025 Minijobgermany.de. All rights reserved
-              </div>
-              <div class="col-md-8 text-center text-md-end">
-                <div class="footer-menu">
-                  <a target="_blank" href="about-us">About Us</a>
-                  <a target="_blank" href="disclaimer">Disclaimer</a>
-                  <a target="_blank" href="terms-condition"
-                    >Terms and condition</a
-                  >
-                  <a target="_blank" href="privacy-policy">Privacy Policy</a>
                 </div>
+              </li>
+            </ul>
+          </div>
+          <a target="_blank" href="contact-us" class="nav-item nav-link">Contact</a>
+          <!-- <a  target="_blank" href="blogs" class="nav-item nav-link">Blogs</a> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- 404 Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <i class="bi bi-exclamation-triangle display-1 primary-color-blue"></i>
+            <h1 class="display-1">404</h1>
+            <h1 class="mb-4">Page Not Found</h1>
+            <p class="mb-4">
+              We’re sorry, the page you have looked for does not exist in our
+              website! Maybe go to our home page or try to use a search?
+            </p>
+            <a target="_blank" class="btn primary-blue text-white py-3 px-5" href="/">Go Back To Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 404 End -->
+
+    <!-- Footer Start -->
+    <div class="text-white footer wow fadeIn" data-wow-delay="0.1s">
+      <div class="px-5 py-5">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="footer-logo">
+              <img src="./img/logo2.webp" alt="Logo" />
+            </div>
+            <p class="footer-description mt-3">
+              MiniJobGermany.de hilft Ihnen dabei, Minijobs und Nebenjobs in
+              ganz Deutschland zu finden und macht Ihre Jobsuche einfach und
+              stressfrei. Egal ob Sie Student, Rentner oder auf der Suche nach
+              einem Nebenverdienst sind, wir haben Stellenangebote, die Ihren
+              Bedürfnissen entsprechen.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <p style="font-size: 25px; font-weight: 700" class="text-white mb-4 mt-5">
+              Contact
+            </p>
+            <div class="contact-info">
+              <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i><a
+                  href="mailto:contact@minijobgermany.de">contact@minijobgermany.de</a>
+              </p>
+              <p class="mb-2">
+                <i class="fab fa-linkedin me-3"></i><a
+                  href="https://www.linkedin.com/company/minijobgermany-de/">linkedIn/minijobgermany</a>
+              </p>
+              <p class="mb-2">
+                <i class="fab fa-facebook me-3"></i><a
+                  href="https://www.facebook.com/minijobgermany.de">facebook/minijobgermany</a>
+              </p>
+
+              <p class="mb-2">
+                <i class="fa-brands fa-instagram me-3"></i>
+                <a href="https://www.instagram.com/minijobgermany.de/">instagram/minijobgermany</a>
+              </p>
+              <p class="mb-2">
+                <i class="fa-brands fa-pinterest me-3"></i>
+                <a href="https://de.pinterest.com/minijobgermany/">pinterest/minijobgermany</a>
+              </p>
+              <p class="mb-2">
+                <i class="fa-brands fa-youtube me-3"></i>
+                <a href="https://www.youtube.com/@minijobgermany-de">youtube/minijobgermany</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <p style="font-size: 25px; font-weight: 700" class="text-white pt-2 mb-1 mt-5">
+              Newsletter
+            </p>
+            <p>
+              Abonnieren Sie unsere E-Mail-Updates und erhalten Sie die
+              neuesten Stellenangebote direkt in Ihren Posteingang.
+            </p>
+            <div class="position-relative" style="max-width: 400px">
+              <input class="form-control bg-white text-dark w-100 py-3 ps-4 pe-5" type="email" required
+                placeholder="Your email" id="newsletter-input" />
+              <button type="button" id="newsletter-button" onclick="subscribeToEmail();"
+                aria-label="Subscribe to Newsletter" class="btn w-25 py-2 position-absolute top-0 end-0 mt-2 me-2">
+                <span class="fa fa-paper-plane"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 25px; font-weight: 700" class="text-white mb-3">
+          📍 Unser Standort
+        </p>
+        <div class="google-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.1640150449757!2d12.443471876154968!3d51.363281421222055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6573717169d2d%3A0xb2996461c2c5affe!2sMinijob%20Germany.de!5e0!3m2!1sen!2s!4v1743758961069!5m2!1sen!2s"
+            width="100%" height="250" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright py-3">
+          <div class="row">
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+              &copy; 2025 Minijobgermany.de. All rights reserved
+            </div>
+            <div class="col-md-8 text-center text-md-end">
+              <div class="footer-menu">
+                <a target="_blank" href="about-us">About Us</a>
+                <a target="_blank" href="disclaimer">Disclaimer</a>
+                <a target="_blank" href="terms-condition">Terms and condition</a>
+                <a target="_blank" href="privacy-policy">Privacy Policy</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Footers End -->
     </div>
+    <!-- Footers End -->
+  </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Template Javascript -->
-  </body>
+  <!-- Template Javascript -->
+</body>
+
 </html>

@@ -59,8 +59,13 @@
     <link rel="stylesheet" href="./style.css" />
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="canonical" href="https://minijobgermany.de/minijob-tempelhof" />
-  </head>
+    <script>
+      const canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      canonicalLink.setAttribute("href", window.location.href);
+      document.head.appendChild(canonicalLink);
+    </script>
+      </head>
 
   <body data-city="Tempelhof">
     <!-- Navbar Start -->
