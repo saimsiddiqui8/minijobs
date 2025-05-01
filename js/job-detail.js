@@ -30,6 +30,9 @@ function showJobExpiredMessage() {
 }
 
 async function loadJobDetail() {
+  document.getElementById("job-loader").style.display = "block";
+  document.getElementById("job-content").style.display = "none";
+
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("guid");
@@ -119,6 +122,11 @@ async function loadJobDetail() {
     schemaScript.type = "application/ld+json";
     schemaScript.text = JSON.stringify(jobSchema);
     document.head.appendChild(schemaScript);
+    
+    // After everything is loaded
+    document.getElementById("job-loader").style.display = "none";
+    document.getElementById("job-content").style.display = "block";
+
   } catch (error) {
     console.error("Error loading job detail:", error);
   }

@@ -298,20 +298,26 @@
       </a>
       <div class="row gy-5 gx-4">
         <div class="col-lg-8">
-          <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
-            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-              <li class="breadcrumb-item">
-                <a href="/">MiniJobGermany <span class="text-primary">.de</span></a>
-              </li>
-              <!-- <li class="breadcrumb-item">
-                                <a id="city-crumb-link" href="#">City</a>
-                            </li> -->
-              <li class="breadcrumb-item active" id="breadcrumb-title" aria-current="page">
-                Loading...
-              </li>
-            </ol>
-          </nav>
-
+          <div id="job-loader" class="text-center py-5">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <div id="job-content" style="display: none;">
+            <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+              <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li class="breadcrumb-item">
+                  <a href="/">MiniJobGermany <span class="text-primary">.de</span></a>
+                </li>
+                <!-- <li class="breadcrumb-item">
+                                  <a id="city-crumb-link" href="#">City</a>
+                              </li> -->
+                <li class="breadcrumb-item active" id="breadcrumb-title" aria-current="page">
+                  Loading...
+                </li>
+              </ol>
+            </nav>
+          </div>
           <div class="d-flex align-items-center mb-5">
             <div class="text-start ps-4">
               <h1 class="mb-3" id="job-title">Marketing Manager</h1>
