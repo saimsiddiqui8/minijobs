@@ -59,10 +59,19 @@
     <link rel="stylesheet" href="./style.css" />
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-    <link
-      rel="canonical"
-      href="https://minijobgermany.de/minijob-friedrichshain"
-    />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const canonicalLink = document.createElement("link");
+        canonicalLink.setAttribute("rel", "canonical");
+  
+        // Get pathname only, without search params
+        const path = window.location.pathname;
+  
+        // Set static canonical
+        canonicalLink.setAttribute("href", window.location.origin + path);
+        document.head.appendChild(canonicalLink);
+      });
+    </script>
   </head>
 
   <body data-city="Friedrichshain">

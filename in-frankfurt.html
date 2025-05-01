@@ -59,12 +59,20 @@
     <link rel="stylesheet" href="./style.css" />
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-    <script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
       const canonicalLink = document.createElement("link");
       canonicalLink.setAttribute("rel", "canonical");
-      canonicalLink.setAttribute("href", window.location.href);
+
+      // Get pathname only, without search params
+      const path = window.location.pathname;
+
+      // Set static canonical
+      canonicalLink.setAttribute("href", window.location.origin + path);
       document.head.appendChild(canonicalLink);
-    </script>
+    });
+  </script>
+
       </head>
 
   <body data-city="Frankfurt">

@@ -9,10 +9,17 @@
     content="MiniJobGermany.de connects job seekers with top mini job opportunities across Germany, making job hunting easy and efficient."
     name="description" />
   <script>
-    const canonicalLink = document.createElement("link");
-    canonicalLink.setAttribute("rel", "canonical");
-    canonicalLink.setAttribute("href", window.location.href);
-    document.head.appendChild(canonicalLink);
+    document.addEventListener("DOMContentLoaded", () => {
+      const canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+
+      // Get pathname only, without search params
+      const path = window.location.pathname;
+
+      // Set static canonical
+      canonicalLink.setAttribute("href", window.location.origin + path);
+      document.head.appendChild(canonicalLink);
+    });
   </script>
   <!-- Favicon -->
   <link href="img/favicon.ico" rel="icon" />
