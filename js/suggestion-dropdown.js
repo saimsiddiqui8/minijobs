@@ -22,8 +22,7 @@ keywordsInput.addEventListener("input", (e) => {
     try {
       const res = await fetch(`${BASE_URL}job/suggestions?q=${encodeURIComponent(query)}&city=${encodeURIComponent(selectedCity)}`);
       const data = await res.json();
-      console.log(data)
-      suggestions.innerHTML = data
+      suggestions.innerHTML = data.data.data
         .map(item => `
           <li onclick="selectSuggestion('${item.value}', '${item.type}')">
             <strong>${item.value}</strong>
