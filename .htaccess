@@ -16,6 +16,10 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^job-detail/[^/]+$ /job-detail.html [L,QSA]
 
+# Redirect any request to /minijob-* to /city/minijob-* (only if not already in /city/)
+RewriteCond %{REQUEST_URI} ^/minijob-(.*)$
+RewriteRule ^minijob-(.*)$ /city/minijob-$1 [R=301,L]
+
 # Check if the requested file exists as .html
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
