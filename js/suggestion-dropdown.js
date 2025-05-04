@@ -1,3 +1,4 @@
+const selectedCity = document.body.dataset.city || "";
 
 const keywordInput = document.getElementById("keyword");
 
@@ -19,11 +20,10 @@ keywordInput.addEventListener("input", (e) => {
 
   debounceTimer = setTimeout(async () => {
     try {
-      const res = await fetch(`${BASE_URL}job/suggestions?q=${encodeURIComponent(query)}`);
+      const res = await fetch(`${BASE_URL}job/suggestions?q=${encodeURIComponent(query)}&city=${encodeURIComponent(selectedCity)}`);
       const data = await res.json();
 
       suggestions.innerHTML = data
-        .filter(item => item.type !== "city") // Hide cities
         .map(item => `
           <li onclick="selectSuggestion('${item.value}', '${item.type}')">
             <strong>${item.value}</strong>
