@@ -55,3 +55,5 @@ keywordInput.addEventListener("input", (e) =>
 locationInput.addEventListener("input", (e) =>
   showSuggestions(e.target.value, "location"),
 );
+
+
