@@ -36,6 +36,7 @@ keywordsInput.addEventListener("input", (e) => {
 
 function selectSuggestion(value) {
   keywordsInput.value = value;
+  suggestions.innerHTML = "";
 }
 
 document.addEventListener("click", (e) => {
