@@ -9,6 +9,7 @@ const types = urlParams.get("types") ? urlParams.get("types").split(",") : [];
 const city = document.body.dataset.city || "";
 const limit = 20;
 let isLoading = false;
+let userChangedJobType = false;
 
 function updateUrlParams() {
   const keyword = document.getElementById("keyword").value.trim();
@@ -16,7 +17,10 @@ function updateUrlParams() {
 
   const params = new URLSearchParams();
   if (keyword) params.set("keyword", keyword);
-  if (selectedTypes.length > 0) params.set("types", selectedTypes.join(","));
+
+  if (userChangedJobType && selectedTypes.length > 0) {
+    params.set("types", selectedTypes.join(","));
+  }
   if (currentPage !== 1) {
     params.set("page", currentPage);
   }
@@ -85,6 +89,7 @@ const checkboxes = document.querySelectorAll(".form-check-input");
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
     // Whenever a checkbox is changed, refetch jobs
+    userChangedJobType = true;
     currentPage = 1;
     fetchJobs(currentPage, limit);
   });
