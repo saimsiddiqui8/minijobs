@@ -1,15 +1,15 @@
 const selectedCity = document.body.dataset.city || "";
 
-const keywordInput = document.getElementById("keyword");
+const keywordsInput = document.getElementById("keyword");
 
 // Create suggestions container
 const suggestions = document.createElement("ul");
 suggestions.className = "autocomplete-city-results";
-keywordInput.parentElement.style.position = "relative";
-keywordInput.parentElement.appendChild(suggestions);
+keywordsInput.parentElement.style.position = "relative";
+keywordsInput.parentElement.appendChild(suggestions);
 
 let debounceTimer;
-keywordInput.addEventListener("input", (e) => {
+keywordsInput.addEventListener("input", (e) => {
   const query = e.target.value;
   clearTimeout(debounceTimer);
 
@@ -36,13 +36,13 @@ keywordInput.addEventListener("input", (e) => {
 });
 
 function selectSuggestion(value, type) {
-  keywordInput.value = value;
+  keywordsInput.value = value;
   suggestions.innerHTML = "";
   fetchJobs(1); // re-fetch jobs if needed
 }
 
 document.addEventListener("click", (e) => {
-  if (!suggestions.contains(e.target) && e.target !== keywordInput) {
+  if (!suggestions.contains(e.target) && e.target !== keywordsInput) {
     suggestions.innerHTML = "";
   }
 });
