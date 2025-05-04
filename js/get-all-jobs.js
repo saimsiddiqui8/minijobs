@@ -17,8 +17,9 @@ function updateUrlParams() {
   const params = new URLSearchParams();
   if (keyword) params.set("keyword", keyword);
   if (selectedTypes.length > 0) params.set("types", selectedTypes.join(","));
-  params.set("page", currentPage);
-
+  if (currentPage !== 1) {
+    params.set("page", currentPage);
+  }
   const newUrl = `${window.location.pathname}?${params.toString()}`;
   window.history.pushState({}, "", newUrl);
 
@@ -365,7 +366,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     prevButton.onclick = () => {
       updatePageInUrl(currentPage - 1);
       fetchJobs(currentPage - 1).then(() => {
-      document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
+        document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
 
       });
     };
@@ -380,7 +381,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     pageButton.onclick = () => {
       updatePageInUrl(i);
       fetchJobs(i).then(() => {
-      document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
+        document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
 
       });
     };
@@ -396,7 +397,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     nextButton.onclick = () => {
       updatePageInUrl(currentPage + 1);
       fetchJobs(currentPage + 1).then(() => {
-      document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
+        document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
 
       });
     };
