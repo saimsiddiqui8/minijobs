@@ -15,6 +15,13 @@
   font-family: Helvetica;
 }
 
+/* job-detail  */
+#job-title {
+  font-size: 1.75rem;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
 /* navbar  */
 .navbar-nav .nav-link {
   font-family: "Arial", sans-serif !important;
@@ -104,6 +111,7 @@
 
 /* ============ mobile view ============ */
 @media (max-width: 991px) {
+
   .navbar.fixed-top .navbar-collapse,
   .navbar.sticky-top .navbar-collapse {
     overflow-y: auto;
@@ -637,7 +645,7 @@ li.nav-item.megamenu::marker {
 }
 
 /* Show tick when checked */
-.form-check-input:checked + .form-check-label::after {
+.form-check-input:checked+.form-check-label::after {
   content: "✓";
   position: absolute;
   left: 4px;
@@ -682,7 +690,7 @@ li.nav-item.megamenu::marker {
 }
 
 /* Blue background when checked */
-.form-check-input:checked + .form-check-label::before {
+.form-check-input:checked+.form-check-label::before {
   background-color: #007bff;
 }
 
