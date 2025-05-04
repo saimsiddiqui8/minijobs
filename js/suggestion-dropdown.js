@@ -24,8 +24,8 @@ keywordsInput.addEventListener("input", (e) => {
       const data = await res.json();
       suggestions.innerHTML = data.data.data
         .map(item => `
-          <li onclick="selectSuggestion('${item.value}', '${item.type}')">
-            <strong>${item.value}</strong>
+          <li onclick="selectSuggestion('${item.title}')">
+            <strong>${item.title}</strong>
           </li>
         `).join("");
     } catch (err) {
@@ -34,10 +34,8 @@ keywordsInput.addEventListener("input", (e) => {
   }, 300);
 });
 
-function selectSuggestion(value, type) {
+function selectSuggestion(value) {
   keywordsInput.value = value;
-  suggestions.innerHTML = "";
-  fetchJobs(1); // re-fetch jobs if needed
 }
 
 document.addEventListener("click", (e) => {
