@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteBase /
 
+RewriteCond %{REQUEST_URI} ^/city/minijob-(.*)$
+RewriteRule ^minijob-(.*)$ /minijob-$1 [R=301,L]
+
 RewriteRule ^in-(.*)$ /minijob-$1 [R=301,L]
 
 # Serve "in-{city}.html" when "minijob-{city}" is requested (without redirection)
