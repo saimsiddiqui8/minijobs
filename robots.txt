@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /detail-page/
+
+Sitemap: https://minjobgermany.de/sitemap.xml
