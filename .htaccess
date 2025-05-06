@@ -1,8 +1,8 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteCond %{REQUEST_URI} ^/city/minijob-(.*)$
-RewriteRule ^minijob-(.*)$ /minijob-$1 [R=301,L]
+# Redirect URLs from /city/minijob-* to /minijob-* (e.g., /city/minijob-abc → /minijob-abc)
+RewriteRule ^city/minijob-(.*)$ /minijob-$1 [R=301,L]
 
 RewriteRule ^in-(.*)$ /minijob-$1 [R=301,L]
 
