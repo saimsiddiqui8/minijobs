@@ -40,6 +40,11 @@ function updateUrlParams() {
   canonical.setAttribute("href", window.location.origin + newUrl);
 }
 
+function scrollToJob() {
+  document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
+
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Fill search input
   const searchInput = document.getElementById("keyword");
@@ -188,6 +193,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
   }
 
   jobFilter(keyword.toLowerCase(), 1, limit);
+  scrollToJob();
 });
 
 function getInitialSelectedJobTypes() {
@@ -374,8 +380,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     prevButton.onclick = () => {
       updatePageInUrl(currentPage - 1);
       fetchJobs(currentPage - 1).then(() => {
-        document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
-
+        scrollToJob();
       });
     };
     paginationContainer.appendChild(prevButton);
@@ -389,8 +394,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     pageButton.onclick = () => {
       updatePageInUrl(i);
       fetchJobs(i).then(() => {
-        document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
-
+        scrollToJob();
       });
     };
     if (i === currentPage) pageButton.classList.add("active");
@@ -405,8 +409,7 @@ function generatePaginationButtons(totalPages, currentPage) {
     nextButton.onclick = () => {
       updatePageInUrl(currentPage + 1);
       fetchJobs(currentPage + 1).then(() => {
-        document.querySelector(".container-xxl.pb-5.pt-2").scrollIntoView({ behavior: "smooth", block: "start" });
-
+        scrollToJob();
       });
     };
     paginationContainer.appendChild(nextButton);
