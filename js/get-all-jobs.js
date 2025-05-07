@@ -62,7 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 3. Now fetch jobs AFTER restoring UI state
-  fetchJobs(currentPage, limit);
+  // If a keyword is present, perform a keyword search
+  if (keyword) {
+    jobFilter(keyword, currentPage, limit);
+  } else {
+    fetchJobs(currentPage, limit);
+  }
 });
 
 function updateJobInfo(totalJobs, currentPage, totalPages) {
@@ -99,7 +104,7 @@ checkboxes.forEach((checkbox) => {
     // Whenever a checkbox is changed, refetch jobs
     userChangedJobType = true;
     currentPage = 1;
-    fetchJobs(currentPage, limit);
+    fetchJobs(currentPage, limit).then(() => scrollToJob());
   });
 });
 
@@ -152,6 +157,7 @@ async function jobFilter(keyword, page = 1, limit = 15) {
     if (city) {
       URL += `&city=${encodeURIComponent(city)}`;
     }
+    
     const response = await fetch(URL);
     if (!response.ok) throw new Error("Failed to fetch jobs");
 
