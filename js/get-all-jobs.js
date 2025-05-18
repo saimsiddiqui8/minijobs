@@ -6,17 +6,21 @@ let currentPage = parseInt(urlParams.get("page")) || 1;
 const keyword = urlParams.get("keyword") || "";
 const types = urlParams.get("types") ? urlParams.get("types").split(",") : [];
 
-const city = document.body.dataset.city || "";
+const city = urlParams.get("city") || document.body.dataset.city || "";
 const limit = 20;
 let isLoading = false;
 let userChangedJobType = false;
 
 function updateUrlParams() {
   const keyword = document.getElementById("keyword").value.trim();
+  const cityInput = document.getElementById("location").value.trim();
   const selectedTypes = getSelectedJobTypes(); // array
 
   const params = new URLSearchParams();
   if (keyword) params.set("keyword", keyword);
+  if (cityInput) {
+    params.set("city", cityInput);
+  }
 
   if (userChangedJobType && selectedTypes.length > 0) {
     params.set("types", selectedTypes.join(","));
@@ -50,6 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("keyword");
   if (searchInput && keyword) {
     searchInput.value = keyword;
+  }
+
+  const locationInput = document.getElementById("location");
+  if (locationInput && urlParams.get("city")) {
+    locationInput.value = city;
   }
 
   // Check the checkboxes based on types from URL
@@ -153,11 +162,14 @@ function updatePageInUrl(page) {
 
 async function jobFilter(keyword, page = 1, limit = 15) {
   try {
-    let URL = `${BASE_URL}job/search?q=${encodeURIComponent(keyword)}&page=${page}&limit=${limit}`;
+    let URL = `${BASE_URL}job/search?page=${page}&limit=${limit}`;
+    if (keyword) {
+      URL += `&q=${encodeURIComponent(keyword)}`;
+    }
     if (city) {
       URL += `&city=${encodeURIComponent(city)}`;
     }
-    
+
     const response = await fetch(URL);
     if (!response.ok) throw new Error("Failed to fetch jobs");
 
@@ -193,10 +205,11 @@ document.getElementById("searchButton").addEventListener("click", () => {
   noJobsSection.style.display = "none";
   paginationContainer.style.display = "none";
 
-  if (keyword.length < 2) {
-    alert("Please enter at least 2 characters");
+  if ((keyword.length < 2 && !city) || (city.length < 1 && keyword.length < 2)) {
+    alert("Please enter at least 2 characters in keyword or a valid city");
     return;
   }
+
 
   jobFilter(keyword.toLowerCase(), 1, limit);
   scrollToJob();

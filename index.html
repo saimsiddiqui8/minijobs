@@ -232,11 +232,11 @@
                   <i class="fa-solid fa-magnifying-glass ps-3" style="font-size: 22px"></i>
                   <input type="text" id="keyword" class="form-control border-0 py-3" placeholder="Search Jobs" />
                 </div>
-                <!-- <div class="ps-2 col-md-6 d-flex align-items-center after">
+                <div class="ps-2 col-md-6 d-flex align-items-center after">
                   <i class="fa-solid fa-location-dot ps-3" style="font-size: 23px"></i>
                   <input type="text" id="location" class="form-control border-0 py-3"
                     placeholder="Search by Location..." />
-                </div> -->
+                </div>
               </div>
             </div>
             <div class="col-md-4 pe-3 searches2" style="align-items: end !important">
@@ -252,7 +252,8 @@
           <!-- Row Container -->
           <div class="row align-items-center g-3 my-1">
             <!-- City Dropdown -->
-            <div class="col-12 col-md-6">
+
+            <!-- <div class="col-12 col-md-6">
               <div class="position-relative">
                 <select class="form-select" id="cityDropdown" aria-label="Select City" multiple>
                   <optgroup label="Bayern (Bavaria)">
@@ -274,13 +275,13 @@
                   <optgroup label="Hessen">
                     <option value="frankfurt">🇩🇪 Frankfurt</option>
                   </optgroup>
-                  <!-- Add more states and cities here -->
                 </select>
               </div>
-            </div>
+            </div> -->
+            
             <!-- Job Type Checkboxes -->
-            <div class="col-12 col-md-6">
-              <div class="d-flex flex-wrap gap-3">
+            <div class="col-12 col-md-12">
+              <div class="d-flex justify-content-center flex-wrap gap-3">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="Part-time" id="partTime" checked />
                   <label class="form-check-label" for="partTime">
@@ -1260,6 +1261,7 @@
   <!-- Template Javascript -->
   <script src="js/get-all-jobs.js"></script>
   <script src="js/suggestion-dropdown.js"></script>
+  <script src="js/city-dropdown.js"></script>
   <script src="js/search.js"></script>
 </body>
 

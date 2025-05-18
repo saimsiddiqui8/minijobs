@@ -733,8 +733,6 @@ li.nav-item.megamenu::marker {
 
 .keyword {
   position: relative;
-  /* ensures absolute dropdown works inside */
-  width: 100%;
 }
 
 .autocomplete-city-results {
