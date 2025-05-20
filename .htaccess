@@ -1,6 +1,16 @@
 RewriteEngine On
 RewriteBase /
 
+#####################################################################
+# Step 1: Redirect from /minijob-bonn.html to /city/minijob-bonn
+RewriteRule ^minijob-(.+)\.html$ /city/minijob-$1 [R=301,L]
+
+# Step 2: Internally serve minijob-bonn.html when accessing /city/minijob-bonn
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^city/minijob-(.+)$ /minijob-$1.html [L]
+#####################################################################
+
 # Redirect URLs from /city/minijob-* to /minijob-* (e.g., /city/minijob-abc → /minijob-abc)
 RewriteRule ^city/minijob-(.*)$ /minijob-$1 [R=301,L]
 
