@@ -1,9 +1,19 @@
 RewriteEngine On
 RewriteBase /
 
-# Redirect URLs from /city/minijob-* to /minijob-* (e.g., /city/minijob-abc → /minijob-abc)
-RewriteRule ^city/minijob-(.*)$ /minijob-$1 [R=301,L]
+# ✅ Redirect /minijob-bonn.html to /city/minijob-bonn
+RewriteCond %{THE_REQUEST} \s/minijob-([^.]+)\.html [NC]
+RewriteRule ^minijob-([^.]+)\.html$ /city/minijob-%1 [R=301,L]
 
+# ✅ Internally serve minijob-bonn.html when accessing /city/minijob-bonn
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^city/minijob-([^.]+)$ /minijob-%1.html [L]
+
+# Remove or comment out this line to avoid redirect loop:
+# RewriteRule ^city/minijob-(.*)$ /minijob-$1 [R=301,L]
+
+# Redirect /in-* to /minijob-*
 RewriteRule ^in-(.*)$ /minijob-$1 [R=301,L]
 
 # Redirect /redirect/{encoded-url} to /redirect.html?url={encoded-url}
@@ -11,14 +21,14 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^redirect/(.*)$ /redirect.html?url=$1 [L,QSA]
 
-# ✅ Serve "job-detail.html" for "job-detail/{slug}" URLs
+# Serve job-detail.html for /job-detail/{slug}
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^job-detail/[^/]+$ /job-detail.html [L,QSA]
 
-# Check if the requested file exists as .html
+# Check if requested file exists as .html
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
-# Custom 404 Error Page
+# Custom 404 Page
 ErrorDocument 404 /404.html
