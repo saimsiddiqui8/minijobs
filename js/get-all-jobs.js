@@ -380,6 +380,33 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
   scriptTag.type = "application/ld+json";
   scriptTag.textContent = JSON.stringify(allJobsSchema, null, 2);
   document.head.appendChild(scriptTag);
+  if (window.innerWidth <= 992) { // Desktop only
+    const jobContainer = document.getElementById("job-container");
+    const welcomeBox = document.getElementById("welcomeBoxWrapper");
+    const newsletter = document.getElementById("newsletterWrapper");
+    const jobItems = jobContainer.querySelectorAll(".job-item");
+    welcomeBox.innerHTML = `
+      <section id="about-our-web">
+        <h2 style="font-size: 20px" class="mt-1 mb-2 text-white">
+          Willkommen auf MinijobGermany.de
+        </h2>
+        <p style="font-size: 13.5px">
+          Finden Sie die besten Karrierechancen und bewerben Sie sich auf Nebenjobs in Deutschland mit MinijobGermany.de.
+          Wenn Sie als Student, Rentner oder Hausfrau Ihren finanziellen Lebensunterhalt sichern wollen, bewerben Sie sich
+          auf unsere Angebote in Deutschland und starten Sie Ihre berufliche Karriere.
+        </p>
+      </section>
+    `;
+    if (jobItems.length >= 4 && welcomeBox) {
+      jobItems[3].insertAdjacentElement("afterend", welcomeBox);
+      welcomeBox.classList.remove("d-none"); // ensure it's visible
+    }
+
+    if (jobItems.length >= 8) {
+      jobItems[7].insertAdjacentElement("afterend", newsletter);
+      newsletter.classList.remove("d-none"); // ensure it's visible
+    }
+  }
 }
 
 function generatePaginationButtons(totalPages, currentPage) {
