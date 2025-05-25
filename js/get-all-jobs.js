@@ -343,7 +343,7 @@ function insertJobsinUi(jobs, totalPages, currentPage) {
     //   window.location.href = url;
     // });
     jobItem.addEventListener("click", () => {
-      const url = `job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`;
+      const url = `/job-detail/${slug}?guid=${encodeURIComponent(job.guid)}`;
       window.open(url, "_blank");
     });
 
