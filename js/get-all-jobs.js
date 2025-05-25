@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3. Now fetch jobs AFTER restoring UI state
   // If a keyword is present, perform a keyword search
-  if (keyword) {
+  if (keyword || city) {
     jobFilter(keyword, currentPage, limit);
   } else {
     fetchJobs(currentPage, limit);
