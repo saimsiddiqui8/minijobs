@@ -8,7 +8,7 @@ RewriteRule ^state/minijob-brandenburg$ /minijob-brandenburg.html [L]
 RewriteCond %{REQUEST_URI} ^/state/
 RewriteRule ^state/(.*)$ /$1 [L]
 
-# Redirect URLs from /city/minijob-* to /minijob-* (e.g., /city/minijob-abc → /minijob-abc)
+# Redirect URLs from /city/minijob-* to /minijob-*
 RewriteRule ^city/minijob-(.*)$ /minijob-$1 [R=301,L]
 
 RewriteRule ^in-(.*)$ /minijob-$1 [R=301,L]
