@@ -1,8 +1,9 @@
 RewriteEngine On
 RewriteBase /
 
-# Only this rule
-RewriteRule ^state/minijob-berlin$ /minijob-berlin.html [L]
+# ✅ Serve /minijob-berlin.html for /state/minijob-berlin WITHOUT breaking CSS
+RewriteCond %{REQUEST_URI} ^/state/minijob-berlin$
+RewriteRule ^state/minijob-berlin$ /minijob-berlin.html [L,PT]
 
 # Redirect URLs from /city/minijob-* to /minijob-* (e.g., /city/minijob-abc → /minijob-abc)
 RewriteRule ^city/minijob-(.*)$ /minijob-$1 [R=301,L]
