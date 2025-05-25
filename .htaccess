@@ -1,11 +1,8 @@
 RewriteEngine On
 RewriteBase /
 
-# ✅ Internally rewrite /state/minijob-berlin to /minijob-berlin (serves the same page without changing URL)
+# Only this rule
 RewriteRule ^state/minijob-berlin$ /minijob-berlin [L]
-
-# ✅ Redirect only /minijob-berlin to /state/minijob-berlin (optional, if you want the URL to show /state/)
-RewriteRule ^minijob-berlin$ /state/minijob-berlin [R=301,L]
 
 # Redirect URLs from /city/minijob-* to /minijob-* (e.g., /city/minijob-abc → /minijob-abc)
 RewriteRule ^city/minijob-(.*)$ /minijob-$1 [R=301,L]
