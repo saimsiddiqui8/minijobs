@@ -3,6 +3,9 @@ RewriteBase /
 
 # ✅ Rewrite /state/minijob-brandenburg to /minijob-brandenburg.html
 RewriteRule ^state/minijob-brandenburg$ /minijob-brandenburg.html [L]
+RewriteRule ^state/minijob-bayern$ /minijob-bayern.html [L]
+
+# ✅ Redirect plain /minijob-bayern to /state/minijob-bayern
 RewriteRule ^minijob-bayern$ /state/minijob-bayern [R=301,L]
 
 
