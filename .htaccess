@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteBase /
 
+# Redirect only /minijob-berlin to /state/minijob-berlin
+RewriteRule ^minijob-berlin$ /state/minijob-berlin [R=301,L]
+
 # Redirect URLs from /city/minijob-* to /minijob-* (e.g., /city/minijob-abc → /minijob-abc)
 RewriteRule ^city/minijob-(.*)$ /minijob-$1 [R=301,L]
 
