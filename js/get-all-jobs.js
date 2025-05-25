@@ -212,8 +212,8 @@ document.getElementById("searchButton").addEventListener("click", () => {
     return;
   }
 
-  jobFilter(keyword.toLowerCase(), 1, limit);
-  scrollToJob();
+  fetchJobTypeCounts();
+  jobFilter(keyword.toLowerCase(), 1, limit).then(() => scrollToJob())
 });
 
 function getInitialSelectedJobTypes() {
