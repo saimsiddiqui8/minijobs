@@ -6,7 +6,7 @@ let currentPage = parseInt(urlParams.get("page")) || 1;
 const keyword = urlParams.get("keyword") || "";
 const types = urlParams.get("types") ? urlParams.get("types").split(",") : [];
 
-const city = urlParams.get("city") || document.body.dataset.city || "";
+let city = urlParams.get("city") || document.body.dataset.city || "";
 const limit = 20;
 let isLoading = false;
 let userChangedJobType = false;
@@ -201,6 +201,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
   const noJobsSection = document.getElementById("no-jobs");
   const paginationContainer = document.getElementById("pagination-container");
 
+  city = locationInput;
   // Reset UI
   jobContainer.innerHTML = "";
   noJobsSection.style.display = "none";
