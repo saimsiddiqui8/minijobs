@@ -1,8 +1,8 @@
 RewriteEngine On
 RewriteBase /
 
-# ✅ Rewrite /state/minijob-berlin to /minijob-berlin.html
-RewriteRule ^state/minijob-berlin$ /minijob-berlin.html [L]
+# ✅ Rewrite /state/minijob-brandenburg to /minijob-brandenburg.html
+RewriteRule ^state/minijob-brandenburg$ /minijob-brandenburg.html [L]
 
 # ✅ Rewrite any request under /state/ to root (for assets to load correctly)
 RewriteCond %{REQUEST_URI} ^/state/
