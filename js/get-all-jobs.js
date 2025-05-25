@@ -196,6 +196,7 @@ async function jobFilter(keyword, page = 1, limit = 15) {
 
 document.getElementById("searchButton").addEventListener("click", () => {
   const keyword = document.getElementById("keyword").value.trim();
+  const locationInput = document.getElementById("location").value.trim();
   const jobContainer = document.getElementById("job-container");
   const noJobsSection = document.getElementById("no-jobs");
   const paginationContainer = document.getElementById("pagination-container");
@@ -205,11 +206,10 @@ document.getElementById("searchButton").addEventListener("click", () => {
   noJobsSection.style.display = "none";
   paginationContainer.style.display = "none";
 
-  if ((keyword.length < 2 && !city) || (city.length < 1 && keyword.length < 2)) {
+  if (keyword.length < 2 && locationInput.length < 1) {
     alert("Please enter at least 2 characters in keyword or a valid city");
     return;
   }
-
 
   jobFilter(keyword.toLowerCase(), 1, limit);
   scrollToJob();
