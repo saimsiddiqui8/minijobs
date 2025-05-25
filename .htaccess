@@ -3,6 +3,8 @@ RewriteBase /
 
 # ✅ Rewrite /state/minijob-brandenburg to /minijob-brandenburg.html
 RewriteRule ^state/minijob-brandenburg$ /minijob-brandenburg.html [L]
+RewriteRule ^minijob-bayern$ /state/minijob-bayern [R=301,L]
+
 
 # ✅ Rewrite any request under /state/ to root (for assets to load correctly)
 RewriteCond %{REQUEST_URI} ^/state/
