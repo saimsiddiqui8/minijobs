@@ -202,7 +202,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
   const paginationContainer = document.getElementById("pagination-container");
 
   city = locationInput;
-  
+
   // Reset UI
   jobContainer.innerHTML = "";
   noJobsSection.style.display = "none";
@@ -218,11 +218,11 @@ document.getElementById("searchButton").addEventListener("click", () => {
 });
 
 function getInitialSelectedJobTypes() {
-  if (types.length > 0) {
-    return types; // Use types from URL
-  } else {
-    return getSelectedJobTypes(); // Fallback to default checked
-  }
+  // if (types.length > 0) {
+  //   return types; // Use types from URL
+  // } else {
+  return getSelectedJobTypes(); // Fallback to default checked
+  // }
 }
 
 // Function to fetch paginated jobs
