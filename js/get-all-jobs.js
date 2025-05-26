@@ -202,6 +202,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
   const paginationContainer = document.getElementById("pagination-container");
 
   city = locationInput;
+  
   // Reset UI
   jobContainer.innerHTML = "";
   noJobsSection.style.display = "none";
