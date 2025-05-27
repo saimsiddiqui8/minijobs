@@ -169,6 +169,12 @@ async function jobFilter(keyword, page = 1, limit = 15) {
     if (city) {
       URL += `&city=${encodeURIComponent(city)}`;
     }
+    const selectedJobTypes = getSelectedJobTypes();
+    const jobType = selectedJobTypes.length > 0 ? selectedJobTypes.join(", ") : "Part-time";
+
+    if (jobType) {
+      URL += `&jobtype=${encodeURIComponent(jobType)}`;
+    }
 
     const response = await fetch(URL);
     if (!response.ok) throw new Error("Failed to fetch jobs");
