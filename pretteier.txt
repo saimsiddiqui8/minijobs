@@ -1,1 +1,26 @@
 prettier --write "**/*.{html,css,js}"
+
+
+
+https://minijobgermany.de/minijob-dusseldorf
+https://minijobgermany.de/minijob-bielefeld	
+https://minijobgermany.de/state/minijob-nordrhein-westfalen (berlin job)
+https://minijobgermany.de/state/minijob-schleswig-holstein
+
+
+https://minijobgermany.de/minijob-baden-wurttemberg (404)
+https://minijobgermany.de/minijob-bavaria (404)
+https://minijobgermany.de/minijob- (404)
+https://minijobgermany.de/minijob-thuringen (404)
+https://minijobgermany.de/minijob-saxony-anhalt (404)
+
+
+https://minijobgermany.de/state/minijob-niedersachsen
+
+
+https://minijobgermany.de/minijob-hanover (FIXED)
+https://minijobgermany.de/minijob-nuremberg
+https://minijobgermany.de/minijob-monchengladbach
+https://minijobgermany.de/state/minijob-rheinland-pfalz
+https://minijobgermany.de/state/minijob-saarland
+https://minijobgermany.de/state/minijob-sachsen
