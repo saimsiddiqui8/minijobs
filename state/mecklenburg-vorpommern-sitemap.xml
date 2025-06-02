@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- State Page -->
+  <url>
+    <loc>https://minijobgermany.de/state/minijob-mecklenburg-vorpommern</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- City Pages -->
+  <!-- <url><loc>https://minijobgermany.de/minijob-neubrandenburg</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-rostock</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-schwerin</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-greifswald</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-neustrelitz</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-stralsund</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-wismar</loc></url> -->
+
+</urlset>

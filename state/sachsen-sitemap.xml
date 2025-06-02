@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- State Page -->
+  <url>
+    <loc>https://minijobgermany.de/state/minijob-sachsen</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- City Pages -->
+  <!-- <url><loc>https://minijobgermany.de/minijob-bautzen</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-dresden</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-freiberg</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-meissen</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-riesa</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-plauen</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-zwickau</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-chemnitz</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-leipzig</loc></url>
+  <url><loc>https://minijobgermany.de/minijob-dresden</loc></url>  -->
+  <!-- (Duplicate of above) -->
+
+</urlset>
