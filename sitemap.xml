@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://minijobgermany.de/states/state.xml</loc>
+    <loc>https://minijobgermany.de/sitemap/state.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://minijobgermany.de/pages-sitemap.xml</loc>
+    <loc>https://minijobgermany.de/sitemap/pages-sitemap.xml</loc>
   </sitemap>
   <!-- <sitemap>
     <loc>https://minijobgermany.de/blogs-sitemap.xml</loc>
   </sitemap> -->
   <sitemap>
-    <loc>https://minijobgermany.de/job-types-sitemap.xml</loc>
+    <loc>https://minijobgermany.de/sitemap/job-types-sitemap.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://minijobgermany.de/category-sitemap.xml</loc>
+    <loc>https://minijobgermany.de/sitemap/category-sitemap.xml</loc>
   </sitemap>
 </sitemapindex>
