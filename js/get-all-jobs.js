@@ -232,7 +232,7 @@ function getInitialSelectedJobTypes() {
 }
 
 // Function to fetch paginated jobs
-async function fetchJobs(page = 1, limit = 12) {
+async function fetchJobs(page = 1, limit = 20) {
   if (isLoading) return;
   isLoading = true;
   toggleLoader(true);
