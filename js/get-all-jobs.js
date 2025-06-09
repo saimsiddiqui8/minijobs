@@ -50,6 +50,9 @@ function scrollToJob() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  insertJobLoader();
+  toggleLoader(true);
+
   // Fill search input
   const searchInput = document.getElementById("keyword");
   if (searchInput && keyword) {
@@ -78,6 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchJobs(currentPage, limit);
   }
 });
+
+function toggleLoader(show) {
+  const loader = document.getElementById("job-loader");
+  if (loader) loader.style.display = show ? "block" : "none";
+}
+
+function insertJobLoader() {
+  const loaderHTML = `
+    <div id="job-loader" class="text-center py-5">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  `;
+
+  // Add loader at top of the body or wherever appropriate
+  const container = document.getElementById("job-container"); // or a specific parent container
+  container.innerHTML = loaderHTML;
+}
 
 function updateJobInfo(totalJobs, currentPage, totalPages) {
   const jobsFoundElement = document.getElementById("jobs-found");
@@ -471,14 +493,14 @@ function generatePaginationButtons(totalPages, currentPage) {
 }
 
 // Helper function to toggle loader
-function toggleLoader(show) {
-  const loader = document.getElementById("loader");
-  if (show) {
-    loader.classList.add("active");
-  } else {
-    loader.classList.remove("active");
-  }
-}
+// function toggleLoader(show) {
+//   const loader = document.getElementById("loader");
+//   if (show) {
+//     loader.classList.add("active");
+//   } else {
+//     loader.classList.remove("active");
+//   }
+// }
 
 // Decode HTML entities
 function decodeHtml(html) {
