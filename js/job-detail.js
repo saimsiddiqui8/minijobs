@@ -1,18 +1,5 @@
 const BASE_URL = "https://www.backend.parttimejobsinberlin.com/api/v1/";
 
-const currentUrl = encodeURIComponent(window.location.href);
-
-document.getElementById("share-fb").href =
-  `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
-document.getElementById("share-tw").href =
-  `https://twitter.com/intent/tweet?url=${currentUrl}&text=Check%20out%20this%20job!`;
-document.getElementById("share-li").href =
-  `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
-document.getElementById("share-wa").href =
-  `https://api.whatsapp.com/send?text=Check%20out%20this%20job:%20${currentUrl}`;
-document.getElementById("share-mail").href =
-  `mailto:?subject=Check%20out%20this%20job&body=${currentUrl}`;
-
 function showJobExpiredMessage() {
   document.querySelector(".col-lg-8").innerHTML = `
         <div class="text-center py-5">
