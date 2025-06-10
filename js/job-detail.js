@@ -180,7 +180,7 @@ async function loadRelatedJobs(job) {
         <div class="job-title">${job.title}</div>
         <div class="job-location">${job.city}, ${job.state}</div>
         <div class="job-type">${job.jobtype}</div>
-        <a href="/job-detail/${slug}?guid=${encodeURIComponent(job.guid)}" class="view-btn">View Job</a>
+        <a target="_blank" href="/job-detail/${slug}?guid=${encodeURIComponent(job.guid)}" class="view-btn">View Job</a>
       `;
       container.appendChild(card);
     });
