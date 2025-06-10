@@ -169,21 +169,15 @@ async function loadRelatedJobs(job) {
     }
 
     jobs.forEach((job) => {
-      const jobCard = document.createElement("div");
-      jobCard.className = "col";
-
-      jobCard.innerHTML = `
-        <div class="card h-100 border-0 shadow-sm rounded-4">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title mb-2 text-primary">${job.title}</h5>
-            <p class="card-text text-muted mb-1"><i class="bi bi-geo-alt"></i> ${job.city}, ${job.state}</p>
-            <p class="card-text mb-3"><span class="badge bg-secondary">${job.jobtype}</span></p>
-            <div class="mt-auto">
-              <a href="/job-detail.html?guid=${job.guid}" class="btn btn-outline-primary w-100 btn-sm">View Details</a>
-            </div>
-          </div>
-        </div>
+      const card = document.createElement("div");
+      card.className = "job-card";
+      card.innerHTML = `
+        <div class="job-title">${job.title}</div>
+        <div class="job-location">${job.city}, ${job.state}</div>
+        <div class="job-type">${job.jobtype}</div>
+        <a href="/job-detail.html?guid=${job.guid}" class="view-btn">View Job</a>
       `;
+      container.appendChild(card);
 
       container.appendChild(jobCard);
     });
