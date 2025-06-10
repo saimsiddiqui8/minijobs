@@ -140,6 +140,13 @@ document.getElementById("copy-link").addEventListener("click", () => {
   });
 });
 
+function truncateHTML(html, maxLength) {
+  const div = document.createElement("div");
+  div.innerHTML = html;
+  const text = div.textContent || div.innerText || "";
+  return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+}
+
 // Related Jobs 
 async function loadRelatedJobs(job) {
   const container = document.getElementById("related-jobs-container");
@@ -174,12 +181,17 @@ async function loadRelatedJobs(job) {
         .replace(/[^a-z0-9\s]/g, "") // Remove special characters
         .replace(/\s+/g, "-") // Replace spaces with hyphens
         .trim();
+      const description = truncateHTML(job.description, 200);
+
       const card = document.createElement("div");
       card.className = "job-card";
       card.innerHTML = `
         <div class="job-title">${job.title}</div>
         <div class="job-location">${job.city}, ${job.state}</div>
         <div class="job-type">${job.jobtype}</div>
+        <div class="mt-2" id="jobDescription">
+          ${description}
+        </div>
         <a target="_blank" href="/job-detail/${slug}?guid=${encodeURIComponent(job.guid)}" class="view-btn">View Job</a>
       `;
       container.appendChild(card);
