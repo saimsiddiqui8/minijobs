@@ -146,7 +146,7 @@ async function loadRelatedJobs(job) {
   container.innerHTML = `<div class="text-center w-100 py-5">Loading related jobs...</div>`;
 
   try {
-    let URL = `${BASE_URL}job/search?page=1&limit=4`;
+    let URL = `${BASE_URL}job/search?page=1&limit=10`;
 
     if (job.city) {
       URL += `&city=${encodeURIComponent(job.city)}`;
