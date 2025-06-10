@@ -178,8 +178,6 @@ async function loadRelatedJobs(job) {
         <a href="/job-detail.html?guid=${job.guid}" class="view-btn">View Job</a>
       `;
       container.appendChild(card);
-
-      container.appendChild(jobCard);
     });
   } catch (error) {
     console.error("Error loading related jobs:", error);
