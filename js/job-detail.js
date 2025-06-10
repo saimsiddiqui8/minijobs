@@ -144,9 +144,9 @@ document.getElementById("copy-link").addEventListener("click", () => {
 async function loadRelatedJobs(job) {
   try {
     let URL = `${BASE_URL}job/search?page=1&limit=3`;
-    
+
     if (job.city) {
-      URL += `&city=${encodeURIComponent(city)}`;
+      URL += `&city=${encodeURIComponent(job.city)}`;
     }
     if (job.jobtype) {
       URL += `&jobtype=${encodeURIComponent(job.jobtype)}`;
