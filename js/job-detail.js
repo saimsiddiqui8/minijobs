@@ -109,17 +109,26 @@ async function loadJobDetail() {
     schemaScript.type = "application/ld+json";
     schemaScript.text = JSON.stringify(jobSchema);
     document.head.appendChild(schemaScript);
-    
+
     // After everything is loaded
     document.getElementById("job-loader").style.display = "none";
     document.getElementById("job-content").style.display = "block";
-
+    
+    return job;
   } catch (error) {
     console.error("Error loading job detail:", error);
   }
 }
 
-loadJobDetail();
+loadJobDetail().then((data) => {
+  console.log(data)
+  // Load related jobs after job detail is loaded
+  const urlParams = new URLSearchParams(window.location.search);
+  const guid = urlParams.get("guid");
+  if (guid) {
+    loadRelatedJobs(guid);
+  }
+});
 
 document.getElementById("copy-link").addEventListener("click", () => {
   navigator.clipboard.writeText(window.location.href).then(() => {
@@ -133,3 +142,42 @@ document.getElementById("copy-link").addEventListener("click", () => {
     }, 2000);
   });
 });
+
+// Related Jobs 
+async function loadRelatedJobs(guid) {
+  try {
+    const response = await fetch(`${BASE_URL}job/related-jobs/${guid}`);
+    if (!response.ok) return;
+
+    const data = await response.json();
+    const jobs = data?.data || [];
+
+    const container = document.getElementById("related-jobs-container");
+    container.innerHTML = "";
+
+    if (!jobs.length) {
+      container.innerHTML = `<p>No related jobs found.</p>`;
+      return;
+    }
+
+    jobs.forEach((job) => {
+      const jobCard = document.createElement("div");
+      jobCard.className = "col";
+
+      jobCard.innerHTML = `
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">${job.title}</h5>
+            <p class="card-text">${job.city}, ${job.state}</p>
+            <p class="card-text"><strong>${job.jobtype}</strong></p>
+            <a href="/job-detail.html?guid=${job.guid}" class="btn btn-primary btn-sm">View Job</a>
+          </div>
+        </div>
+      `;
+
+      container.appendChild(jobCard);
+    });
+  } catch (error) {
+    console.error("Error loading related jobs:", error);
+  }
+}
