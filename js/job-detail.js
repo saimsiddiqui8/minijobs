@@ -182,13 +182,20 @@ async function loadRelatedJobs(job) {
         .replace(/\s+/g, "-") // Replace spaces with hyphens
         .trim();
       const description = truncateHTML(job.description, 200);
+    const location = `${job.city}, ${job.country} - (${job.jobtype})`;
 
       const card = document.createElement("div");
       card.className = "job-card";
       card.innerHTML = `
         <div class="job-title">${job.title}</div>
-        <div class="job-location">${job.city}, ${job.state}</div>
-        <div class="job-type">${job.jobtype}</div>
+        <span class="text-start ps-2">
+          <div class="d-flex d-inline-flex">
+            <span id="jobLocation">
+              ${location}
+              <p><b>${job.company}</b></p>
+            </span>
+          </div>
+        </span>
         <div class="mt-2" id="jobDescription">
           ${description}
         </div>
