@@ -179,6 +179,7 @@ async function loadRelatedJobs(job) {
       `;
       container.appendChild(card);
     });
+
   } catch (error) {
     console.error("Error loading related jobs:", error);
   }
