@@ -169,13 +169,18 @@ async function loadRelatedJobs(job) {
     }
 
     jobs.forEach((job) => {
+      const slug = job.title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, "") // Remove special characters
+        .replace(/\s+/g, "-") // Replace spaces with hyphens
+        .trim();
       const card = document.createElement("div");
       card.className = "job-card";
       card.innerHTML = `
         <div class="job-title">${job.title}</div>
         <div class="job-location">${job.city}, ${job.state}</div>
         <div class="job-type">${job.jobtype}</div>
-        <a href="/job-detail.html?guid=${job.guid}" class="view-btn">View Job</a>
+        <a href="/job-detail/${slug}?guid=${encodeURIComponent(job.guid)}" class="view-btn">View Job</a>
       `;
       container.appendChild(card);
     });
