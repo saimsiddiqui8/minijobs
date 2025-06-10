@@ -113,7 +113,7 @@ async function loadJobDetail() {
     // After everything is loaded
     document.getElementById("job-loader").style.display = "none";
     document.getElementById("job-content").style.display = "block";
-    
+
     return job;
   } catch (error) {
     console.error("Error loading job detail:", error);
@@ -121,12 +121,9 @@ async function loadJobDetail() {
 }
 
 loadJobDetail().then((data) => {
-  console.log(data)
-  // Load related jobs after job detail is loaded
-  const urlParams = new URLSearchParams(window.location.search);
-  const guid = urlParams.get("guid");
-  if (guid) {
-    loadRelatedJobs(guid);
+  console.log(data.data)
+  if (data) {
+    loadRelatedJobs(data.data);
   }
 });
 
@@ -144,9 +141,17 @@ document.getElementById("copy-link").addEventListener("click", () => {
 });
 
 // Related Jobs 
-async function loadRelatedJobs(guid) {
+async function loadRelatedJobs(job) {
   try {
-    const response = await fetch(`${BASE_URL}job/related-jobs/${guid}`);
+    let URL = `${BASE_URL}job/search?page=1&limit=3`;
+    
+    if (job.city) {
+      URL += `&city=${encodeURIComponent(city)}`;
+    }
+    if (job.jobtype) {
+      URL += `&jobtype=${encodeURIComponent(job.jobtype)}`;
+    }
+    const response = await fetch(URL);
     if (!response.ok) return;
 
     const data = await response.json();
