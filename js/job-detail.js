@@ -199,7 +199,7 @@ async function loadRelatedJobs(job) {
         <div class="mt-2" id="jobDescription">
           ${description}
         </div>
-        <a target="_blank" href="/job-detail/${slug}?guid=${encodeURIComponent(job.guid)}" class="view-btn">View Job</a>
+        <a target="_blank" rel="noopener noreferrer" href="/job-detail/${slug}?guid=${encodeURIComponent(job.guid)}" class="view-btn">View Job</a>
       `;
       container.appendChild(card);
     });
