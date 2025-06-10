@@ -142,8 +142,11 @@ document.getElementById("copy-link").addEventListener("click", () => {
 
 // Related Jobs 
 async function loadRelatedJobs(job) {
+  const container = document.getElementById("related-jobs-container");
+  container.innerHTML = `<div class="text-center w-100 py-5">Loading related jobs...</div>`;
+
   try {
-    let URL = `${BASE_URL}job/search?page=1&limit=3`;
+    let URL = `${BASE_URL}job/search?page=1&limit=4`;
 
     if (job.city) {
       URL += `&city=${encodeURIComponent(job.city)}`;
@@ -161,7 +164,7 @@ async function loadRelatedJobs(job) {
     container.innerHTML = "";
 
     if (!jobs.length) {
-      container.innerHTML = `<p>No related jobs found.</p>`;
+      container.innerHTML = `<p class="text-muted text-center w-100">No related jobs found.</p>`;
       return;
     }
 
@@ -170,12 +173,14 @@ async function loadRelatedJobs(job) {
       jobCard.className = "col";
 
       jobCard.innerHTML = `
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">${job.title}</h5>
-            <p class="card-text">${job.city}, ${job.state}</p>
-            <p class="card-text"><strong>${job.jobtype}</strong></p>
-            <a href="/job-detail.html?guid=${job.guid}" class="btn btn-primary btn-sm">View Job</a>
+        <div class="card h-100 border-0 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-2 text-primary">${job.title}</h5>
+            <p class="card-text text-muted mb-1"><i class="bi bi-geo-alt"></i> ${job.city}, ${job.state}</p>
+            <p class="card-text mb-3"><span class="badge bg-secondary">${job.jobtype}</span></p>
+            <div class="mt-auto">
+              <a href="/job-detail.html?guid=${job.guid}" class="btn btn-outline-primary w-100 btn-sm">View Details</a>
+            </div>
           </div>
         </div>
       `;
